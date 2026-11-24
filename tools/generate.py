@@ -10,7 +10,15 @@ BASE='https://harmonie-amitie.com/'
 SHORT={'fr':'FR','zh':'中文','en':'EN','es':'ES','ru':'RU','ar':'عربي'}
 PARTNERS=['IFAC du Pays de Montbéliard','Association Paris Pont Alexandre III',
           "Comité d'animation culturelle Paris 1",'Ordre de Malte France',
-          'Association Internationale La Voix de la Compassion']
+          'Association Internationale La Voix de la Compassion',
+          "Association internationale d'échanges culturels"]
+# subline of the 6th partner (A.I.E.C., RNA W751211126)
+D6={'fr':"A.I.E.C. · Festival de la diversité culturelle 2024",
+    'zh':"A.I.E.C. · 2024 年多元文化节",
+    'en':"A.I.E.C. · Festival of Cultural Diversity 2024",
+    'es':"A.I.E.C. · Festival de la Diversidad Cultural 2024",
+    'ru':"A.I.E.C. · Фестиваль культурного разнообразия 2024 года",
+    'ar':"\u2066A.I.E.C.\u2069 · مهرجان التنوع الثقافي 2024"}
 # past news: (datetime, label, content key)
 NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
@@ -28,7 +36,7 @@ ONGOING={
  'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة فرسان مالطا في فرنسا لجولاتها الميدانية."),
        ("قيد النقاش","محادثات مع مؤسسة مصرفية حول مرافقة مخصّصة للأعضاء، ولا سيما الطلاب.")],
 }
-FIGS=['2023','2','40','2','5']
+FIGS=['2023','2','40','2','6']
 # alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
 C2_ALT={'fr':"Le public d'un concert à l'église Saint-Louis-en-l'Île, à Paris",
         'zh':'巴黎圣路易岛教堂音乐会现场的观众',
@@ -104,7 +112,8 @@ def page(l, preview=False):
     figs=''.join(f'<div class="fig"><b>{FIGS[i]}</b><span>{t["f%d"%(i+1)]}</span></div>' for i in range(5))
     news=''.join(f'<article class="item ongoing"><span class="status">{html.escape(st)}</span><p>{html.escape(tx)}</p></article>' for st,tx in ONGOING[l])
     news+=''.join(f'<article class="item"><time datetime="{d}">{ltr(s)}</time><p>{t[k]}</p></article>' for d,s,k in NEWS)
-    parts=''.join(f'<li><bdi lang="fr">{html.escape(PARTNERS[i])}</bdi><small>{t["d%d"%(i+1)]}</small></li>' for i in range(5))
+    t['d6']=html.escape(D6[l],quote=False)
+    parts=''.join(f'<li><bdi lang="fr">{html.escape(PARTNERS[i])}</bdi><small>{t["d%d"%(i+1)]}</small></li>' for i in range(6))
     legal=f'<a href="{up}mentions-legales.html">{t["legal"]}</a>'
     body=f'''{mt}<div class="util"><div class="in">
   <a href="#contact">{t['u_news']}</a>
