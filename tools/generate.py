@@ -198,7 +198,9 @@ def main():
     preview=None
     global CLEAN
     if '--preview' in sys.argv: preview=sys.argv[sys.argv.index('--preview')+1]; CLEAN=False
-    out=preview or os.path.join(os.path.dirname(HERE),'site')
+    ROOT=os.path.dirname(HERE)  # repo root (tools/ next to the pages); aha-website/ layout writes to site/
+    if not os.path.exists(os.path.join(ROOT,'CNAME')): ROOT=os.path.join(ROOT,'site')
+    out=preview or ROOT
     for l in LANGS:
         p=os.path.join(out,'index.html') if l=='fr' else os.path.join(out,l,'index.html')
         os.makedirs(os.path.dirname(p),exist_ok=True)

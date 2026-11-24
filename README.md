@@ -20,6 +20,6 @@ Demander la modification à Claude dans le projet ; Claude modifie et pousse sur
 ## Six langues de l'ONU / 联合国六种语言
 
 FR (racine /), 中文 (/zh/), EN (/en/), ES (/es/), RU (/ru/), العربية (/ar/, RTL).
-Textes : `build/content.py` · Gabarit : `build/generate.py` · Style : `build/style.css`.
-Reconstruire / 重新生成 : `python3 -I build/generate.py` (depuis aha-website/).
+Textes : `tools/content.py` · Gabarit : `tools/generate.py` · Style : `tools/style.css`.
+Reconstruire / 重新生成 : `python3 -I tools/generate.py` (à la racine du dépôt).
 EN/ES/RU/AR : traduction assistée par IA, à relire par un locuteur natif (bandeau affiché sur ces pages). 英、西、俄、阿语为 AI 辅助翻译，需母语人士审校，页面已显示提示。
