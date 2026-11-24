@@ -211,7 +211,7 @@ def page(l, preview=False):
 </div></section>
 
 <section class="band" id="engager"><div class="in grid">
-  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-red" href="#contact">{t['b1_b']}</a></div>
+  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="#contact">{t['b1_b']}</a></div>
   <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="#contact">{t['b2_b']}</a></div>
   <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="#contact">{t['b3_b']}</a></div>
 </div></section>

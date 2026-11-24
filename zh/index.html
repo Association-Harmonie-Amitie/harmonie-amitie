@@ -170,6 +170,11 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .item .status{display:inline-block;font:700 .72rem var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border:1px solid var(--navy);padding:.15rem .45rem;margin-bottom:.5rem}
 .item.ongoing{background:var(--mist)}
 .seal.latin{writing-mode:horizontal-tb;font:700 .9rem/1 var(--f-head);letter-spacing:.04em}
+/* CTA band: three equal columns, buttons aligned on one line and same style */
+.band .grid>div{display:flex;flex-direction:column;align-items:flex-start}
+.band .grid>div p{flex:1}
+.band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
+.band .btn-line:hover{background:#fff;color:var(--navy)}
 
 </style>
 </head>
@@ -271,7 +276,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 </div></section>
 
 <section class="band" id="engager"><div class="in grid">
-  <div><h3>我要支持</h3><p>在线捐赠即将开通。在此之前，欢迎来信支持某项行动。</p><a class="btn btn-red" href="#contact">联系我们</a></div>
+  <div><h3>我要支持</h3><p>在线捐赠即将开通。在此之前，欢迎来信支持某项行动。</p><a class="btn btn-line" href="#contact">联系我们</a></div>
   <div><h3>我要参与</h3><p>志愿者、音乐家、教师：欢迎加入我们的音乐会和冬季公益行动。</p><a class="btn btn-line" href="#contact">成为志愿者</a></div>
   <div><h3>我要关注</h3><p>订阅我们的季度通讯。</p><a class="btn btn-line" href="#contact">订阅通讯</a></div>
 </div></section>
