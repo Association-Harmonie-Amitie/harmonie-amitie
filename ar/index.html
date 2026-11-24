@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Association Harmonie d'Amitié · 和谊协会</title>
+<title>Association Harmonie d'Amitié (A.H.A.)</title>
 <meta name="description" content="نبني الروابط والثقة: نرافق الشباب ونرعى كبارنا.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Association Harmonie d&#x27;Amitié · 和谊协会">
+<meta property="og:title" content="Association Harmonie d&#x27;Amitié (A.H.A.)">
 <meta property="og:description" content="نبني الروابط والثقة: نرافق الشباب ونرعى كبارنا.">
 <meta property="og:image" content="https://harmonie-amitie.com/img/concert-2025.jpg">
 <meta property="og:url" content="https://harmonie-amitie.com/ar/">
@@ -162,6 +162,11 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 [dir="rtl"] .hero::after{background:linear-gradient(270deg,var(--hero-veil) 0%,var(--hero-veil) 45%,rgba(0,0,0,.15) 100%)}
 [dir="rtl"] .hero img{object-position:70% 30%}
 .ltr{direction:ltr;unicode-bidi:isolate}
+/* French wordmark (non-Chinese pages), after the A.H.A header of the concert programmes */
+.wordmark{display:flex;flex-direction:column;align-items:center;line-height:1}
+.wordmark b{font:500 1.9rem/1 var(--f-head);letter-spacing:.12em;color:var(--navy)}
+.wordmark span{margin-top:.25rem;font:400 .72rem/1.2 var(--f-body);letter-spacing:.04em;color:var(--muted)}
+.pic .ico{color:var(--paper);opacity:.95}
 
 </style>
 </head>
@@ -176,8 +181,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 <header class="main"><div class="in">
   <a class="logo" href="#top" id="top">
-    <span class="seal" aria-hidden="true">和谊</span>
-    <span><b lang="fr" dir="ltr">Association Harmonie d'Amitié</b><span><bdi lang="zh">和谊协会</bdi> · <bdi lang="fr">A.H.A. · Paris</bdi></span></span>
+    <span class="wordmark" lang="fr" dir="ltr"><b>A.H.A</b><span>Association Harmonie d'Amitié</span></span>
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">الجمعية</a></li>
@@ -231,11 +235,11 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
       <div class="body"><span class="tag">الشباب · التعليم</span><h3>نُعِدّ ونفتح الطرق</h3><p>تدريب مهني فرنسي صيني مع IFAC du Pays de Montbéliard (تفويض 2026–2028)؛ ومتابعة الدراسة والتبادل الطلابي المتبادل قيد النقاش مع مؤسسات التعليم العالي.</p></div>
     </article>
     <article class="card">
-      <div class="pic"><span class="mark" aria-hidden="true">乐</span></div>
+      <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="جمهور حفل موسيقي في كنيسة سان لوي أن ليل في باريس" loading="lazy"></div>
       <div class="body"><span class="tag">الانسجام · الثقافة</span><h3>الموسيقى لغة مشتركة</h3><p>كل ربيع، حفل موسيقي في كنيسة سان لوي أن ليل، في إطار مهرجان التنوع الثقافي، المنظّم تحت رعاية اللجنة الوطنية الفرنسية لليونسكو.</p></div>
     </article>
     <article class="card">
-      <div class="pic red"><span class="mark" aria-hidden="true">暖</span></div>
+      <div class="pic red"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></div>
       <div class="body"><span class="tag">كبارنا · التضامن</span><h3>ألّا يبقى أحد وحيدًا</h3><p>حملات شتوية لدور رعاية المسنين والرعايا الكنسية والأشخاص بلا مأوى؛ ودعم الأعمال الخيرية لرئيسَينا الفخريين: منظمة فرسان مالطا وجمعية «La Voix de la Compassion» الدولية.</p></div>
     </article>
   </div>
@@ -282,7 +286,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 <footer><div class="in">
   <div>
-    <h4><bdi lang="fr">Association Harmonie d'Amitié</bdi> · <bdi lang="zh">和谊协会</bdi></h4>
+    <h4><bdi lang="fr">Association Harmonie d'Amitié (A.H.A.)</bdi></h4>
     <p>جمعية غير ربحية وفق القانون الفرنسي لعام 1901، مُصرَّح بها لدى مديرية شرطة باريس في 12 ديسمبر 2023 (الجريدة الرسمية بتاريخ 19 ديسمبر 2023). RNA W751272194. المقر: 27 rue Saint-Jacques, 75005 Paris.</p>
   </div>
   <div>

@@ -133,3 +133,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 [dir="rtl"] .hero::after{background:linear-gradient(270deg,var(--hero-veil) 0%,var(--hero-veil) 45%,rgba(0,0,0,.15) 100%)}
 [dir="rtl"] .hero img{object-position:70% 30%}
 .ltr{direction:ltr;unicode-bidi:isolate}
+/* French wordmark (non-Chinese pages), after the A.H.A header of the concert programmes */
+.wordmark{display:flex;flex-direction:column;align-items:center;line-height:1}
+.wordmark b{font:500 1.9rem/1 var(--f-head);letter-spacing:.12em;color:var(--navy)}
+.wordmark span{margin-top:.25rem;font:400 .72rem/1.2 var(--f-body);letter-spacing:.04em;color:var(--muted)}
+.pic .ico{color:var(--paper);opacity:.95}

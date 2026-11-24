@@ -13,6 +13,15 @@ PARTNERS=['IFAC du Pays de Montbéliard','Association Paris Pont Alexandre III',
           'Association Internationale La Voix de la Compassion']
 NEWS=[('2026-04-08','08.04.2026'),('2026-03-07','07.03.2026'),('2025-05-25','25.05.2025'),('2024-11-25','25.11.2024')]
 FIGS=['2023','2','40','2','5']
+# alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
+C2_ALT={'fr':"Le public d'un concert à l'église Saint-Louis-en-l'Île, à Paris",
+        'zh':'巴黎圣路易岛教堂音乐会现场的观众',
+        'en':"The audience at a concert in the church of Saint-Louis-en-l'Île, Paris",
+        'es':"El público de un concierto en la iglesia de Saint-Louis-en-l'Île, en París",
+        'ru':"Зрители концерта в церкви Сен-Луи-ан-л'Иль в Париже",
+        'ar':"جمهور حفل موسيقي في كنيسة سان لوي أن ليل في باريس"}
+HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
+
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
 FONTS=('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700'
        '&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700')
@@ -28,7 +37,20 @@ def rel(frm,to):
 
 def page(l, preview=False):
     t={k:html.escape(v,quote=False) for k,v in T[l].items()}
-    a=lambda k: html.escape(T[l][k],quote=True)
+    if l!='zh': t['title']=html.escape("Association Harmonie d'Amitié (A.H.A.)",quote=False)
+    a=lambda k: html.escape(t[k] if k=='title' else T[l][k],quote=True)
+    zh=(l=='zh')
+    # Chinese seal only on the Chinese page; elsewhere the French wordmark (as on concert programmes)
+    if zh:
+        logo=('<span class="seal" aria-hidden="true">和谊</span>\n    <span><b>和谊协会</b>'
+              '<span><bdi lang="fr">Association Harmonie d\'Amitié · A.H.A.</bdi> · 巴黎</span></span>')
+        fth='和谊协会 · <bdi lang="fr">Association Harmonie d\'Amitié</bdi>'
+        mark3='<span class="mark" aria-hidden="true">暖</span>'
+    else:
+        logo=('<span class="wordmark" lang="fr" dir="ltr"><b>A.H.A</b>'
+              '<span>Association Harmonie d\'Amitié</span></span>')
+        fth='<bdi lang="fr">Association Harmonie d\'Amitié (A.H.A.)</bdi>'
+        mark3=HEART
     up='' if l=='fr' else '../'
     rtl=(l=='ar')
     fonts=FONTS+(FONTS_AR if rtl else '')+'&display=swap'
@@ -73,8 +95,7 @@ def page(l, preview=False):
 
 <header class="main"><div class="in">
   <a class="logo" href="#top" id="top">
-    <span class="seal" aria-hidden="true">和谊</span>
-    <span><b lang="fr" dir="ltr">Association Harmonie d'Amitié</b><span><bdi lang="zh">和谊协会</bdi> · <bdi lang="fr">A.H.A. · Paris</bdi></span></span>
+    {logo}
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">{t['m_assoc']}</a></li>
@@ -128,11 +149,11 @@ def page(l, preview=False):
       <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_p']}</p></div>
     </article>
     <article class="card">
-      <div class="pic"><span class="mark" aria-hidden="true">乐</span></div>
+      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
       <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_p']}</p></div>
     </article>
     <article class="card">
-      <div class="pic red"><span class="mark" aria-hidden="true">暖</span></div>
+      <div class="pic red">{mark3}</div>
       <div class="body"><span class="tag">{t['c3_tag']}</span><h3>{t['c3_h']}</h3><p>{t['c3_p']}</p></div>
     </article>
   </div>
@@ -179,7 +200,7 @@ def page(l, preview=False):
 
 <footer><div class="in">
   <div>
-    <h4><bdi lang="fr">Association Harmonie d'Amitié</bdi> · <bdi lang="zh">和谊协会</bdi></h4>
+    <h4>{fth}</h4>
     <p>{t['ft_p']}</p>
   </div>
   <div>

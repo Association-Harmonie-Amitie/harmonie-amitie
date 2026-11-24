@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Association Harmonie d'Amitié · 和谊协会</title>
+<title>Association Harmonie d'Amitié (A.H.A.)</title>
 <meta name="description" content="Crear vínculos y confianza: acompañar a los jóvenes y cuidar de nuestros mayores.">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Association Harmonie d&#x27;Amitié · 和谊协会">
+<meta property="og:title" content="Association Harmonie d&#x27;Amitié (A.H.A.)">
 <meta property="og:description" content="Crear vínculos y confianza: acompañar a los jóvenes y cuidar de nuestros mayores.">
 <meta property="og:image" content="https://harmonie-amitie.com/img/concert-2025.jpg">
 <meta property="og:url" content="https://harmonie-amitie.com/es/">
@@ -162,6 +162,11 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 [dir="rtl"] .hero::after{background:linear-gradient(270deg,var(--hero-veil) 0%,var(--hero-veil) 45%,rgba(0,0,0,.15) 100%)}
 [dir="rtl"] .hero img{object-position:70% 30%}
 .ltr{direction:ltr;unicode-bidi:isolate}
+/* French wordmark (non-Chinese pages), after the A.H.A header of the concert programmes */
+.wordmark{display:flex;flex-direction:column;align-items:center;line-height:1}
+.wordmark b{font:500 1.9rem/1 var(--f-head);letter-spacing:.12em;color:var(--navy)}
+.wordmark span{margin-top:.25rem;font:400 .72rem/1.2 var(--f-body);letter-spacing:.04em;color:var(--muted)}
+.pic .ico{color:var(--paper);opacity:.95}
 
 </style>
 </head>
@@ -176,8 +181,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 <header class="main"><div class="in">
   <a class="logo" href="#top" id="top">
-    <span class="seal" aria-hidden="true">和谊</span>
-    <span><b lang="fr" dir="ltr">Association Harmonie d'Amitié</b><span><bdi lang="zh">和谊协会</bdi> · <bdi lang="fr">A.H.A. · Paris</bdi></span></span>
+    <span class="wordmark" lang="fr" dir="ltr"><b>A.H.A</b><span>Association Harmonie d'Amitié</span></span>
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">La Asociación</a></li>
@@ -231,11 +235,11 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
       <div class="body"><span class="tag">Juventud · Educación</span><h3>Formar y abrir caminos</h3><p>Formación profesional franco-china con el IFAC du Pays de Montbéliard (mandato 2026–2028); continuación de estudios e intercambios recíprocos de estudiantes en conversación con centros de enseñanza superior.</p></div>
     </article>
     <article class="card">
-      <div class="pic"><span class="mark" aria-hidden="true">乐</span></div>
+      <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="El público de un concierto en la iglesia de Saint-Louis-en-l&#x27;Île, en París" loading="lazy"></div>
       <div class="body"><span class="tag">Armonía · Cultura</span><h3>La música, una lengua común</h3><p>Cada primavera, un concierto en la iglesia de Saint-Louis-en-l'Île, en el marco del Festival de la Diversidad Cultural, bajo el patrocinio de la Comisión Nacional Francesa para la UNESCO.</p></div>
     </article>
     <article class="card">
-      <div class="pic red"><span class="mark" aria-hidden="true">暖</span></div>
+      <div class="pic red"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></div>
       <div class="body"><span class="tag">Mayores · Solidaridad</span><h3>Que nadie se quede solo</h3><p>Colectas de invierno para residencias de mayores, parroquias y personas sin hogar; apoyo a las obras benéficas de nuestros Presidentes de honor, la Orden de Malta y la Association Internationale La Voix de la Compassion.</p></div>
     </article>
   </div>
@@ -282,7 +286,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 <footer><div class="in">
   <div>
-    <h4><bdi lang="fr">Association Harmonie d'Amitié</bdi> · <bdi lang="zh">和谊协会</bdi></h4>
+    <h4><bdi lang="fr">Association Harmonie d'Amitié (A.H.A.)</bdi></h4>
     <p>Asociación sin ánimo de lucro regida por la ley francesa de 1901, declarada ante la Prefectura de Policía de París el 12 de diciembre de 2023 (Diario Oficial del 19 de diciembre de 2023). RNA W751272194. Sede: 27 rue Saint-Jacques, 75005 París.</p>
   </div>
   <div>
