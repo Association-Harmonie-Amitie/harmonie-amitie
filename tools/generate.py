@@ -45,6 +45,31 @@ C2_ALT={'fr':"Le public d'un concert à l'église Saint-Louis-en-l'Île, à Pari
         'ru':"Зрители концерта в церкви Сен-Луи-ан-л'Иль в Париже",
         'ar':"جمهور حفل موسيقي في كنيسة سان لوي أن ليل في باريس"}
 BOOK='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg>'
+# free membership card (mailto until an online form exists)
+JOIN_TO='ahaparis@outlook.com'
+JOIN={
+ 'fr':dict(h="Adhérer gratuitement",p="L'adhésion à l'association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme.",b="Je m'inscris",
+      n="Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.",
+      subj="Adhésion gratuite",body="Bonjour,\n\nJe souhaite adhérer gratuitement à l'Association Harmonie d'Amitié.\n\nNom et prénom :\nPays / ville :\nTéléphone (facultatif) :\nCentres d'intérêt (jeunesse et éducation / culture et musique / solidarité) :\nBénévolat (oui / non) :\n\nJ'accepte que ces données soient utilisées par l'association pour gérer mon adhésion.\n"),
+ 'zh':dict(h="免费入会",p="加入协会完全免费。欢迎加入，按自己的节奏关注并参与我们的行动。",b="立即登记",
+      n="您的信息仅用于会员管理，绝不对外提供。",
+      subj="免费入会申请",body="您好：\n\n我希望免费加入和谊协会。\n\n姓名：\n国家 / 城市：\n电话（选填）：\n关注领域（青年与教育 / 文化与音乐 / 公益）：\n是否愿意做志愿者（是 / 否）：\n\n我同意协会使用以上信息办理会员事务。\n"),
+ 'en':dict(h="Join for free",p="Membership of the association is free. Join us to follow and take part in our activities at your own pace.",b="Sign up",
+      n="Your data is used only to manage memberships and is never shared.",
+      subj="Free membership",body="Hello,\n\nI would like to join the Association Harmonie d'Amitié (free membership).\n\nFull name:\nCountry / city:\nPhone (optional):\nInterests (youth and education / culture and music / solidarity):\nVolunteering (yes / no):\n\nI agree that the association may use this data to manage my membership.\n"),
+ 'es':dict(h="Hacerse socio gratis",p="La adhesión a la asociación es gratuita. Únase a nosotros para seguir nuestras acciones y participar a su ritmo.",b="Inscribirme",
+      n="Sus datos solo se utilizan para gestionar las adhesiones y nunca se ceden.",
+      subj="Adhesión gratuita",body="Hola:\n\nDeseo hacerme socio/a gratuitamente de la Association Harmonie d'Amitié.\n\nNombre y apellidos:\nPaís / ciudad:\nTeléfono (opcional):\nIntereses (juventud y educación / cultura y música / solidaridad):\nVoluntariado (sí / no):\n\nAcepto que la asociación utilice estos datos para gestionar mi adhesión.\n"),
+ 'ru':dict(h="Вступить бесплатно",p="Членство в ассоциации бесплатное. Присоединяйтесь, чтобы следить за нашими делами и участвовать в них в своём ритме.",b="Записаться",
+      n="Ваши данные используются только для учёта членов и никому не передаются.",
+      subj="Бесплатное членство",body="Здравствуйте!\n\nЯ хочу бесплатно вступить в Association Harmonie d'Amitié.\n\nИмя и фамилия:\nСтрана / город:\nТелефон (по желанию):\nИнтересы (молодёжь и образование / культура и музыка / солидарность):\nВолонтёрство (да / нет):\n\nЯ согласен(на), чтобы ассоциация использовала эти данные для учёта моего членства.\n"),
+ 'ar':dict(h="انضموا مجانًا",p="العضوية في الجمعية مجانية. انضموا إلينا لمتابعة أنشطتنا والمشاركة فيها بالإيقاع الذي يناسبكم.",b="سجّلوا الآن",
+      n="تُستخدم بياناتكم لإدارة العضوية فقط ولا تُشارك مع أي جهة.",
+      subj="طلب عضوية مجانية",body="مرحبًا،\n\nأرغب في الانضمام مجانًا إلى Association Harmonie d'Amitié.\n\nالاسم الكامل:\nالبلد / المدينة:\nالهاتف (اختياري):\nالاهتمامات (الشباب والتعليم / الثقافة والموسيقى / التضامن):\nالتطوع (نعم / لا):\n\nأوافق على أن تستخدم الجمعية هذه البيانات لإدارة عضويتي.\n"),
+}
+from urllib.parse import quote
+def join_href(l):
+    j=JOIN[l]; return 'mailto:%s?subject=%s&body=%s'%(JOIN_TO,quote(j['subj']),quote(j['body']))
 HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
@@ -117,7 +142,7 @@ def page(l, preview=False):
     legal=f'<a href="{up}mentions-legales.html">{t["legal"]}</a>'
     body=f'''{mt}<div class="util"><div class="in">
   <a href="#contact">{t['u_news']}</a>
-  <a href="#engager">{t['u_join']}</a>
+  <a href="#adherer">{t['u_join']}</a>
   <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
   <a class="btn btn-red" href="#engager">{t['u_support']}</a>
 </div></div>
@@ -155,6 +180,12 @@ def page(l, preview=False):
     <p class="kicker">{t['mis_k']}</p>
     <h2>{t['mis_h']}</h2>
     <p class="sub">{t['mis_sub']}</p>
+    <div class="join" id="adherer">
+      <h3>{html.escape(JOIN[l]['h'])}</h3>
+      <p>{html.escape(JOIN[l]['p'])}</p>
+      <a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
+      <small>{html.escape(JOIN[l]['n'])}</small>
+    </div>
   </div>
   <blockquote>
     <p>{t['mis_q']}</p>

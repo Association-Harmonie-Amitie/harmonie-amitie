@@ -146,3 +146,9 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
+/* free membership card in the mission section */
+.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
+.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
+.join p{margin:0 0 .9rem;color:var(--ink)}
+.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
+.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
