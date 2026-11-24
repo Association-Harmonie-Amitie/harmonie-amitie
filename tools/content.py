@@ -55,7 +55,7 @@ T["fr"] = dict(
  ct_k="Contact", ct_h="Nous écrire", ct_seat="Siège", ct_mail="E-mail", ct_cn="Bureau en Chine (Wuhan)",
  ft_p="Association loi 1901 à but non lucratif, déclarée à la Préfecture de police de Paris le 12 décembre 2023 (JO du 19 décembre 2023). RNA W751272194. Siège : 27 rue Saint-Jacques, 75005 Paris.",
  tr_h="Transparence", tr_p="Statuts et récépissé de déclaration sur demande. Rapport d'activité 2026 à paraître.",
- pub="Directrice de la publication : Mme Yue QUEMERAIS, Présidente. Ce site ne dépose aucun cookie.", legal="Mentions légales",
+ pub="Ce site ne dépose aucun cookie.", legal="Mentions légales",
  langs_label="Langue",
 )
 
@@ -102,7 +102,7 @@ T["zh"] = dict(
  ct_k="联系", ct_h="联系我们", ct_seat="巴黎总部", ct_mail="电子邮箱", ct_cn="中国联络处（武汉）",
  ft_p="依法国 1901 年协会法登记的非营利社团，2023 年 12 月 12 日向巴黎警察总署申报（2023 年 12 月 19 日政府公报公告）。RNA W751272194。会址：巴黎五区圣雅克街 27 号。",
  tr_h="信息公开", tr_p="章程与登记回执可按需索取。2026 年度活动报告即将发布。",
- pub="出版负责人：主席 Yue QUEMERAIS 女士。本网站不使用 Cookie。", legal="法律声明",
+ pub="本网站不使用 Cookie。", legal="法律声明",
  langs_label="语言",
 )
 
@@ -154,7 +154,7 @@ T["en"] = dict(
  ct_k="Contact", ct_h="Write to us", ct_seat="Head office", ct_mail="E-mail", ct_cn="Office in China (Wuhan)",
  ft_p="Non-profit association under the French law of 1901, declared to the Paris Police Prefecture on 12 December 2023 (Official Journal of 19 December 2023). RNA W751272194. Head office: 27 rue Saint-Jacques, 75005 Paris.",
  tr_h="Transparency", tr_p="Statutes and declaration receipt available on request. 2026 activity report forthcoming.",
- pub="Publication director: Ms Yue QUEMERAIS, President. This site sets no cookies.", legal="Legal notice (French)",
+ pub="This site sets no cookies.", legal="Legal notice (French)",
  langs_label="Language",
 )
 
@@ -206,7 +206,7 @@ T["es"] = dict(
  ct_k="Contacto", ct_h="Escríbanos", ct_seat="Sede", ct_mail="Correo electrónico", ct_cn="Oficina en China (Wuhan)",
  ft_p="Asociación sin ánimo de lucro regida por la ley francesa de 1901, declarada ante la Prefectura de Policía de París el 12 de diciembre de 2023 (Diario Oficial del 19 de diciembre de 2023). RNA W751272194. Sede: 27 rue Saint-Jacques, 75005 París.",
  tr_h="Transparencia", tr_p="Estatutos y resguardo de declaración disponibles a petición. Informe de actividad 2026 de próxima publicación.",
- pub="Directora de la publicación: Sra. Yue QUEMERAIS, Presidenta. Este sitio no utiliza cookies.", legal="Aviso legal (en francés)",
+ pub="Este sitio no utiliza cookies.", legal="Aviso legal (en francés)",
  langs_label="Idioma",
 )
 
@@ -258,7 +258,7 @@ T["ru"] = dict(
  ct_k="Контакты", ct_h="Напишите нам", ct_seat="Штаб-квартира", ct_mail="Электронная почта", ct_cn="Представительство в Китае (Ухань)",
  ft_p="Некоммерческая ассоциация по французскому закону 1901 года, зарегистрирована в Префектуре полиции Парижа 12 декабря 2023 года (Официальный журнал от 19 декабря 2023 года). RNA W751272194. Адрес: 27 rue Saint-Jacques, 75005 Paris.",
  tr_h="Прозрачность", tr_p="Устав и свидетельство о регистрации — по запросу. Отчёт о деятельности за 2026 год готовится.",
- pub="Ответственная за публикацию: г-жа Yue QUEMERAIS, президент. Сайт не использует файлы cookie.", legal="Правовая информация (на французском)",
+ pub="Сайт не использует файлы cookie.", legal="Правовая информация (на французском)",
  langs_label="Язык",
 )
 
@@ -310,6 +310,6 @@ T["ar"] = dict(
  ct_k="اتصلوا بنا", ct_h="راسلونا", ct_seat="المقر", ct_mail="البريد الإلكتروني", ct_cn="مكتب الصين (ووهان)",
  ft_p="جمعية غير ربحية وفق القانون الفرنسي لعام 1901، مُصرَّح بها لدى مديرية شرطة باريس في 12 ديسمبر 2023 (الجريدة الرسمية بتاريخ 19 ديسمبر 2023). RNA W751272194. المقر: 27 rue Saint-Jacques, 75005 Paris.",
  tr_h="الشفافية", tr_p="النظام الأساسي وإيصال التصريح متاحان عند الطلب. تقرير أنشطة 2026 قيد الإعداد.",
- pub="مديرة النشر: السيدة Yue QUEMERAIS، الرئيسة. لا يستخدم هذا الموقع ملفات تعريف الارتباط.", legal="إشعار قانوني (بالفرنسية)",
+ pub="لا يستخدم هذا الموقع ملفات تعريف الارتباط.", legal="إشعار قانوني (بالفرنسية)",
  langs_label="اللغة",
 )
