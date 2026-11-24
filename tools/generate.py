@@ -11,7 +11,29 @@ SHORT={'fr':'FR','zh':'中文','en':'EN','es':'ES','ru':'RU','ar':'عربي'}
 PARTNERS=['IFAC du Pays de Montbéliard','Association Paris Pont Alexandre III',
           "Comité d'animation culturelle Paris 1",'Ordre de Malte France',
           'Association Internationale La Voix de la Compassion']
-NEWS=[('2026-04-08','08.04.2026'),('2026-03-07','07.03.2026'),('2025-05-25','25.05.2025'),('2024-11-25','25.11.2024')]
+# past news: (datetime, label, content key)
+NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
+# cooperations under discussion (no names of individuals, no third-party logos; modest wording)
+ONGOING={
+ 'fr':[("En cours","Échanges avec la Commission nationale française pour l'UNESCO ; une rencontre est envisagée à partir de décembre."),
+       ("En préparation","Collecte d'hiver 2026 : des dons en nature proposés par des donateurs en Chine (chaussettes, plaids), acceptés par l'Ordre de Malte France pour ses maraudes."),
+       ("En discussion","Échanges avec un établissement bancaire sur un accompagnement dédié aux adhérents, notamment aux étudiants.")],
+ 'zh':[("进行中","与法国联合国教科文组织全国委员会保持沟通，拟于 12 月起安排会面。"),
+       ("筹备中","2026 年冬季募集：中国捐赠者拟捐赠袜子和毛毯，马耳他骑士团法国分会已同意接收，用于冬季街头探访救助。"),
+       ("洽谈中","与一家银行机构商谈为会员、特别是学生会员提供专门服务。")],
+ 'en':[("Ongoing","Exchanges with the French National Commission for UNESCO; a meeting is envisaged from December."),
+       ("In preparation","Winter collection 2026: donations in kind offered by donors in China (socks, blankets), accepted by the Ordre de Malte France for its street outreach."),
+       ("Under discussion","Talks with a banking institution about dedicated support for members, especially students.")],
+ 'es':[("En curso","Intercambios con la Comisión Nacional Francesa para la UNESCO; se prevé un encuentro a partir de diciembre."),
+       ("En preparación","Colecta de invierno 2026: donaciones en especie ofrecidas por donantes en China (calcetines, mantas), aceptadas por la Orden de Malta Francia para sus rondas solidarias."),
+       ("En conversación","Conversaciones con una entidad bancaria sobre un acompañamiento dedicado a los socios, en particular a los estudiantes.")],
+ 'ru':[("В процессе","Ведётся диалог с Национальной комиссией Франции по делам ЮНЕСКО; встреча предполагается начиная с декабря."),
+       ("В подготовке","Зимний сбор 2026 года: вещи от дарителей из Китая (носки, пледы) приняты Мальтийским орденом Франции для помощи людям на улице."),
+       ("Обсуждается","Переговоры с банковским учреждением о специальном сопровождении для членов ассоциации, прежде всего студентов.")],
+ 'ar':[("جارٍ","تبادل مع اللجنة الوطنية الفرنسية لليونسكو، ويُرتقب لقاء ابتداءً من ديسمبر."),
+       ("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة فرسان مالطا في فرنسا لجولاتها الميدانية."),
+       ("قيد النقاش","محادثات مع مؤسسة مصرفية حول مرافقة مخصّصة للأعضاء، ولا سيما الطلاب.")],
+}
 FIGS=['2023','2','40','2','5']
 # alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
 C2_ALT={'fr':"Le public d'un concert à l'église Saint-Louis-en-l'Île, à Paris",
@@ -83,7 +105,8 @@ def page(l, preview=False):
         rel(l,x),HTML_LANG[x],HTML_LANG[x],html.escape(NAMES[x]),' aria-current="page"' if x==l else '',SHORT[x]) for x in LANGS)
     mt=f'<div class="mtnote" role="note"><div class="in">{t["mtnote"]} <a href="{rel(l,"fr")}" hreflang="fr" lang="fr">Version française</a></div></div>\n' if l in MACHINE and t['mtnote'] else ''
     figs=''.join(f'<div class="fig"><b>{FIGS[i]}</b><span>{t["f%d"%(i+1)]}</span></div>' for i in range(5))
-    news=''.join(f'<article class="item"><time datetime="{d}">{ltr(s)}</time><p>{t["n%d"%(i+1)]}</p></article>' for i,(d,s) in enumerate(NEWS))
+    news=''.join(f'<article class="item ongoing"><span class="status">{html.escape(st)}</span><p>{html.escape(tx)}</p></article>' for st,tx in ONGOING[l])
+    news+=''.join(f'<article class="item"><time datetime="{d}">{ltr(s)}</time><p>{t[k]}</p></article>' for d,s,k in NEWS)
     parts=''.join(f'<li><bdi lang="fr">{html.escape(PARTNERS[i])}</bdi><small>{t["d%d"%(i+1)]}</small></li>' for i in range(5))
     legal=f'<a href="{up}mentions-legales.html">{t["legal"]}</a>'
     body=f'''{mt}<div class="util"><div class="in">

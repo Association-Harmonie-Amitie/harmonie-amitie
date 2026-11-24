@@ -115,7 +115,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .person p{margin:0;color:var(--muted)}
 
 /* news */
-.news{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
 .item{border:1px solid var(--line);padding:1.1rem;background:var(--paper)}
 .item time{display:block;font:700 .8rem var(--f-body);color:var(--red);font-variant-numeric:tabular-nums;margin-bottom:.4rem}
 .item p{margin:0}
@@ -167,6 +167,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .wordmark b{font:500 1.9rem/1 var(--f-head);letter-spacing:.12em;color:var(--navy)}
 .wordmark span{margin-top:.25rem;font:400 .72rem/1.2 var(--f-body);letter-spacing:.04em;color:var(--muted)}
 .pic .ico{color:var(--paper);opacity:.95}
+.item .status{display:inline-block;font:700 .72rem var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border:1px solid var(--navy);padding:.15rem .45rem;margin-bottom:.5rem}
+.item.ongoing{background:var(--mist)}
 
 </style>
 </head>
@@ -258,7 +260,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 <section id="actualites"><div class="in">
   <p class="kicker">Noticias</p>
   <h2>Últimas noticias</h2>
-  <div class="news" style="margin-top:1.5rem"><article class="item"><time datetime="2026-04-08">08.04.2026</time><p>El IUT Nord Franche-Comté confirma por carta su intención de cooperar con la asociación.</p></article><article class="item"><time datetime="2026-03-07">07.03.2026</time><p>Almuerzo de trabajo con la Fondation Inalco sobre intercambios recíprocos de estudiantes.</p></article><article class="item"><time datetime="2025-05-25">25.05.2025</time><p>Concierto del 15.º Festival de la Diversidad Cultural con la Orchestre à cordes de Paris.</p></article><article class="item"><time datetime="2024-11-25">25.11.2024</time><p>40 abrigos de invierno entregados a la Ordre de Malte France para personas sin hogar y familias en dificultad.</p></article></div>
+  <div class="news" style="margin-top:1.5rem"><article class="item ongoing"><span class="status">En curso</span><p>Intercambios con la Comisión Nacional Francesa para la UNESCO; se prevé un encuentro a partir de diciembre.</p></article><article class="item ongoing"><span class="status">En preparación</span><p>Colecta de invierno 2026: donaciones en especie ofrecidas por donantes en China (calcetines, mantas), aceptadas por la Orden de Malta Francia para sus rondas solidarias.</p></article><article class="item ongoing"><span class="status">En conversación</span><p>Conversaciones con una entidad bancaria sobre un acompañamiento dedicado a los socios, en particular a los estudiantes.</p></article><article class="item"><time datetime="2025-05-25">25.05.2025</time><p>Concierto del 15.º Festival de la Diversidad Cultural con la Orchestre à cordes de Paris.</p></article><article class="item"><time datetime="2024-11-25">25.11.2024</time><p>40 abrigos de invierno entregados a la Ordre de Malte France para personas sin hogar y familias en dificultad.</p></article></div>
 </div></section>
 
 <section class="mission" id="partenaires"><div class="in">

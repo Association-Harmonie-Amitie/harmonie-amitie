@@ -115,7 +115,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .person p{margin:0;color:var(--muted)}
 
 /* news */
-.news{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.25rem}
+.news{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}
 .item{border:1px solid var(--line);padding:1.1rem;background:var(--paper)}
 .item time{display:block;font:700 .8rem var(--f-body);color:var(--red);font-variant-numeric:tabular-nums;margin-bottom:.4rem}
 .item p{margin:0}
@@ -167,6 +167,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .wordmark b{font:500 1.9rem/1 var(--f-head);letter-spacing:.12em;color:var(--navy)}
 .wordmark span{margin-top:.25rem;font:400 .72rem/1.2 var(--f-body);letter-spacing:.04em;color:var(--muted)}
 .pic .ico{color:var(--paper);opacity:.95}
+.item .status{display:inline-block;font:700 .72rem var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border:1px solid var(--navy);padding:.15rem .45rem;margin-bottom:.5rem}
+.item.ongoing{background:var(--mist)}
 
 </style>
 </head>
@@ -258,7 +260,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 <section id="actualites"><div class="in">
   <p class="kicker">动态</p>
   <h2>最新动态</h2>
-  <div class="news" style="margin-top:1.5rem"><article class="item"><time datetime="2026-04-08">08.04.2026</time><p>北弗朗什-孔泰技术学院来函确认与协会的合作意向。</p></article><article class="item"><time datetime="2026-03-07">07.03.2026</time><p>与 INALCO 基金会工作午餐，商谈中法学生对等交流。</p></article><article class="item"><time datetime="2025-05-25">25.05.2025</time><p>第 15 届多元文化节音乐会，巴黎弦乐团演出。</p></article><article class="item"><time datetime="2024-11-25">25.11.2024</time><p>40 件冬衣交由马耳他骑士团法国分会，分发给无家可归者和困难家庭。</p></article></div>
+  <div class="news" style="margin-top:1.5rem"><article class="item ongoing"><span class="status">进行中</span><p>与法国联合国教科文组织全国委员会保持沟通，拟于 12 月起安排会面。</p></article><article class="item ongoing"><span class="status">筹备中</span><p>2026 年冬季募集：中国捐赠者拟捐赠袜子和毛毯，马耳他骑士团法国分会已同意接收，用于冬季街头探访救助。</p></article><article class="item ongoing"><span class="status">洽谈中</span><p>与一家银行机构商谈为会员、特别是学生会员提供专门服务。</p></article><article class="item"><time datetime="2025-05-25">25.05.2025</time><p>第 15 届多元文化节音乐会，巴黎弦乐团演出。</p></article><article class="item"><time datetime="2024-11-25">25.11.2024</time><p>40 件冬衣交由马耳他骑士团法国分会，分发给无家可归者和困难家庭。</p></article></div>
 </div></section>
 
 <section class="mission" id="partenaires"><div class="in">
