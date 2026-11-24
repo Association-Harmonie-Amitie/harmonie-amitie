@@ -175,12 +175,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
-/* free membership card in the mission section */
-.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
-.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
-.join p{margin:0 0 .9rem;color:var(--ink)}
-.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
-.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
+/* free membership band under the two mission columns */
+.join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
+.join-txt{flex:1;min-width:0}
+.join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
+.join p{margin:0;color:var(--ink)}
+.join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+@media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
+.mission .grid{align-items:center}
 
 </style>
 </head>
@@ -226,18 +229,20 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <p class="kicker">Notre mission</p>
     <h2>Ce qui était difficile hier devient possible</h2>
     <p class="sub">Association loi 1901 à but non lucratif, créée à Paris en 2023, l'A.H.A. agit dans trois domaines : l'éducation, la culture et la solidarité.</p>
-    <div class="join" id="adherer">
-      <h3>Adhérer gratuitement</h3>
-      <p>L&#x27;adhésion à l&#x27;association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme.</p>
-      <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Adh%C3%A9sion%20gratuite&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20adh%C3%A9rer%20gratuitement%20%C3%A0%20l%27Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0ANom%20et%20pr%C3%A9nom%20%3A%0APays%20/%20ville%20%3A%0AT%C3%A9l%C3%A9phone%20%28facultatif%29%20%3A%0ACentres%20d%27int%C3%A9r%C3%AAt%20%28jeunesse%20et%20%C3%A9ducation%20/%20culture%20et%20musique%20/%20solidarit%C3%A9%29%20%3A%0AB%C3%A9n%C3%A9volat%20%28oui%20/%20non%29%20%3A%0A%0AJ%27accepte%20que%20ces%20donn%C3%A9es%20soient%20utilis%C3%A9es%20par%20l%27association%20pour%20g%C3%A9rer%20mon%20adh%C3%A9sion.%0A">Je m&#x27;inscris</a>
-      <small>Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.</small>
-    </div>
   </div>
   <blockquote>
     <p>Mettre les possibilités de l'ère de l'intelligence artificielle au service du lien et de la confiance : accompagner les jeunes, prendre soin de nos aînés, et permettre à chaque personne, à chaque collectif et à la société tout entière de réaliser, à son propre rythme, ses vœux d'harmonie et de bien-être.</p>
     <p class="last">Bien des choses difficiles hier deviennent possibles à l'ère de l'intelligence artificielle.</p>
   </blockquote>
-</div></section>
+</div>
+<div class="in"><div class="join" id="adherer">
+  <div class="join-txt">
+    <h3>Adhérer gratuitement</h3>
+    <p>L&#x27;adhésion à l&#x27;association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme.</p>
+    <small>Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.</small>
+  </div>
+  <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Adh%C3%A9sion%20gratuite&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20adh%C3%A9rer%20gratuitement%20%C3%A0%20l%27Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0ANom%20et%20pr%C3%A9nom%20%3A%0APays%20/%20ville%20%3A%0AT%C3%A9l%C3%A9phone%20%28facultatif%29%20%3A%0ACentres%20d%27int%C3%A9r%C3%AAt%20%28jeunesse%20et%20%C3%A9ducation%20/%20culture%20et%20musique%20/%20solidarit%C3%A9%29%20%3A%0AB%C3%A9n%C3%A9volat%20%28oui%20/%20non%29%20%3A%0A%0AJ%27accepte%20que%20ces%20donn%C3%A9es%20soient%20utilis%C3%A9es%20par%20l%27association%20pour%20g%C3%A9rer%20mon%20adh%C3%A9sion.%0A">Je m&#x27;inscris</a>
+</div></div></section>
 
 <section aria-labelledby="h-figs"><div class="in">
   <p class="kicker" id="h-figs">Repères</p>

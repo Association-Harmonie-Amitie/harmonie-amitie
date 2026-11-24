@@ -175,12 +175,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
-/* free membership card in the mission section */
-.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
-.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
-.join p{margin:0 0 .9rem;color:var(--ink)}
-.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
-.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
+/* free membership band under the two mission columns */
+.join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
+.join-txt{flex:1;min-width:0}
+.join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
+.join p{margin:0;color:var(--ink)}
+.join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+@media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
+.mission .grid{align-items:center}
 
 </style>
 </head>
@@ -227,18 +230,20 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <p class="kicker">Our mission</p>
     <h2>What was difficult yesterday becomes possible</h2>
     <p class="sub">A non-profit association under the French law of 1901, founded in Paris in 2023, A.H.A. works in three fields: education, culture and solidarity.</p>
-    <div class="join" id="adherer">
-      <h3>Join for free</h3>
-      <p>Membership of the association is free. Join us to follow and take part in our activities at your own pace.</p>
-      <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Free%20membership&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20join%20the%20Association%20Harmonie%20d%27Amiti%C3%A9%20%28free%20membership%29.%0A%0AFull%20name%3A%0ACountry%20/%20city%3A%0APhone%20%28optional%29%3A%0AInterests%20%28youth%20and%20education%20/%20culture%20and%20music%20/%20solidarity%29%3A%0AVolunteering%20%28yes%20/%20no%29%3A%0A%0AI%20agree%20that%20the%20association%20may%20use%20this%20data%20to%20manage%20my%20membership.%0A">Sign up</a>
-      <small>Your data is used only to manage memberships and is never shared.</small>
-    </div>
   </div>
   <blockquote>
     <p>To use the possibilities of the age of artificial intelligence to build connection and trust: supporting young people, caring for our elders, and enabling every person, every community and society as a whole to fulfil, at its own pace, its hopes for harmony and well-being.</p>
     <p class="last">Much that was once difficult becomes possible in the age of artificial intelligence.</p>
   </blockquote>
-</div></section>
+</div>
+<div class="in"><div class="join" id="adherer">
+  <div class="join-txt">
+    <h3>Join for free</h3>
+    <p>Membership of the association is free. Join us to follow and take part in our activities at your own pace.</p>
+    <small>Your data is used only to manage memberships and is never shared.</small>
+  </div>
+  <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Free%20membership&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20join%20the%20Association%20Harmonie%20d%27Amiti%C3%A9%20%28free%20membership%29.%0A%0AFull%20name%3A%0ACountry%20/%20city%3A%0APhone%20%28optional%29%3A%0AInterests%20%28youth%20and%20education%20/%20culture%20and%20music%20/%20solidarity%29%3A%0AVolunteering%20%28yes%20/%20no%29%3A%0A%0AI%20agree%20that%20the%20association%20may%20use%20this%20data%20to%20manage%20my%20membership.%0A">Sign up</a>
+</div></div></section>
 
 <section aria-labelledby="h-figs"><div class="in">
   <p class="kicker" id="h-figs">Key figures</p>

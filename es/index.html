@@ -175,12 +175,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
-/* free membership card in the mission section */
-.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
-.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
-.join p{margin:0 0 .9rem;color:var(--ink)}
-.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
-.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
+/* free membership band under the two mission columns */
+.join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
+.join-txt{flex:1;min-width:0}
+.join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
+.join p{margin:0;color:var(--ink)}
+.join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+@media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
+.mission .grid{align-items:center}
 
 </style>
 </head>
@@ -227,18 +230,20 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <p class="kicker">Nuestra misión</p>
     <h2>Lo que ayer era difícil hoy es posible</h2>
     <p class="sub">Asociación sin ánimo de lucro regida por la ley francesa de 1901, creada en París en 2023, la A.H.A. actúa en tres ámbitos: la educación, la cultura y la solidaridad.</p>
-    <div class="join" id="adherer">
-      <h3>Hacerse socio gratis</h3>
-      <p>La adhesión a la asociación es gratuita. Únase a nosotros para seguir nuestras acciones y participar a su ritmo.</p>
-      <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Adhesi%C3%B3n%20gratuita&amp;body=Hola%3A%0A%0ADeseo%20hacerme%20socio/a%20gratuitamente%20de%20la%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0ANombre%20y%20apellidos%3A%0APa%C3%ADs%20/%20ciudad%3A%0ATel%C3%A9fono%20%28opcional%29%3A%0AIntereses%20%28juventud%20y%20educaci%C3%B3n%20/%20cultura%20y%20m%C3%BAsica%20/%20solidaridad%29%3A%0AVoluntariado%20%28s%C3%AD%20/%20no%29%3A%0A%0AAcepto%20que%20la%20asociaci%C3%B3n%20utilice%20estos%20datos%20para%20gestionar%20mi%20adhesi%C3%B3n.%0A">Inscribirme</a>
-      <small>Sus datos solo se utilizan para gestionar las adhesiones y nunca se ceden.</small>
-    </div>
   </div>
   <blockquote>
     <p>Poner las posibilidades de la era de la inteligencia artificial al servicio del vínculo y la confianza: acompañar a los jóvenes, cuidar de nuestros mayores y permitir que cada persona, cada colectivo y la sociedad en su conjunto realicen, a su propio ritmo, sus anhelos de armonía y bienestar.</p>
     <p class="last">Muchas cosas que antes eran difíciles se vuelven posibles en la era de la inteligencia artificial.</p>
   </blockquote>
-</div></section>
+</div>
+<div class="in"><div class="join" id="adherer">
+  <div class="join-txt">
+    <h3>Hacerse socio gratis</h3>
+    <p>La adhesión a la asociación es gratuita. Únase a nosotros para seguir nuestras acciones y participar a su ritmo.</p>
+    <small>Sus datos solo se utilizan para gestionar las adhesiones y nunca se ceden.</small>
+  </div>
+  <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Adhesi%C3%B3n%20gratuita&amp;body=Hola%3A%0A%0ADeseo%20hacerme%20socio/a%20gratuitamente%20de%20la%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0ANombre%20y%20apellidos%3A%0APa%C3%ADs%20/%20ciudad%3A%0ATel%C3%A9fono%20%28opcional%29%3A%0AIntereses%20%28juventud%20y%20educaci%C3%B3n%20/%20cultura%20y%20m%C3%BAsica%20/%20solidaridad%29%3A%0AVoluntariado%20%28s%C3%AD%20/%20no%29%3A%0A%0AAcepto%20que%20la%20asociaci%C3%B3n%20utilice%20estos%20datos%20para%20gestionar%20mi%20adhesi%C3%B3n.%0A">Inscribirme</a>
+</div></div></section>
 
 <section aria-labelledby="h-figs"><div class="in">
   <p class="kicker" id="h-figs">Cifras clave</p>

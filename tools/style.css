@@ -146,9 +146,12 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
-/* free membership card in the mission section */
-.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
-.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
-.join p{margin:0 0 .9rem;color:var(--ink)}
-.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
-.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
+/* free membership band under the two mission columns */
+.join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
+.join-txt{flex:1;min-width:0}
+.join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
+.join p{margin:0;color:var(--ink)}
+.join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+@media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
+.mission .grid{align-items:center}

@@ -175,12 +175,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .band .grid>div p{flex:1}
 .band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
-/* free membership card in the mission section */
-.join{margin-top:1.75rem;padding:1.25rem 1.4rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);max-width:32rem}
-.join h3{margin:0 0 .35rem;font:600 1.2rem var(--f-head);color:var(--navy)}
-.join p{margin:0 0 .9rem;color:var(--ink)}
-.join .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
-.join small{display:block;margin-top:.7rem;font-size:.78rem;color:var(--muted)}
+/* free membership band under the two mission columns */
+.join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
+.join-txt{flex:1;min-width:0}
+.join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
+.join p{margin:0;color:var(--ink)}
+.join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
+.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+@media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
+.mission .grid{align-items:center}
 
 </style>
 </head>
@@ -227,18 +230,20 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <p class="kicker">Наша миссия</p>
     <h2>То, что вчера было трудным, становится возможным</h2>
     <p class="sub">Некоммерческая ассоциация по французскому закону 1901 года, основанная в Париже в 2023 году, A.H.A. работает в трёх областях: образование, культура и солидарность.</p>
-    <div class="join" id="adherer">
-      <h3>Вступить бесплатно</h3>
-      <p>Членство в ассоциации бесплатное. Присоединяйтесь, чтобы следить за нашими делами и участвовать в них в своём ритме.</p>
-      <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%D0%91%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%BE&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B2%D1%81%D1%82%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B2%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0A%D0%98%D0%BC%D1%8F%20%D0%B8%20%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F%3A%0A%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B0%20/%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%20%28%D0%BF%D0%BE%20%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8E%29%3A%0A%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%8B%20%28%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D1%8C%20%D0%B8%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20/%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D0%B8%20%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%20/%20%D1%81%D0%BE%D0%BB%D0%B8%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C%29%3A%0A%D0%92%D0%BE%D0%BB%D0%BE%D0%BD%D1%82%D1%91%D1%80%D1%81%D1%82%D0%B2%D0%BE%20%28%D0%B4%D0%B0%20/%20%D0%BD%D0%B5%D1%82%29%3A%0A%0A%D0%AF%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B5%D0%BD%28%D0%BD%D0%B0%29%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%B0%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BB%D0%B0%20%D1%8D%D1%82%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%B0.%0A">Записаться</a>
-      <small>Ваши данные используются только для учёта членов и никому не передаются.</small>
-    </div>
   </div>
   <blockquote>
     <p>Использовать возможности эпохи искусственного интеллекта для создания связей и доверия: поддерживать молодёжь, заботиться о старшем поколении и помогать каждому человеку, каждому коллективу и обществу в целом в своём ритме осуществлять стремление к гармонии и благополучию.</p>
     <p class="last">Многое из того, что раньше было трудным, становится возможным в эпоху искусственного интеллекта.</p>
   </blockquote>
-</div></section>
+</div>
+<div class="in"><div class="join" id="adherer">
+  <div class="join-txt">
+    <h3>Вступить бесплатно</h3>
+    <p>Членство в ассоциации бесплатное. Присоединяйтесь, чтобы следить за нашими делами и участвовать в них в своём ритме.</p>
+    <small>Ваши данные используются только для учёта членов и никому не передаются.</small>
+  </div>
+  <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%D0%91%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%BE&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B2%D1%81%D1%82%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B2%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0A%D0%98%D0%BC%D1%8F%20%D0%B8%20%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F%3A%0A%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B0%20/%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%20%28%D0%BF%D0%BE%20%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8E%29%3A%0A%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%8B%20%28%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D1%8C%20%D0%B8%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20/%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D0%B8%20%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%20/%20%D1%81%D0%BE%D0%BB%D0%B8%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C%29%3A%0A%D0%92%D0%BE%D0%BB%D0%BE%D0%BD%D1%82%D1%91%D1%80%D1%81%D1%82%D0%B2%D0%BE%20%28%D0%B4%D0%B0%20/%20%D0%BD%D0%B5%D1%82%29%3A%0A%0A%D0%AF%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B5%D0%BD%28%D0%BD%D0%B0%29%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%B0%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BB%D0%B0%20%D1%8D%D1%82%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%B0.%0A">Записаться</a>
+</div></div></section>
 
 <section aria-labelledby="h-figs"><div class="in">
   <p class="kicker" id="h-figs">Цифры</p>

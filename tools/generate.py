@@ -180,18 +180,20 @@ def page(l, preview=False):
     <p class="kicker">{t['mis_k']}</p>
     <h2>{t['mis_h']}</h2>
     <p class="sub">{t['mis_sub']}</p>
-    <div class="join" id="adherer">
-      <h3>{html.escape(JOIN[l]['h'])}</h3>
-      <p>{html.escape(JOIN[l]['p'])}</p>
-      <a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
-      <small>{html.escape(JOIN[l]['n'])}</small>
-    </div>
   </div>
   <blockquote>
     <p>{t['mis_q']}</p>
     <p class="last">{t['mis_last']}</p>
   </blockquote>
-</div></section>
+</div>
+<div class="in"><div class="join" id="adherer">
+  <div class="join-txt">
+    <h3>{html.escape(JOIN[l]['h'])}</h3>
+    <p>{html.escape(JOIN[l]['p'])}</p>
+    <small>{html.escape(JOIN[l]['n'])}</small>
+  </div>
+  <a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
+</div></div></section>
 
 <section aria-labelledby="h-figs"><div class="in">
   <p class="kicker" id="h-figs">{t['fig_k']}</p>
