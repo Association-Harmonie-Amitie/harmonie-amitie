@@ -140,3 +140,4 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .pic .ico{color:var(--paper);opacity:.95}
 .item .status{display:inline-block;font:700 .72rem var(--f-body);letter-spacing:.06em;text-transform:uppercase;color:var(--navy);border:1px solid var(--navy);padding:.15rem .45rem;margin-bottom:.5rem}
 .item.ongoing{background:var(--mist)}
+.seal.latin{writing-mode:horizontal-tb;font:700 .9rem/1 var(--f-head);letter-spacing:.04em}

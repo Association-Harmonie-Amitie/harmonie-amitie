@@ -63,8 +63,8 @@ def page(l, preview=False):
         fth='和谊协会 · <bdi lang="fr">Association Harmonie d\'Amitié</bdi>'
         mark3='<span class="mark" aria-hidden="true">暖</span>'
     else:
-        logo=('<span class="wordmark" lang="fr" dir="ltr"><b>A.H.A</b>'
-              '<span>Association Harmonie d\'Amitié</span></span>')
+        logo=('<span class="seal latin" aria-hidden="true">AHA</span>\n    <span lang="fr" dir="ltr"><b>Association Harmonie d\'Amitié</b>'
+              '<span>A.H.A. · Paris</span></span>')
         fth='<bdi lang="fr">Association Harmonie d\'Amitié (A.H.A.)</bdi>'
         mark3=HEART
     up='' if l=='fr' else '../'
