@@ -36,6 +36,7 @@ C2_ALT={'fr':"Le public d'un concert à l'église Saint-Louis-en-l'Île, à Pari
         'es':"El público de un concierto en la iglesia de Saint-Louis-en-l'Île, en París",
         'ru':"Зрители концерта в церкви Сен-Луи-ан-л'Иль в Париже",
         'ar':"جمهور حفل موسيقي في كنيسة سان لوي أن ليل في باريس"}
+BOOK='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg>'
 HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
@@ -62,11 +63,13 @@ def page(l, preview=False):
               '<span><bdi lang="fr">Association Harmonie d\'Amitié · A.H.A.</bdi> · 巴黎</span></span>')
         fth='和谊协会 · <bdi lang="fr">Association Harmonie d\'Amitié</bdi>'
         mark3='<span class="mark" aria-hidden="true">暖</span>'
+        mark1='<span class="mark" aria-hidden="true">学</span>'
     else:
         logo=('<span class="seal latin" aria-hidden="true">AHA</span>\n    <span lang="fr" dir="ltr"><b>Association Harmonie d\'Amitié</b>'
               '<span>A.H.A. · Paris</span></span>')
         fth='<bdi lang="fr">Association Harmonie d\'Amitié (A.H.A.)</bdi>'
         mark3=HEART
+        mark1=BOOK
     up='' if l=='fr' else '../'
     rtl=(l=='ar')
     fonts=FONTS+(FONTS_AR if rtl else '')+'&display=swap'
@@ -162,7 +165,7 @@ def page(l, preview=False):
   <p class="sub">{t['act_sub']}</p>
   <div class="cards">
     <article class="card">
-      <div class="pic"><img src="{up}img/iut-2026.jpg" alt="{a('c1_alt')}" loading="lazy"></div>
+      <div class="pic">{mark1}</div>
       <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_p']}</p></div>
     </article>
     <article class="card">
