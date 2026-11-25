@@ -68,7 +68,7 @@ def join_href(l):
 # entry: dict(name='...', line={'fr':'...','zh':'...'}, url='https://...' or None)  (≤40 words, no personal contact data)
 FRIENDS=[]
 # cookieless audience measurement: set to the GoatCounter site code once the association has created its account (e.g. 'harmonie-amitie'); '' = off
-GOATCOUNTER=''
+GOATCOUNTER='harmonie-amitie'
 HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
@@ -138,7 +138,7 @@ def page(l, preview=False, pg='home'):
         t['title']=html.escape({'actions':T[l]['m_actions'],'gouvernance':T[l]['m_gov']}[pg],quote=False)+' · '+t['title']
     gctag=(f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER and not preview else '')
     if GOATCOUNTER: t['pub']=html.escape(T[l]['pub_gc'],quote=False)
-    ldtag=gctag+f'<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>\n' if pg=='home' else ''
+    ldtag=gctag+(f'<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>\n' if pg=='home' else '')
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">
