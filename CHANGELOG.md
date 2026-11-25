@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Bandeau « Nous rejoindre » équilibré / "参与"四栏对称
+- Les quatre colonnes ont la même structure (titre, texte, bouton) et leurs boutons sont alignés ; la mention de confidentialité, l'adresse e-mail, le bouton de copie et le modèle sont réunis sur une ligne centrée en dessous. Choix de la Présidente (option A), aucun texte modifié.
+- 四栏结构一致、按钮对齐；隐私说明、邮箱、复制按钮和申请模板移到四栏下方居中一行。会长选定方案 A，文字未改。
+
 ## 2026-11-25 — Mobile : plus de débordement horizontal ; bouton « Nous soutenir » / 手机不再左右溢出；"支持我们"按钮
 - Avec un grand texte (réglage WeChat ou téléphone), la page ne déborde plus à droite ; les titres chinois ne se coupent qu'entre les expressions (plus de coupure dans « 热爱 »).
 - 字体放大时页面不再左右溢出；中文标题只在词组之间换行（不再把"热爱"拆开）。

@@ -256,13 +256,15 @@ def page(l, preview=False, pg='home'):
 
 {friends_sec}
 
-<section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}"{FT}>{html.escape(JOIN[l]['b'])}</a>
-    <p class="jalt">{JCOPY[l][0]} <bdi class="jmail">{JOIN_TO}</bdi> <button type="button" class="copy" data-copy="{JOIN_TO}" data-done="{JCOPY[l][2]}">{JCOPY[l][1]}</button></p>
-    <details class="jtpl"><summary>{JCOPY[l][3]}</summary><pre id="jtpl-{l}">{html.escape(JOIN[l]['body'])}</pre><button type="button" class="copy" data-copy-from="jtpl-{l}" data-done="{JCOPY[l][2]}">{JCOPY[l][4]}</button></details></div>
+<section class="band" id="engager"><div class="in"><div class="grid g4">
+  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])}</p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}"{FT}>{html.escape(JOIN[l]['b'])}</a></div>
   <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b1_b']}</a></div>
   <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b2_b']}</a></div>
   <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b3_b']}</a></div>
+</div>
+<div class="jrow"><small>{html.escape(JOIN[l]['n'])}</small>
+  <p class="jalt">{JCOPY[l][0]} <bdi class="jmail">{JOIN_TO}</bdi> <button type="button" class="copy" data-copy="{JOIN_TO}" data-done="{JCOPY[l][2]}">{JCOPY[l][1]}</button></p>
+  <details class="jtpl"><summary>{JCOPY[l][3]}</summary><pre id="jtpl-{l}">{html.escape(JOIN[l]['body'])}</pre><button type="button" class="copy" data-copy-from="jtpl-{l}" data-done="{JCOPY[l][2]}">{JCOPY[l][4]}</button></details></div>
 </div></section>
 
 ''',
