@@ -4,9 +4,6 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
-## 2026-11-25 — Titre de la carte Aînés · Solidarité
-- Avis d'un conseiller : « Ne laisser personne seul » remplacé, dans chaque langue selon son usage (SK12), par l'idée d'une aide offerte à qui rencontre une difficulté (FR « Une main tendue à qui en a besoin »).
-
 ## 2026-11-25 — Accueil plus court et plus léger (étude lecture mobile, 1re vague)
 - A : mission en une phrase + devise ; texte des valeurs déplacé sur gouvernance.html ; « Adhérer gratuitement » rejoint le bandeau #engager (4 colonnes).
 - B : cartes d'actions de l'accueil sans grande image sur téléphone, image plus basse sur ordinateur.
