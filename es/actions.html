@@ -246,12 +246,23 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .band .jrow .jtpl{width:auto;max-width:40rem;margin:.5rem auto 0}
 .band .jrow .jtpl pre{text-align:start}
 
+/* newsletter box (option B, 2026-11-25): opens on the page, works without Microsoft; :target is the no-JS fallback */
+.subbox{display:none;position:fixed;inset:0;z-index:100;background:rgba(10,20,40,.55);align-items:center;justify-content:center;padding:16px}
+.subbox:target,.subbox.open{display:flex}
+.subin{position:relative;max-width:30rem;width:100%;background:var(--navy);color:#fff;padding:1.6rem 1.4rem 1.2rem;border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+.subin p{margin:0 0 .9rem;color:#e6ebf3;line-height:1.6}
+.subin .jmail{color:#fff;font-weight:600;overflow-wrap:anywhere;user-select:all}
+.subin .copy{min-height:36px;padding:.3rem .9rem;font:600 .9rem var(--f-body);color:#fff;background:transparent;border:1px solid #fff;border-radius:2px;cursor:pointer}
+.subin .copy:hover{background:#fff;color:var(--navy)}
+.subin a{color:#fff}
+.sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
+
 </style>
 </head>
 <body>
 <div class="mtnote" role="note"><div class="in">Esta versión en español se ha traducido con ayuda de IA y está pendiente de revisión. Prevalece el texto en francés. <a href="../actions.html" hreflang="fr" lang="fr">Version française</a></div></div>
 <div class="util"><div class="in">
-  <a href="https://forms.cloud.microsoft/r/NvSwQPzXvB" target="_blank" rel="noopener">Boletín</a>
+  <a href="#sub" class="sub-open" aria-haspopup="dialog">Boletín</a>
   <a href="./#adherer">Únase a nosotros</a>
   <nav class="langs" aria-label="Idioma"><a href="../actions.html" hreflang="fr" lang="fr" title="Français">FR</a><a href="../zh/actions.html" hreflang="zh-Hans" lang="zh-Hans" title="中文">中文</a><a href="../en/actions.html" hreflang="en" lang="en" title="English">EN</a><a href="../es/actions.html" hreflang="es" lang="es" title="Español" aria-current="page">ES</a><a href="../ru/actions.html" hreflang="ru" lang="ru" title="Русский">RU</a><a href="../ar/actions.html" hreflang="ar" lang="ar" title="العربية">عربي</a></nav>
   <a class="btn btn-red" href="https://forms.cloud.microsoft/r/NvSwQPzXvB" target="_blank" rel="noopener">Apóyenos</a>
@@ -318,6 +329,13 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
     <p>Para ampliar el texto, use el zoom de su teléfono o de su navegador.</p>
   </div>
 </div></footer>
+<div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="Boletín"><div class="subin">
+  <a href="#" class="sub-x" aria-label="Cerrar">×</a>
+  <p>Reciba nuestras noticias: escriba a <bdi class="jmail">ahaparis@outlook.com</bdi> con el asunto «Suscripción». Puede darse de baja en cualquier momento.</p>
+  <p><button type="button" class="copy" data-copy="ahaparis@outlook.com" data-done="Copiado">Copiar la dirección</button></p>
+  <p><a href="https://forms.cloud.microsoft/r/NvSwQPzXvB" target="_blank" rel="noopener">o rellene el formulario en línea →</a></p>
+</div></div>
+<script>(function(){var d=document.getElementById('sub');if(!d)return;function sh(o){d.classList.toggle('open',o);if(!o&&location.hash==='#sub')history.replaceState(null,'',location.pathname+location.search)}document.querySelectorAll('.sub-open').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();sh(true)})});d.querySelector('.sub-x').addEventListener('click',function(e){e.preventDefault();sh(false)});d.addEventListener('click',function(e){if(e.target===d)sh(false)});document.addEventListener('keydown',function(e){if(e.key==='Escape')sh(false)})})();</script>
 <script>(function(){function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return fb(t)});return Promise.resolve(fb(t))}function fb(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
 document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},2000)})})})})();</script>
 <script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>

@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Abonnement : petite fenêtre sur la page / 订阅：本页小框
+- « Lettre d'information » (haut de page) ouvre une petite fenêtre : écrire à ahaparis@outlook.com avec l'objet « Abonnement », bouton de copie de l'adresse, lien vers le formulaire. Sans quitter le site ni dépendre de Microsoft. Choix de la Présidente (option B), textes zh/fr validés.
+- 顶栏"订阅通讯"在本页弹出小框：发邮件至 ahaparis@outlook.com，标题写"订阅"；可复制邮箱，并附登记表链接。不跳转、不依赖微软。会长选定方案 B，中法文字已确认。
+
 ## 2026-11-25 — Bandeau « Nous rejoindre » équilibré / "参与"四栏对称
 - Les quatre colonnes ont la même structure (titre, texte, bouton) et leurs boutons sont alignés ; la mention de confidentialité, l'adresse e-mail, le bouton de copie et le modèle sont réunis sur une ligne centrée en dessous. Choix de la Présidente (option A), aucun texte modifié.
 - 四栏结构一致、按钮对齐；隐私说明、邮箱、复制按钮和申请模板移到四栏下方居中一行。会长选定方案 A，文字未改。

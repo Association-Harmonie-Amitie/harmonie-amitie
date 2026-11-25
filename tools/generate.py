@@ -75,6 +75,13 @@ FT=' target="_blank" rel="noopener"'
 def join_href(l):
     return FORM[l]
 # labels for the copy fallback (wording confirmed by the Présidente, 2026-11-25)
+# newsletter box texts (zh/fr approved by the Présidente 2026-11-25, option B; other languages translated on the same facts)
+SUB={'zh':('订阅动态：请发邮件至','，标题写“订阅”即可，可随时退订。','或填写在线登记表','关闭'),
+ 'fr':('Recevoir nos nouvelles : écrivez à'," avec l'objet « Abonnement ». Désinscription à tout moment.",'ou remplir le formulaire en ligne','Fermer'),
+ 'en':('Receive our news: write to',' with the subject “Subscribe”. You can unsubscribe at any time.','or fill in the online form','Close'),
+ 'es':('Reciba nuestras noticias: escriba a',' con el asunto «Suscripción». Puede darse de baja en cualquier momento.','o rellene el formulario en línea','Cerrar'),
+ 'ru':('Получать наши новости: напишите на адрес',' с темой «Подписка». Отписаться можно в любой момент.','или заполните онлайн-форму','Закрыть'),
+ 'ar':('لتلقّي أخبارنا: راسلونا على',' مع كتابة «اشتراك» في عنوان الرسالة. يمكن إلغاء الاشتراك في أي وقت.','أو املؤوا الاستمارة الإلكترونية','إغلاق')}
 JCOPY={'zh':('或发邮件至','复制邮箱','已复制','查看申请模板','复制模板'),
  'fr':('Ou écrivez-nous à',"Copier l'adresse",'Copié','Voir le modèle de demande','Copier le modèle'),
  'en':('Or write to us at','Copy address','Copied','See the application template','Copy template'),
@@ -306,7 +313,7 @@ def page(l, preview=False, pg='home'):
 
 ''' if pg=='home' else ''
     body=f'''{mt}<div class="util"><div class="in">
-  <a href="{FORM[l]}"{FT}>{t['u_news']}</a>
+  <a href="#sub" class="sub-open" aria-haspopup="dialog">{t['u_news']}</a>
   <a href="{H('adherer')}">{t['u_join']}</a>
   <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
   <a class="btn btn-red" href="{FORM[l]}"{FT}>{t['u_support']}</a>
@@ -349,6 +356,13 @@ def page(l, preview=False, pg='home'):
     <p>{html.escape(ZOOM[l])}</p>
   </div>
 </div></footer>
+<div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="{t['u_news']}"><div class="subin">
+  <a href="#" class="sub-x" aria-label="{SUB[l][3]}">×</a>
+  <p>{SUB[l][0]} <bdi class="jmail">{JOIN_TO}</bdi>{SUB[l][1]}</p>
+  <p><button type="button" class="copy" data-copy="{JOIN_TO}" data-done="{JCOPY[l][2]}">{JCOPY[l][1]}</button></p>
+  <p><a href="{FORM[l]}"{FT}>{SUB[l][2]} →</a></p>
+</div></div>
+<script>(function(){{var d=document.getElementById('sub');if(!d)return;function sh(o){{d.classList.toggle('open',o);if(!o&&location.hash==='#sub')history.replaceState(null,'',location.pathname+location.search)}}document.querySelectorAll('.sub-open').forEach(function(a){{a.addEventListener('click',function(e){{e.preventDefault();sh(true)}})}});d.querySelector('.sub-x').addEventListener('click',function(e){{e.preventDefault();sh(false)}});d.addEventListener('click',function(e){{if(e.target===d)sh(false)}});document.addEventListener('keydown',function(e){{if(e.key==='Escape')sh(false)}})}})();</script>
 <script>(function(){{function cp(t){{if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){{return fb(t)}});return Promise.resolve(fb(t))}}function fb(t){{var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{{document.execCommand('copy')}}catch(e){{}}document.body.removeChild(a)}}
 document.querySelectorAll('button.copy').forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){{b.textContent=b.dataset.done;setTimeout(function(){{b.textContent=o}},2000)}})}})}})}})();</script>
 <script>(function(){{var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){{var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)}});m.addEventListener('click',function(e){{if(e.target.closest('a')){{m.classList.remove('open');b.setAttribute('aria-expanded','false')}}}})}})();</script>'''
