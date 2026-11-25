@@ -14,7 +14,7 @@ PARTNERS=['IFAC du Pays de Montbéliard','Association Paris Pont Alexandre III',
           "Association internationale d'échanges culturels"]
 # subline of the 6th partner (A.I.E.C., RNA W751211126)
 D6={'fr':"A.I.E.C. · partenaire stratégique · organisation des concerts 2024 et 2025",
-    'zh':"A.I.E.C. · 长期战略合作伙伴 · 2024、2025 年音乐会执行方",
+    'zh':"A.I.E.C. · 长期战略合作伙伴 · 2024、2025 年音乐会承办方",
     'en':"A.I.E.C. · strategic partner · organiser of the 2024 and 2025 concerts",
     'es':"A.I.E.C. · socio estratégico · organización de los conciertos de 2024 y 2025",
     'ru':"A.I.E.C. · стратегический партнёр · организация концертов 2024 и 2025 годов",

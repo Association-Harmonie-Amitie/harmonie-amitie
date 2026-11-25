@@ -4,6 +4,9 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Chinois : « 执行 » → « 承办 » pour l'A.I.E.C.
+- zh uniquement (SK12), mot confirmé par la Présidente : 4 occurrences (actions, cartes musique, actualité 25.05.2025, ligne partenaire). « 执行主席 » (titre) inchangé.
+
 ## 2026-11-25 — Titre de la carte Aînés · Solidarité (validé par la Présidente)
 - Titres choisis et confirmés par la Présidente, six langues : « Relier les besoins aux mains tendues » / 让需要与帮助相遇 / Connecting needs with helping hands / Unir las necesidades con manos tendidas / Соединяя нужду с протянутой рукой / نَصِلُ الحاجةَ باليدِ الممدودة. Sous-titre inchangé.
 
