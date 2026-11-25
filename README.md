@@ -23,3 +23,8 @@ FR (racine /), 中文 (/zh/), EN (/en/), ES (/es/), RU (/ru/), العربية (/
 Textes : `tools/content.py` · Gabarit : `tools/generate.py` · Style : `tools/style.css`.
 Reconstruire / 重新生成 : `python3 -I tools/generate.py` (à la racine du dépôt).
 EN/ES/RU/AR : traduction assistée par IA, à relire par un locuteur natif (bandeau affiché sur ces pages). 英、西、俄、阿语为 AI 辅助翻译，需母语人士审校，页面已显示提示。
+
+## Pour les humains et les agents / 人机协作
+
+- `llms.txt` : plan du site pour les agents IA. `CHANGELOG.md` : journal et répartition humain / IA.
+- Modifier uniquement `tools/content.py` (textes) et `tools/generate.py` (structure), puis `python3 -I tools/generate.py`.

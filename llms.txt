@@ -1,0 +1,27 @@
+# Association Harmonie d'Amitié (A.H.A.) · 和谊协会
+
+> Association loi 1901 à but non lucratif, créée à Paris en 2023 (RNA W751272194). Éducation, culture et solidarité. Passerelle d'intérêt général : l'A.H.A. ne gère pas de flux financiers ; la mise en œuvre des projets est confiée à son partenaire stratégique, l'A.I.E.C.
+
+Site statique en six langues, une page par langue, mêmes sections et mêmes ancres partout.
+
+## Pages
+- [Français (version de référence)](https://harmonie-amitie.com/)
+- [中文](https://harmonie-amitie.com/zh/)
+- [English (AI-assisted translation, under review)](https://harmonie-amitie.com/en/)
+- [Español (traducción asistida por IA, en revisión)](https://harmonie-amitie.com/es/)
+- [Русский (перевод с помощью ИИ, на проверке)](https://harmonie-amitie.com/ru/)
+- [العربية (ترجمة بمساعدة الذكاء الاصطناعي، قيد المراجعة)](https://harmonie-amitie.com/ar/)
+- [Mentions légales](https://harmonie-amitie.com/mentions-legales.html)
+
+## Sections (identical anchors in every language)
+- #association : mission and free membership (#adherer)
+- #actions : three fields (youth and education, culture, solidarity)
+- #gouvernance : honorary presidents
+- #actualites : cooperations in progress, then dated past actions
+- #partenaires : written agreements, documented joint actions, supported charities
+- #engager : support, volunteer, news
+- #contact : ahaparis@outlook.com
+
+## Data
+- Structured data: JSON-LD (schema.org NGO + MusicEvent) in each page head.
+- Source of all texts: tools/content.py (per language) and tools/generate.py in the GitHub repository Association-Harmonie-Amitie/harmonie-amitie. Pages are generated, do not edit the HTML by hand.

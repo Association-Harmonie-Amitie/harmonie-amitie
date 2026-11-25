@@ -33,7 +33,7 @@ ONGOING={
        ("En conversación","Conversaciones con una entidad bancaria sobre un acompañamiento dedicado a los socios, en particular a los estudiantes.")],
  'ru':[("В подготовке","Зимний сбор 2026 года: вещи от дарителей из Китая (носки, пледы) приняты Мальтийским орденом Франции для помощи людям на улице."),
        ("Обсуждается","Переговоры с банковским учреждением о специальном сопровождении для членов ассоциации, прежде всего студентов.")],
- 'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة فرسان مالطا في فرنسا لجولاتها الميدانية."),
+ 'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة مالطا في فرنسا لجولاتها الميدانية."),
        ("قيد النقاش","محادثات مع مؤسسة مصرفية حول مرافقة مخصّصة للأعضاء، ولا سيما الطلاب.")],
 }
 FIGS=['2023','2','40','2','6']
@@ -109,9 +109,21 @@ def page(l, preview=False):
     ltr=lambda s:'<bdi class="ltr">%s</bdi>'%s if rtl else s
     alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x)) for x in LANGS)
     alts+='<link rel="alternate" hreflang="x-default" href="%s">\n'%BASE
-    ld={"@context":"https://schema.org","@type":"NGO","name":"Association Harmonie d'Amitié",
-        "alternateName":["A.H.A.","和谊协会"],"url":BASE,"email":"ahaparis@outlook.com","foundingDate":"2023",
-        "address":{"@type":"PostalAddress","streetAddress":"27 rue Saint-Jacques","postalCode":"75005","addressLocality":"Paris","addressCountry":"FR"}}
+    # structured data for search engines and AI agents (SK0): association, strategic partner, concerts
+    AHA_ID=BASE+'#aha'; AIEC_ID=BASE+'#aiec'
+    venue={"@type":"Place","name":"Église Saint-Louis-en-l'Île","address":{"@type":"PostalAddress","streetAddress":"19 rue Saint-Louis-en-l'Île","postalCode":"75004","addressLocality":"Paris","addressCountry":"FR"}}
+    ld={"@context":"https://schema.org","@graph":[
+        {"@type":"NGO","@id":AHA_ID,"name":"Association Harmonie d'Amitié","alternateName":["A.H.A.","和谊协会"],
+         "url":BASE,"email":"ahaparis@outlook.com","foundingDate":"2023","identifier":"RNA W751272194",
+         "description":"Association loi 1901 à but non lucratif : éducation, culture, solidarité. Passerelle d'intérêt général ; ne gère pas de flux financiers.",
+         "knowsLanguage":["fr","zh","en","es","ru","ar"],
+         "address":{"@type":"PostalAddress","streetAddress":"27 rue Saint-Jacques","postalCode":"75005","addressLocality":"Paris","addressCountry":"FR"}},
+        {"@type":"NGO","@id":AIEC_ID,"name":"Association internationale d'échanges culturels","alternateName":"A.I.E.C.",
+         "description":"Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."},
+        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 14e édition","startDate":"2024-05-24T20:00","location":venue,
+         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}},
+        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 15e édition","startDate":"2025-05-25","location":venue,
+         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}}]}
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">

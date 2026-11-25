@@ -20,7 +20,7 @@
 <link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/">
 <link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "NGO", "name": "Association Harmonie d'Amitié", "alternateName": ["A.H.A.", "和谊协会"], "url": "https://harmonie-amitie.com/", "email": "ahaparis@outlook.com", "foundingDate": "2023", "address": {"@type": "PostalAddress", "streetAddress": "27 rue Saint-Jacques", "postalCode": "75005", "addressLocality": "Paris", "addressCountry": "FR"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "NGO", "@id": "https://harmonie-amitie.com/#aha", "name": "Association Harmonie d'Amitié", "alternateName": ["A.H.A.", "和谊协会"], "url": "https://harmonie-amitie.com/", "email": "ahaparis@outlook.com", "foundingDate": "2023", "identifier": "RNA W751272194", "description": "Association loi 1901 à but non lucratif : éducation, culture, solidarité. Passerelle d'intérêt général ; ne gère pas de flux financiers.", "knowsLanguage": ["fr", "zh", "en", "es", "ru", "ar"], "address": {"@type": "PostalAddress", "streetAddress": "27 rue Saint-Jacques", "postalCode": "75005", "addressLocality": "Paris", "addressCountry": "FR"}}, {"@type": "NGO", "@id": "https://harmonie-amitie.com/#aiec", "name": "Association internationale d'échanges culturels", "alternateName": "A.I.E.C.", "description": "Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."}, {"@type": "MusicEvent", "name": "Festival de la diversité culturelle, 14e édition", "startDate": "2024-05-24T20:00", "location": {"@type": "Place", "name": "Église Saint-Louis-en-l'Île", "address": {"@type": "PostalAddress", "streetAddress": "19 rue Saint-Louis-en-l'Île", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"}}, "organizer": {"@id": "https://harmonie-amitie.com/#aiec"}, "funder": {"@id": "https://harmonie-amitie.com/#aha"}}, {"@type": "MusicEvent", "name": "Festival de la diversité culturelle, 15e édition", "startDate": "2025-05-25", "location": {"@type": "Place", "name": "Église Saint-Louis-en-l'Île", "address": {"@type": "PostalAddress", "streetAddress": "19 rue Saint-Louis-en-l'Île", "postalCode": "75004", "addressLocality": "Paris", "addressCountry": "FR"}}, "organizer": {"@id": "https://harmonie-amitie.com/#aiec"}, "funder": {"@id": "https://harmonie-amitie.com/#aha"}}]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700&display=swap" media="print" onload="this.media='all'">
@@ -173,7 +173,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 /* CTA band: three equal columns, buttons aligned on one line and same style */
 .band .grid>div{display:flex;flex-direction:column;align-items:flex-start}
 .band .grid>div p{flex:1}
-.band .btn{min-width:12rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
+.band .btn{min-width:14rem;text-align:center;padding:.6rem 1.1rem;font-size:.9rem}
 .band .btn-line:hover{background:#fff;color:var(--navy)}
 /* free membership band under the two mission columns */
 .join{margin-top:2.5rem;padding:1.4rem 1.75rem;background:var(--paper);border:1px solid var(--line);border-inline-start:4px solid var(--red);display:flex;align-items:center;justify-content:space-between;gap:1.5rem 2.5rem}
@@ -181,7 +181,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 .join h3{margin:0 0 .3rem;font:600 1.25rem var(--f-head);color:var(--navy)}
 .join p{margin:0;color:var(--ink)}
 .join small{display:block;margin-top:.45rem;font-size:.78rem;color:var(--muted)}
-.join .btn{flex:none;min-width:12rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
+.join .btn{flex:none;min-width:14rem;text-align:center;padding:.7rem 1.2rem;font-size:.95rem}
 @media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
 .mission .grid{align-items:center}
 
@@ -293,9 +293,9 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 </div></section>
 
 <section class="band" id="engager"><div class="in grid">
-  <div><h3>我要支持</h3><p>在线捐赠即将开通。在此之前，欢迎来信支持某项行动。</p><a class="btn btn-line" href="#contact">联系我们</a></div>
+  <div><h3>我要支持</h3><p>如您希望支持某项行动或项目，欢迎来信，我们会认真回复。</p><a class="btn btn-line" href="#contact">联系我们</a></div>
   <div><h3>我要参与</h3><p>志愿者、音乐家、教师：欢迎加入我们的音乐会和冬季公益行动。</p><a class="btn btn-line" href="#contact">成为志愿者</a></div>
-  <div><h3>我要关注</h3><p>订阅我们的季度通讯。</p><a class="btn btn-line" href="#contact">订阅通讯</a></div>
+  <div><h3>我要关注</h3><p>通过电子邮件接收我们的动态。</p><a class="btn btn-line" href="#contact">订阅动态</a></div>
 </div></section>
 
 <section id="contact"><div class="in">
@@ -316,7 +316,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   </div>
   <div>
     <h4>信息公开</h4>
-    <p>章程与登记回执可按需索取。2026 年度活动报告即将发布。</p>
+    <p>章程与登记回执可按需索取。</p>
     <p>本网站不使用 Cookie。 <a href="../mentions-legales.html">法律声明</a></p>
   </div>
 </div></footer>
