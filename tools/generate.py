@@ -5,6 +5,7 @@ import sys, os, json, html
 HERE=os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0,HERE)
 from content import LANGS, NAMES, HTML_LANG, MACHINE, T
+import fonts as fontsmod
 
 BASE='https://harmonie-amitie.com/'
 SHORT={'fr':'FR','zh':'中文','en':'EN','es':'ES','ru':'RU','ar':'عربي'}
@@ -135,6 +136,11 @@ def page(l, preview=False, pg='home'):
     rtl=(l=='ar')
     SEP={'fr':'\u00a0: ','zh':'：'}.get(l,': ')
     fonts=FONTS+(FONTS_AR if rtl else '')+'&display=swap'
+    if preview or not CLEAN:  # artifact preview has no fonts/ folder: keep the Google link there
+        fontlinks=(f'<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+                   f'<link rel="stylesheet" href="{fonts}" media="print" onload="this.media=\'all\'">\n')
+    else:  # self-hosted (tools/fonts.py): reachable from China/WeChat, no visitor IP sent to Google (GDPR)
+        fontlinks=f'<link rel="stylesheet" href="{up}fonts/base.css">\n'+(f'<link rel="stylesheet" href="{up}fonts/arabic.css">\n' if rtl else '')
     ltr=lambda s:'<bdi class="ltr">%s</bdi>'%s if rtl else s
     alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x,pg)) for x in LANGS)
     alts+='<link rel="alternate" hreflang="x-default" href="%s">\n'%url('fr',pg)
@@ -176,10 +182,7 @@ def page(l, preview=False, pg='home'):
 <meta property="og:locale" content="{ {'fr':'fr_FR','zh':'zh_CN','en':'en_GB','es':'es_ES','ru':'ru_RU','ar':'ar_AR'}[l] }">
 <link rel="canonical" href="{url(l,pg)}">
 {alts}<link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
-{ldtag}<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{fonts}"></noscript>{'%%ZHFONT%%' if zh else ''}
+{ldtag}{fontlinks}{'%%ZHFONT%%' if zh else ''}
 <script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{{box-sizing:border-box}}body{{margin:0}}img{{max-width:100%}}html{{scroll-behavior:smooth}}@media (prefers-reduced-motion:reduce){{html{{scroll-behavior:auto}}}}
@@ -201,7 +204,7 @@ def page(l, preview=False, pg='home'):
       <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_p']}</p></div>
     </article>
     <article class="card">
-      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
+      <div class="pic"><picture><source srcset="{up}img/concert-saint-louis.webp" type="image/webp"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" width="960" height="600" loading="lazy" decoding="async"></picture></div>
       <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_p']}</p></div>
     </article>
     <article class="card">
@@ -216,7 +219,7 @@ def page(l, preview=False, pg='home'):
       <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_s']}</p>{more}</div>
     </article>
     <article class="card">
-      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
+      <div class="pic"><picture><source srcset="{up}img/concert-saint-louis.webp" type="image/webp"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" width="960" height="600" loading="lazy" decoding="async"></picture></div>
       <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_s']}</p>{more}</div>
     </article>
     <article class="card">
@@ -298,8 +301,10 @@ def page(l, preview=False, pg='home'):
   </div>
 </div></section>''' }
     MAIN=MAINS[pg]
+    if pg!='home':  # sub-pages have no h2 sections: card titles are the second level (heading order, a11y)
+        MAIN=MAIN.replace('<h3','<h2').replace('</h3>','</h2>')
     HERO=f'''<div class="hero">
-  <img src="{up}img/concert-2025.jpg" alt="{a('hero_alt')}">
+  <picture><source srcset="{up}img/concert-2025.webp" type="image/webp"><img src="{up}img/concert-2025.jpg" alt="{a('hero_alt')}" width="1079" height="553" fetchpriority="high"></picture>
   <div class="in">
     <h1>{t['h1']}</h1>
     <p>{t['hero_p']}</p>
@@ -312,14 +317,15 @@ def page(l, preview=False, pg='home'):
 </div>
 
 ''' if pg=='home' else ''
-    body=f'''{mt}<div class="util"><div class="in">
+    body=f'''<header class="site">
+{mt}<div class="util"><div class="in">
   <a href="#sub" class="sub-open" aria-haspopup="dialog">{t['u_news']}</a>
   <a href="{H('adherer')}">{t['u_join']}</a>
   <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
   <a class="btn btn-red" href="{FORM[l]}"{FT}>{t['u_support']}</a>
 </div></div>
 
-<header class="main"><div class="in">
+<div class="main"><div class="in">
   <a class="logo" href="{HOME if pg!='home' else '#top'}" id="top">
     {logo}
   </a>
@@ -333,7 +339,8 @@ def page(l, preview=False, pg='home'):
     <li><a href="{H('contact')}">{t['m_contact']}</a></li>
     <li class="m-only"><a href="{FORM[l]}"{FT}>{t['u_support']}</a></li>
   </ul></nav>
-</div></header>
+</div></div>
+</header>
 
 <main>
 {HERO}{MAIN}
@@ -341,16 +348,16 @@ def page(l, preview=False, pg='home'):
 
 <footer><div class="in">
   <div>
-    <h4>{fth}</h4>
+    <h2>{fth}</h2>
     <p>{t['ft_p']}</p>
   </div>
   <div id="contact">
-    <h4>{t['ct_k']}</h4>
+    <h2>{t['ct_k']}</h2>
     <p>{t['ct_mail']}{SEP}<bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
     <p>{t['ct_cn']}{SEP}<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
-    <h4>{t['tr_h']}</h4>
+    <h2>{t['tr_h']}</h2>
     <p>{t['tr_p']}</p>
     <p>{t['pub']} {legal}</p>
     <p>{html.escape(ZOOM[l])}</p>
@@ -384,7 +391,9 @@ document.querySelectorAll('button.copy').forEach(function(b){{b.addEventListener
         txt=''.join(x[1] if isinstance(x,tuple) else x for x in parts)
         chars=''.join(sorted({c for c in txt if ord(c)>0x2e7f}))
         zl=ZH_SERIF+urllib.parse.quote(chars)
-        headx=headx.replace('%%ZHFONT%%',f'\n<link rel="stylesheet" href="{zl}" media="print" onload="this.media=\'all\'">')
+        local=None if (preview or not CLEAN) else fontsmod.zh_subset(SITE_ROOT,chars,'zh-'+pg)
+        zlink=f'<link rel="stylesheet" href="../{local}">' if local else f'<link rel="stylesheet" href="{zl}" media="print" onload="this.media=\'all\'">'
+        headx=headx.replace('%%ZHFONT%%','\n'+zlink)
     if preview and l=='fr':
         # artifact main page: no document skeleton, it is added at publish time
         return headx+'\n'+f'<div {attrs}>\n'+body+'\n</div>\n'
@@ -396,6 +405,7 @@ def main():
     if '--preview' in sys.argv: preview=sys.argv[sys.argv.index('--preview')+1]; CLEAN=False
     ROOT=os.path.dirname(HERE)  # repo root (tools/ next to the pages); aha-website/ layout writes to site/
     if not os.path.exists(os.path.join(ROOT,'CNAME')): ROOT=os.path.join(ROOT,'site')
+    global SITE_ROOT; SITE_ROOT=ROOT
     out=preview or ROOT
     for l in LANGS:
       for pg in PAGES:

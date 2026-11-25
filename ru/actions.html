@@ -21,10 +21,8 @@
 <link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <script data-goatcounter="https://harmonie-amitie.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"></noscript>
+<link rel="stylesheet" href="../fonts/base.css">
+
 <script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -63,8 +61,8 @@ section{padding-block:3.5rem}
 .util .btn{padding:.3rem .8rem;font-size:.82rem} .util a.btn-red{color:#fff}
 
 /* header */
-header.main{border-bottom:1px solid var(--line);background:var(--paper)}
-header.main .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem;flex-wrap:wrap}
+.site>.main{border-bottom:1px solid var(--line);background:var(--paper)}
+.site>.main .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ink)}
 .seal{width:3rem;height:3rem;flex:none;border:2px solid var(--red);border-radius:3px;display:grid;place-items:center;color:var(--red);font:700 1.05rem/1 var(--f-seal);writing-mode:vertical-rl;letter-spacing:.05em}
 .logo b{display:block;font:600 1.1rem/1.15 var(--f-head);color:var(--navy)}
@@ -104,14 +102,14 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .card .pic .mark{font:700 3.2rem var(--f-seal);color:var(--paper);opacity:.9}
 .card .pic.red{background:var(--red)}
 .card .body{padding:1.25rem 1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
-.card h3{font:600 1.3rem/1.25 var(--f-head);margin:0;color:var(--navy)}
+.card h3,.card h2{text-wrap:wrap;font:600 1.3rem/1.25 var(--f-head);margin:0;color:var(--navy)}
 .card .tag{font:700 .72rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
 .card p{margin:0;color:var(--muted)}
 
 /* presidents */
 .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .person{border-top:3px solid var(--navy);padding-top:1rem}
-.person h3{font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
+.person h3,.person h2{text-wrap:wrap;font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
 .person .role{font-weight:600;color:var(--red);margin:0 0 .5rem}
 .person p{margin:0;color:var(--muted)}
 
@@ -142,7 +140,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 footer{background:var(--mist);border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
 footer .in{padding-block:2rem 2.5rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:2rem}
 footer p{margin:.2rem 0}
-footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+footer h2,footer h4{text-wrap:wrap;margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 
 @media (max-width:900px){
   .figs{grid-template-columns:repeat(2,minmax(0,1fr))} .fig:last-child{grid-column:1/-1} .news{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -212,7 +210,7 @@ footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:any
   .js nav.menu ul{flex-direction:column;gap:0}
   .js nav.menu a{display:block;padding-block:.65rem;border-bottom:1px solid var(--line)}
   .m-only{display:list-item}
-  header.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
+  .site>.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
   .logo{flex:1 1 0;min-width:0} .logo b{font-size:1rem} .seal{width:2.6rem;height:2.6rem}
 }
 @media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
@@ -256,10 +254,13 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .subin .copy:hover{background:#fff;color:var(--navy)}
 .subin a{color:#fff}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
+/* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
+picture{display:contents}
 
 </style>
 </head>
 <body>
+<header class="site">
 <div class="mtnote" role="note"><div class="in">Русская версия переведена с помощью ИИ и ожидает проверки. Преимущественную силу имеет текст на французском языке. <a href="../actions.html" hreflang="fr" lang="fr">Version française</a></div></div>
 <div class="util"><div class="in">
   <a href="#sub" class="sub-open" aria-haspopup="dialog">Рассылка</a>
@@ -268,7 +269,7 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
   <a class="btn btn-red" href="https://forms.cloud.microsoft/r/KjnPvXzNPx" target="_blank" rel="noopener">Поддержать нас</a>
 </div></div>
 
-<header class="main"><div class="in">
+<div class="main"><div class="in">
   <a class="logo" href="./" id="top">
     <span class="seal latin" aria-hidden="true">AHA</span>
     <span lang="fr" dir="ltr"><b>Association Harmonie d'Amitié</b><span>A.H.A. · Paris</span></span>
@@ -283,7 +284,8 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
     <li><a href="./#contact">Контакты</a></li>
     <li class="m-only"><a href="https://forms.cloud.microsoft/r/KjnPvXzNPx" target="_blank" rel="noopener">Поддержать нас</a></li>
   </ul></nav>
-</div></header>
+</div></div>
+</header>
 
 <main>
 <section id="actions"><div class="in">
@@ -293,15 +295,15 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
   <div class="cards">
     <article class="card">
       <div class="pic"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></div>
-      <div class="body"><span class="tag">Молодёжь · Образование</span><h3>Обучать и открывать пути</h3><p>Франко-китайское профессиональное обучение с IFAC du Pays de Montbéliard (мандат на 2026–2028 годы); продолжение учёбы и взаимные студенческие обмены обсуждаются с высшими учебными заведениями.</p></div>
+      <div class="body"><span class="tag">Молодёжь · Образование</span><h2>Обучать и открывать пути</h2><p>Франко-китайское профессиональное обучение с IFAC du Pays de Montbéliard (мандат на 2026–2028 годы); продолжение учёбы и взаимные студенческие обмены обсуждаются с высшими учебными заведениями.</p></div>
     </article>
     <article class="card">
-      <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="Зрители концерта в церкви Сен-Луи-ан-л&#x27;Иль в Париже" loading="lazy"></div>
-      <div class="body"><span class="tag">Гармония · Культура</span><h3>Музыка — общий язык</h3><p>Фестиваль культурного разнообразия организует Comité d'animation culturelle Paris 1 под патронажем Национальной комиссии Франции по делам ЮНЕСКО. В рамках фестиваля в церкви Сен-Луи-ан-л'Иль прошли два концерта — 24 мая 2024 года и, по приглашению Comité, 25 мая 2025 года; их организовала A.I.E.C. при поддержке A.H.A.</p></div>
+      <div class="pic"><picture><source srcset="../img/concert-saint-louis.webp" type="image/webp"><img src="../img/concert-saint-louis.jpg" alt="Зрители концерта в церкви Сен-Луи-ан-л&#x27;Иль в Париже" width="960" height="600" loading="lazy" decoding="async"></picture></div>
+      <div class="body"><span class="tag">Гармония · Культура</span><h2>Музыка — общий язык</h2><p>Фестиваль культурного разнообразия организует Comité d'animation culturelle Paris 1 под патронажем Национальной комиссии Франции по делам ЮНЕСКО. В рамках фестиваля в церкви Сен-Луи-ан-л'Иль прошли два концерта — 24 мая 2024 года и, по приглашению Comité, 25 мая 2025 года; их организовала A.I.E.C. при поддержке A.H.A.</p></div>
     </article>
     <article class="card">
       <div class="pic red"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></div>
-      <div class="body"><span class="tag">Старшее поколение · Солидарность</span><h3>Соединяя нужду с протянутой рукой</h3><p>Вместе с двумя организациями, близкими нашим почётным президентам: Association Internationale La Voix de la Compassion, по инициативе которой зимние вещи были переданы парижскому приходу, и Мальтийским орденом Франции — для бездомных. Мы также поддерживаем сборы для домов престарелых и приходов.</p></div>
+      <div class="body"><span class="tag">Старшее поколение · Солидарность</span><h2>Соединяя нужду с протянутой рукой</h2><p>Вместе с двумя организациями, близкими нашим почётным президентам: Association Internationale La Voix de la Compassion, по инициативе которой зимние вещи были переданы парижскому приходу, и Мальтийским орденом Франции — для бездомных. Мы также поддерживаем сборы для домов престарелых и приходов.</p></div>
     </article>
   </div>
 </div></section>
@@ -314,16 +316,16 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 
 <footer><div class="in">
   <div>
-    <h4><bdi lang="fr">Association Harmonie d'Amitié (A.H.A.)</bdi></h4>
+    <h2><bdi lang="fr">Association Harmonie d'Amitié (A.H.A.)</bdi></h2>
     <p>Некоммерческая ассоциация по французскому закону 1901 года, зарегистрирована в Префектуре полиции Парижа 12 декабря 2023 года (Официальный журнал от 19 декабря 2023 года). RNA W751272194. Адрес: 27 rue Saint-Jacques, 75005 Paris.</p>
   </div>
   <div id="contact">
-    <h4>Контакты</h4>
+    <h2>Контакты</h2>
     <p>Электронная почта: <bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
     <p>Представительство в Китае (Ухань): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
-    <h4>Прозрачность</h4>
+    <h2>Прозрачность</h2>
     <p>Устав и свидетельство о регистрации — по запросу.</p>
     <p>Этот сайт не использует файлы cookie. Анонимная статистика без cookie (GoatCounter) учитывает только просмотры страниц. <a href="../mentions-legales.html">Правовая информация (на французском)</a></p>
     <p>Чтобы увеличить текст, используйте масштабирование на телефоне или в браузере.</p>

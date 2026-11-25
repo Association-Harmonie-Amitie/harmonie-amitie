@@ -33,8 +33,8 @@ section{padding-block:3.5rem}
 .util .btn{padding:.3rem .8rem;font-size:.82rem} .util a.btn-red{color:#fff}
 
 /* header */
-header.main{border-bottom:1px solid var(--line);background:var(--paper)}
-header.main .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem;flex-wrap:wrap}
+.site>.main{border-bottom:1px solid var(--line);background:var(--paper)}
+.site>.main .in{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;padding-block:1rem;flex-wrap:wrap}
 .logo{display:flex;align-items:center;gap:.8rem;text-decoration:none;color:var(--ink)}
 .seal{width:3rem;height:3rem;flex:none;border:2px solid var(--red);border-radius:3px;display:grid;place-items:center;color:var(--red);font:700 1.05rem/1 var(--f-seal);writing-mode:vertical-rl;letter-spacing:.05em}
 .logo b{display:block;font:600 1.1rem/1.15 var(--f-head);color:var(--navy)}
@@ -74,14 +74,14 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .card .pic .mark{font:700 3.2rem var(--f-seal);color:var(--paper);opacity:.9}
 .card .pic.red{background:var(--red)}
 .card .body{padding:1.25rem 1.25rem 1.5rem;display:flex;flex-direction:column;gap:.5rem}
-.card h3{font:600 1.3rem/1.25 var(--f-head);margin:0;color:var(--navy)}
+.card h3,.card h2{text-wrap:wrap;font:600 1.3rem/1.25 var(--f-head);margin:0;color:var(--navy)}
 .card .tag{font:700 .72rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--red)}
 .card p{margin:0;color:var(--muted)}
 
 /* presidents */
 .people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .person{border-top:3px solid var(--navy);padding-top:1rem}
-.person h3{font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
+.person h3,.person h2{text-wrap:wrap;font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
 .person .role{font-weight:600;color:var(--red);margin:0 0 .5rem}
 .person p{margin:0;color:var(--muted)}
 
@@ -112,7 +112,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 footer{background:var(--mist);border-top:1px solid var(--line);font-size:.86rem;color:var(--muted)}
 footer .in{padding-block:2rem 2.5rem;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:2rem}
 footer p{margin:.2rem 0}
-footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+footer h2,footer h4{text-wrap:wrap;margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
 
 @media (max-width:900px){
   .figs{grid-template-columns:repeat(2,minmax(0,1fr))} .fig:last-child{grid-column:1/-1} .news{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -182,7 +182,7 @@ footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:any
   .js nav.menu ul{flex-direction:column;gap:0}
   .js nav.menu a{display:block;padding-block:.65rem;border-bottom:1px solid var(--line)}
   .m-only{display:list-item}
-  header.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
+  .site>.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
   .logo{flex:1 1 0;min-width:0} .logo b{font-size:1rem} .seal{width:2.6rem;height:2.6rem}
 }
 @media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
@@ -226,3 +226,5 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .subin .copy:hover{background:#fff;color:var(--navy)}
 .subin a{color:#fff}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
+/* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
+picture{display:contents}

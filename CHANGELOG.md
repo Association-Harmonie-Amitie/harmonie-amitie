@@ -4,6 +4,14 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Optimisations techniques groupées, sans changement de texte / 技术优化合并发布（未改任何文字）
+- Polices hébergées sur le site (plus d'appel à Google Fonts) : lisibles depuis la Chine (WeChat) et aucune adresse IP de visiteur transmise à un tiers (RGPD). Police chinoise des titres : un sous-ensemble par page, mis à jour automatiquement.
+- 字体改为本站自托管，不再请求 Google 字体：中国大陆微信可正常显示，访客 IP 不外传（GDPR）。中文标题字体每页一个子集，自动更新。
+- Photos en WebP (environ 30 % plus légères), dimensions déclarées, photo d'accueil chargée en priorité. / 照片改用 WebP（约轻 30%），声明尺寸，首页大图优先加载。
+- Accessibilité : en-tête du site regroupé dans un seul repère, ordre des titres corrigé (pages Actions et Gouvernance, pied de page) ; audit axe-core WCAG 2.1 AA : 0 erreur. Aspect visuel inchangé. / 无障碍：页眉结构统一，标题层级修正；axe-core WCAG 2.1 AA 检查 0 问题；外观不变。
+- Outils de gestion : `tools/selfcheck.js` (348 contrôles avant publication), `docs/自检清单-autocontrole.md`, `docs/用语表-glossaire.md` (textes approuvés, 6 langues, généré par `tools/glossary.py`), `tools/fonts.py`. robots.txt exclut /docs/ et /tools/.
+- 管理工具：自检脚本（348 项）、自检清单、六语已核准用语表（自动生成）、字体工具；robots.txt 不收录 /docs/ 与 /tools/。
+
 ## 2026-11-25 — Police chinoise de la devise / 中文红字引语字体统一
 - La devise « 阴阳相济，冲气为和。 » s'affiche entièrement dans la même police (certains caractères manquaient au sous-ensemble de police et s'affichaient dans une autre).
 - 红字引语"阴阳相济，冲气为和。"现在整句使用同一字体（之前部分字未包含在网页字体子集里，显示成了另一种字体）。
