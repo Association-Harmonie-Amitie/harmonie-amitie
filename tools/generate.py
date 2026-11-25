@@ -64,8 +64,11 @@ JOIN={
 from urllib.parse import quote
 def join_href(l):
     j=JOIN[l]; return 'mailto:%s?subject=%s&body=%s'%(JOIN_TO,quote(j['subj']),quote(j['body']))
-# friends and partner companies: (name, {lang: line}); shown only with written consent
+# Jardin de l'amitié / 友谊花园: friends and partner companies, ONLY with signed consent form on file.
+# entry: dict(name='...', line={'fr':'...','zh':'...'}, url='https://...' or None)  (≤40 words, no personal contact data)
 FRIENDS=[]
+# cookieless audience measurement: set to the GoatCounter site code once the association has created its account (e.g. 'harmonie-amitie'); '' = off
+GOATCOUNTER=''
 HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
@@ -133,7 +136,9 @@ def page(l, preview=False, pg='home'):
          "sponsor":{"@type":"Organization","name":"Commission nationale française pour l'UNESCO"}}]}
     if pg!='home':
         t['title']=html.escape({'actions':T[l]['m_actions'],'gouvernance':T[l]['m_gov']}[pg],quote=False)+' · '+t['title']
-    ldtag=f'<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>\n' if pg=='home' else ''
+    gctag=(f'<script data-goatcounter="https://{GOATCOUNTER}.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>\n' if GOATCOUNTER and not preview else '')
+    if GOATCOUNTER: t['pub']=html.escape(T[l]['pub_gc'],quote=False)
+    ldtag=gctag+f'<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>\n' if pg=='home' else ''
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">
@@ -191,9 +196,14 @@ def page(l, preview=False, pg='home'):
       <div class="body"><span class="tag">{t['c3_tag']}</span><h3>{t['c3_h']}</h3><p>{t['c3_s']}</p>{more}</div>
     </article>
   </div>'''
-    friends=''.join(f'<li><bdi lang="fr">{html.escape(n)}</bdi><small>{html.escape(d.get(l,d["fr"]))}</small></li>' for n,d in FRIENDS)
-    friends_sec=(f'''<section id="amis"><div class="in">
+    def _fr(e):
+        nm=html.escape(e['name']); ln=html.escape(e['line'].get(l,e['line']['fr']))
+        nm=f'<a href="{html.escape(e["url"],quote=True)}" rel="noopener">{nm}</a>' if e.get('url') else nm
+        return f'<li><bdi lang="fr">{nm}</bdi><small>{ln}</small></li>'
+    friends=''.join(_fr(e) for e in FRIENDS)
+    friends_sec=(f'''<section id="jardin-amitie"><div class="in">
   <h2>{t['fr_h']}</h2>
+  <p class="sub">{t['fr_p']}</p>
   <ul class="partners" style="margin-top:1.5rem">{friends}</ul>
 </div></section>''' if FRIENDS else '')
     MAINS={'home':f'''<section class="mission" id="association"><div class="in grid">
@@ -234,6 +244,8 @@ def page(l, preview=False, pg='home'):
   <ul class="partners" style="margin-top:1.5rem">{parts}</ul>
 </div></section>
 
+{friends_sec}
+
 <section class="band" id="engager"><div class="in grid">
   <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b1_b']}</a></div>
   <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b2_b']}</a></div>
@@ -270,8 +282,7 @@ def page(l, preview=False, pg='home'):
     <div class="person"><h3>{t['p2_n']}</h3><p class="role">{t['p2_r']}</p><p>{t['p2_p']}</p></div>
     <div class="person"><h3>{t['p3_n']}</h3><p class="role">{t['p3_r']}</p><p>{t['p3_p']}</p></div>
   </div>
-</div></section>
-{friends_sec}''' }
+</div></section>''' }
     MAIN=MAINS[pg]
     HERO=f'''<div class="hero">
   <img src="{up}img/concert-2025.jpg" alt="{a('hero_alt')}">

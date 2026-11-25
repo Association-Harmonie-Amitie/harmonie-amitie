@@ -323,7 +323,7 @@ EXTRA = {
    gov_h="Présidents d'honneur et Président exécutif",
    p3_n="M. Fabrice CORSAUT", p3_r="Président exécutif pour la France (depuis juillet 2024)",
    p3_p="Mandaté par la Présidente pour représenter l'association lors des événements auxquels elle est invitée, et pour faire connaître ses valeurs et ses objectifs auprès des partenaires et du public.",
-   fr_h="Amis et partenaires"),
+   fr_h="Jardin de l'amitié", fr_p="Amis de longue date et entreprises partenaires qui accompagnent nos actions, avec leur accord."),
  'zh': dict(more="了解更多", home="首页",
    c1_s="与蒙贝利亚尔地区 IFAC 合作开展中法职业培训（2026–2028）。",
    c2_s="在多元文化节框架内，于圣路易岛教堂举办两场音乐会（2024、2025）。",
@@ -331,7 +331,7 @@ EXTRA = {
    gov_h="荣誉主席与执行主席",
    p3_n="Fabrice CORSAUT 先生", p3_r="法国执行主席（2024 年 7 月起）",
    p3_p="受协会主席委托，在协会受邀参加的各类活动中代表协会，向合作伙伴和公众传播协会的价值观与宗旨。",
-   fr_h="朋友与合作伙伴"),
+   fr_h="友谊花园", fr_p="多年的老朋友和合作企业，在征得同意后与我们一同展示。"),
  'en': dict(more="Learn more", home="Home",
    c1_s="French–Chinese vocational training with IFAC du Pays de Montbéliard (2026–2028).",
    c2_s="Two concerts at the church of Saint-Louis-en-l'Île, as part of the Festival of Cultural Diversity (2024, 2025).",
@@ -339,7 +339,7 @@ EXTRA = {
    gov_h="Honorary Presidents and Executive President",
    p3_n="Mr Fabrice CORSAUT", p3_r="Executive President for France (since July 2024)",
    p3_p="Mandated by the President to represent the association at the events to which it is invited, and to share its values and aims with partners and the public.",
-   fr_h="Friends and partners"),
+   fr_h="Garden of Friendship", fr_p="Long-standing friends and partner companies who support our work, shown with their consent."),
  'es': dict(more="Saber más", home="Inicio",
    c1_s="Formación profesional franco-china con el IFAC du Pays de Montbéliard (2026–2028).",
    c2_s="Dos conciertos en la iglesia de Saint-Louis-en-l'Île, en el marco del Festival de la Diversidad Cultural (2024, 2025).",
@@ -347,7 +347,7 @@ EXTRA = {
    gov_h="Presidentes de honor y Presidente ejecutivo",
    p3_n="Sr. Fabrice CORSAUT", p3_r="Presidente ejecutivo para Francia (desde julio de 2024)",
    p3_p="Mandatado por la Presidenta para representar a la asociación en los actos a los que es invitada y dar a conocer sus valores y objetivos ante los socios y el público.",
-   fr_h="Amigos y socios"),
+   fr_h="Jardín de la amistad", fr_p="Amigos de larga data y empresas socias que acompañan nuestras acciones, con su consentimiento."),
  'ru': dict(more="Подробнее", home="Главная",
    c1_s="Франко-китайское профессиональное обучение с IFAC du Pays de Montbéliard (2026–2028).",
    c2_s="Два концерта в церкви Сен-Луи-ан-л'Иль в рамках Фестиваля культурного разнообразия (2024, 2025).",
@@ -355,7 +355,7 @@ EXTRA = {
    gov_h="Почётные президенты и исполнительный президент",
    p3_n="Г-н Fabrice CORSAUT", p3_r="Исполнительный президент во Франции (с июля 2024 года)",
    p3_p="По поручению президента представляет ассоциацию на мероприятиях, куда она приглашена, и рассказывает партнёрам и публике о её ценностях и целях.",
-   fr_h="Друзья и партнёры"),
+   fr_h="Сад дружбы", fr_p="Давние друзья и компании-партнёры, поддерживающие нашу работу, — с их согласия."),
  'ar': dict(more="اقرأ المزيد", home="الرئيسية",
    c1_s="تدريب مهني فرنسي–صيني مع ⁦IFAC du Pays de Montbéliard⁩ (2026–2028).",
    c2_s="حفلان في كنيسة سان لوي أن ليل ضمن مهرجان التنوع الثقافي (2024، 2025).",
@@ -363,7 +363,13 @@ EXTRA = {
    gov_h="الرئيسان الفخريان والرئيس التنفيذي",
    p3_n="السيد Fabrice CORSAUT", p3_r="الرئيس التنفيذي في فرنسا (منذ يوليو 2024)",
    p3_p="مفوَّض من رئيسة الجمعية لتمثيلها في الفعاليات التي تُدعى إليها، والتعريف بقيمها وأهدافها لدى الشركاء والجمهور.",
-   fr_h="أصدقاء وشركاء"),
+   fr_h="حديقة الصداقة", fr_p="أصدقاء قدامى وشركات شريكة يرافقون أعمالنا، بموافقتهم."),
 }
+EXTRA['fr']['pub_gc']="Ce site ne dépose aucun cookie. Une mesure d'audience anonyme et sans cookie (GoatCounter) compte seulement les pages vues."
+EXTRA['zh']['pub_gc']='本网站不使用 Cookie。仅通过匿名、无 Cookie 的访问统计（GoatCounter）统计页面浏览量。'
+EXTRA['en']['pub_gc']='This site sets no cookies. Anonymous, cookie-free audience measurement (GoatCounter) only counts page views.'
+EXTRA['es']['pub_gc']='Este sitio no instala cookies. Una medición de audiencia anónima y sin cookies (GoatCounter) solo cuenta las páginas vistas.'
+EXTRA['ru']['pub_gc']='Этот сайт не использует файлы cookie. Анонимная статистика без cookie (GoatCounter) учитывает только просмотры страниц.'
+EXTRA['ar']['pub_gc']='لا يستخدم هذا الموقع ملفات تعريف الارتباط. ويقتصر قياس الجمهور المجهول الهوية ومن دون ملفات تعريف الارتباط (\u2066GoatCounter\u2069) على عدّ الصفحات المشاهدة.'
 for _l, _d in EXTRA.items():
     T[_l].update(_d)
