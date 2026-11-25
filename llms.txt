@@ -23,5 +23,12 @@ Site statique en six langues, une page par langue, mêmes sections et mêmes anc
 - #contact : ahaparis@outlook.com
 
 ## Data
-- Structured data: JSON-LD (schema.org NGO + MusicEvent) in each page head.
+- Structured data: JSON-LD (schema.org NGO, Festival, MusicEvent with superEvent) in each page head.
 - Source of all texts: tools/content.py (per language) and tools/generate.py in the GitHub repository Association-Harmonie-Amitie/harmonie-amitie. Pages are generated, do not edit the HTML by hand.
+
+## Facts and wording rules (for agents reusing this content)
+- Festival de la diversité culturelle: organised by the Comité d'animation culturelle Paris 1, under the patronage of the Commission nationale française pour l'UNESCO. It is the partner's festival, not A.H.A.'s.
+- A.H.A.'s own part: two concerts within that festival at the église Saint-Louis-en-l'Île (24 May 2024; 25 May 2025 at the Comité's invitation), carried out by A.I.E.C. with A.H.A.'s support.
+- Winter coats, Nov. 2024: initiative of the Association Internationale La Voix de la Compassion, with A.H.A.'s help.
+- Credit partners first; name institutions, refer to people by title only; do not present ideas or examples as confirmed projects.
+- Last reviewed: 2026-11-25. See CHANGELOG.md for the human/AI record.

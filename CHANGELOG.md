@@ -15,6 +15,7 @@ Le détail de chaque version est dans l'historique Git (un commit par modificati
 - Humain : précise l'origine de l'A.H.A. (fin 2023, sous l'impulsion des deux Présidents d'honneur ; sa Présidente est membre de La Voix de la Compassion) et que les dons de manteaux 2024 étaient une initiative de La Voix de la Compassion, avec l'aide de l'A.H.A. ; reçus de dons conjoints. IA : Gouvernance, carte « Aînés », actualité 2024, ligne partenaire et JSON-LD mis à jour dans les six langues ; nom chinois officiel 法国国际妙音同善会.
 - Humain : les exemples de projets jeunes (cours de chinois, concours humain–IA, « Pont entre les générations ») étaient des illustrations, non des projets confirmés. IA : liste retirée dans les six langues ; l'A.I.E.C. est décrite en une phrase comme « lieu de projets pratiques pour les jeunes ».
 - Humain : ajouter que l'A.H.A. a été créée grâce à l'amitié et au soutien de ses deux Présidents d'honneur. IA : repère « 2023 » (numéro RNA laissé au pied de page pour l'équilibre visuel) et Gouvernance mis à jour dans les six langues.
+- IA (SK0) : llms.txt complété par les faits vérifiés et les règles de formulation (festival du partenaire / nos concerts, initiative des dons 2024, titres sans noms).
 
 ## 2026-11-25
 - Principe de discrétion : actualités et cartes rédigées en donnant le premier rôle aux partenaires (Comité d'animation culturelle Paris 1, Ordre de Malte France, donateurs en Chine, A.I.E.C.) ; personnes désignées par leur titre ; patronage de la CNFU mentionné pour la seule édition 2024 (vérifiée).
