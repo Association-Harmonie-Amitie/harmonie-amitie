@@ -5,6 +5,7 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
 ## 2026-11-25
+- Mission recentrée sur les valeurs communes (paix, amitié, amour) sur conseil des conseillers ; l'IA n'apparaît plus que comme un projet de pratique de l'A.I.E.C. ; titre d'accueil « au fil des générations ».
 - Relecture selon les règles SK0–SK6 : données structurées (association, partenaire, concerts), fichier llms.txt pour les agents, ce journal.
 - Formulations : plus d'annonce de dons en ligne ni de lettre trimestrielle ni de rapport 2026 non encore disponibles ; « منظمة مالطا » au lieu de « فرسان مالطا » en arabe.
 - Rôles A.H.A. (passerelle, sans flux financiers) / A.I.E.C. (projets de pratique pour les jeunes, concerts 2024 et 2025) ; aucune formulation commerciale (vente, rémunération, offre bancaire retirées).
