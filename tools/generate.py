@@ -116,8 +116,9 @@ def page(l, preview=False):
          "description":"Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."},
         {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 14e édition","startDate":"2024-05-24T20:00","location":venue,
          "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}},
-        {"@type":"MusicEvent","name":"Concert, Festival de la diversité culturelle 2025","startDate":"2025-05-25","location":venue,
-         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}}]}
+        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 15e édition","startDate":"2025-05-25T19:30","location":venue,
+         "performer":{"@type":"MusicGroup","name":"Orchestre à cordes de Paris"},
+         "organizer":[{"@type":"Organization","name":"Comité d'animation culturelle Paris 1"},{"@id":AIEC_ID}],"funder":{"@id":AHA_ID}}]}
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">

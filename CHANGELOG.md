@@ -7,6 +7,7 @@ Le détail de chaque version est dans l'historique Git (un commit par modificati
 ## 2026-11-25 (SK8, vérification des sources)
 - Humain : demande de vérifier les informations publiques de chaque partenaire avant toute formulation.
 - IA : vérifié le site du Comité d'animation culturelle Paris 1 (programme 2024), les statuts de l'Ordre de Malte France (RUP, décret du 19 août 1928) et les pages publiques du Fleuron Saint-Jean (péniche d'accueil). Carte « Musique » : faits 2024 seulement là où ils sont attestés (14e édition, 24 mai 2024, patronage CNFU) ; retrait de « porté par le Comité » et de « 15e » pour 2025, en attente de confirmation. Collecte d'hiver : Fleuron Saint-Jean, 500 paires de chaussettes, 24 plaids-capes, acheminement organisé par l'A.H.A.
+- Humain : confirme 2025 (affiche, source non publiée) : 15e édition, organisée par le Comité, patronage CNFU, Orchestre à cordes de Paris (membres de l'Orchestre national de France), soutien A.H.A., mise en œuvre A.I.E.C. IA : carte « Musique », actualité 2025 et JSON-LD mis à jour dans les six langues.
 
 ## 2026-11-25
 - Principe de discrétion : actualités et cartes rédigées en donnant le premier rôle aux partenaires (Comité d'animation culturelle Paris 1, Ordre de Malte France, donateurs en Chine, A.I.E.C.) ; personnes désignées par leur titre ; patronage de la CNFU mentionné pour la seule édition 2024 (vérifiée).
