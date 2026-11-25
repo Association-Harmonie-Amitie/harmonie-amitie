@@ -24,7 +24,7 @@ NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
 ONGOING={
  'fr':[("En préparation","Collecte d'hiver 2026 : des donateurs en Chine offrent 500 paires de chaussettes et 24 plaids-capes au Fleuron Saint-Jean, péniche d'accueil de l'Ordre de Malte France pour les personnes sans abri, à Paris. L'A.H.A. organise l'acheminement.")],
- 'zh':[("筹备中","2026 年冬季募集：中国爱心人士捐赠 500 双袜子和 24 件披肩毯，送往马耳他骑士团法国分会在巴黎的 Fleuron Saint-Jean 收容船，帮助无家可归的人。和谊协会负责组织运送。")],
+ 'zh':[("筹备中","2026 年冬季物资募集：来自中国的热心捐赠者向法国马耳他骑士团在巴黎的接待驳船“圣让之花号”（Fleuron Saint-Jean）捐赠 500 双袜子和 24 件披肩毯，为当地的无家可归者送去温暖。和谊协会负责此次物资的运输组织工作。")],
  'en':[("In preparation","Winter collection 2026: donors in China are offering 500 pairs of socks and 24 blanket-capes to the Fleuron Saint-Jean, the Ordre de Malte France's shelter barge for homeless people in Paris. A.H.A. is arranging the shipment.")],
  'es':[("En preparación","Colecta de invierno 2026: donantes en China ofrecen 500 pares de calcetines y 24 mantas-capa al Fleuron Saint-Jean, la barcaza de acogida de la Orden de Malta Francia para personas sin hogar en París. La A.H.A. organiza el envío.")],
  'ru':[("В подготовке","Зимний сбор 2026 года: дарители из Китая передают 500 пар носков и 24 пледа-накидки на Fleuron Saint-Jean — баржу-приют Мальтийского ордена Франции для бездомных в Париже. A.H.A. организует доставку.")],
@@ -45,8 +45,8 @@ JOIN={
  'fr':dict(h="Adhérer gratuitement",p="L'adhésion à l'association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme.",b="Je m'inscris",
       n="Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.",
       subj="Adhésion gratuite",body="Bonjour,\n\nJe souhaite adhérer gratuitement à l'Association Harmonie d'Amitié.\n\nNom et prénom :\nPays / ville :\nTéléphone (facultatif) :\nCentres d'intérêt (jeunesse et éducation / culture et musique / solidarité) :\nBénévolat (oui / non) :\n\nJ'accepte que ces données soient utilisées par l'association pour gérer mon adhésion.\n"),
- 'zh':dict(h="免费入会",p="加入协会完全免费。欢迎加入，按自己的节奏关注并参与我们的行动。",b="立即登记",
-      n="您的信息仅用于会员管理，绝不对外提供。",
+ 'zh':dict(h="免费入会",p="入会完全免费。欢迎随时关注并参与我们的行动，一切随心、量力而行。",b="立即登记",
+      n="您的信息仅用于会员管理，绝不对外披露。",
       subj="免费入会申请",body="您好：\n\n我希望免费加入和谊协会。\n\n姓名：\n国家 / 城市：\n电话（选填）：\n关注领域（青年与教育 / 文化与音乐 / 公益）：\n是否愿意做志愿者（是 / 否）：\n\n我同意协会使用以上信息办理会员事务。\n"),
  'en':dict(h="Join for free",p="Membership of the association is free. Join us to follow and take part in our activities at your own pace.",b="Sign up",
       n="Your data is used only to manage memberships and is never shared.",
