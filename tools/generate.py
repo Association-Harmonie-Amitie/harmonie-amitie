@@ -104,7 +104,7 @@ def page(l, preview=False):
     alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x)) for x in LANGS)
     alts+='<link rel="alternate" hreflang="x-default" href="%s">\n'%BASE
     # structured data for search engines and AI agents (SK0): association, strategic partner, concerts
-    AHA_ID=BASE+'#aha'; AIEC_ID=BASE+'#aiec'
+    AHA_ID=BASE+'#aha'; AIEC_ID=BASE+'#aiec'; FEST_ID=BASE+'#festival-diversite'
     venue={"@type":"Place","name":"Église Saint-Louis-en-l'Île","address":{"@type":"PostalAddress","streetAddress":"19 rue Saint-Louis-en-l'Île","postalCode":"75004","addressLocality":"Paris","addressCountry":"FR"}}
     ld={"@context":"https://schema.org","@graph":[
         {"@type":"NGO","@id":AHA_ID,"name":"Association Harmonie d'Amitié","alternateName":["A.H.A.","和谊协会"],
@@ -114,11 +114,14 @@ def page(l, preview=False):
          "address":{"@type":"PostalAddress","streetAddress":"27 rue Saint-Jacques","postalCode":"75005","addressLocality":"Paris","addressCountry":"FR"}},
         {"@type":"NGO","@id":AIEC_ID,"name":"Association internationale d'échanges culturels","alternateName":"A.I.E.C.",
          "description":"Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."},
-        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 14e édition","startDate":"2024-05-24T20:00","location":venue,
-         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}},
-        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 15e édition","startDate":"2025-05-25T19:30","location":venue,
+        {"@type":"MusicEvent","name":"Concert à l'église Saint-Louis-en-l'Île (Festival de la diversité culturelle 2024)","startDate":"2024-05-24T20:00","location":venue,
+         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID},"superEvent":{"@id":FEST_ID}},
+        {"@type":"MusicEvent","name":"Concert de l'Orchestre à cordes de Paris (Festival de la diversité culturelle 2025)","startDate":"2025-05-25T19:30","location":venue,
          "performer":{"@type":"MusicGroup","name":"Orchestre à cordes de Paris"},
-         "organizer":[{"@type":"Organization","name":"Comité d'animation culturelle Paris 1"},{"@id":AIEC_ID}],"funder":{"@id":AHA_ID}}]}
+         "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID},"superEvent":{"@id":FEST_ID}},
+        {"@type":"Festival","@id":FEST_ID,"name":"Festival de la diversité culturelle",
+         "organizer":{"@type":"Organization","name":"Comité d'animation culturelle Paris 1","url":"https://www.animationculturelle-paris1.com/"},
+         "sponsor":{"@type":"Organization","name":"Commission nationale française pour l'UNESCO"}}]}
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">
