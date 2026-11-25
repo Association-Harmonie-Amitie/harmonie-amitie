@@ -23,18 +23,12 @@ D6={'fr':"A.I.E.C. · partenaire stratégique · organisation des concerts 2024 
 NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
 ONGOING={
- 'fr':[("En préparation","Collecte d'hiver 2026 : des dons en nature proposés par des donateurs en Chine (chaussettes, plaids), acceptés par l'Ordre de Malte France pour ses maraudes."),
-       ("En discussion","Échanges avec un établissement bancaire sur un accompagnement dédié aux adhérents, notamment aux étudiants.")],
- 'zh':[("筹备中","2026 年冬季募集：中国捐赠者拟捐赠袜子和毛毯，马耳他骑士团法国分会已同意接收，用于冬季街头探访救助。"),
-       ("洽谈中","与一家银行机构商谈为会员、特别是学生会员提供专门服务。")],
- 'en':[("In preparation","Winter collection 2026: donations in kind offered by donors in China (socks, blankets), accepted by the Ordre de Malte France for its street outreach."),
-       ("Under discussion","Talks with a banking institution about dedicated support for members, especially students.")],
- 'es':[("En preparación","Colecta de invierno 2026: donaciones en especie ofrecidas por donantes en China (calcetines, mantas), aceptadas por la Orden de Malta Francia para sus rondas solidarias."),
-       ("En conversación","Conversaciones con una entidad bancaria sobre un acompañamiento dedicado a los socios, en particular a los estudiantes.")],
- 'ru':[("В подготовке","Зимний сбор 2026 года: вещи от дарителей из Китая (носки, пледы) приняты Мальтийским орденом Франции для помощи людям на улице."),
-       ("Обсуждается","Переговоры с банковским учреждением о специальном сопровождении для членов ассоциации, прежде всего студентов.")],
- 'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة مالطا في فرنسا لجولاتها الميدانية."),
-       ("قيد النقاش","محادثات مع مؤسسة مصرفية حول مرافقة مخصّصة للأعضاء، ولا سيما الطلاب.")],
+ 'fr':[("En préparation","Collecte d'hiver 2026 : des dons en nature proposés par des donateurs en Chine (chaussettes, plaids), acceptés par l'Ordre de Malte France pour ses maraudes.")],
+ 'zh':[("筹备中","2026 年冬季募集：中国捐赠者拟捐赠袜子和毛毯，马耳他骑士团法国分会已同意接收，用于冬季街头探访救助。")],
+ 'en':[("In preparation","Winter collection 2026: donations in kind offered by donors in China (socks, blankets), accepted by the Ordre de Malte France for its street outreach.")],
+ 'es':[("En preparación","Colecta de invierno 2026: donaciones en especie ofrecidas por donantes en China (calcetines, mantas), aceptadas por la Orden de Malta Francia para sus rondas solidarias.")],
+ 'ru':[("В подготовке","Зимний сбор 2026 года: вещи от дарителей из Китая (носки, пледы) приняты Мальтийским орденом Франции для помощи людям на улице.")],
+ 'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة مالطا في فرنسا لجولاتها الميدانية.")],
 }
 FIGS=['2023','2','40','2','6']
 # alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
