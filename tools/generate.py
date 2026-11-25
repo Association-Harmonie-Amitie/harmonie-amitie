@@ -73,7 +73,9 @@ HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
 FONTS=('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700'
-       '&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700')
+       '&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600')
+# Chinese serif (headings, seal) only on the Chinese page, subset to the characters actually used (SK0: light pages)
+ZH_SERIF='https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap&text='
 FONTS_AR='&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600'
 
 PAGES=['home','actions','gouvernance']
@@ -107,6 +109,7 @@ def page(l, preview=False, pg='home'):
         mark1=BOOK
     up='' if l=='fr' else '../'
     rtl=(l=='ar')
+    SEP={'fr':'\u00a0: ','zh':'：'}.get(l,': ')
     fonts=FONTS+(FONTS_AR if rtl else '')+'&display=swap'
     ltr=lambda s:'<bdi class="ltr">%s</bdi>'%s if rtl else s
     alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x,pg)) for x in LANGS)
@@ -152,7 +155,8 @@ def page(l, preview=False, pg='home'):
 {ldtag}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="{fonts}"></noscript>
+<noscript><link rel="stylesheet" href="{fonts}"></noscript>{'%%ZHFONT%%' if zh else ''}
+<script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{{box-sizing:border-box}}body{{margin:0}}img{{max-width:100%}}html{{scroll-behavior:smooth}}@media (prefers-reduced-motion:reduce){{html{{scroll-behavior:auto}}}}
 {CSS}
@@ -182,7 +186,7 @@ def page(l, preview=False, pg='home'):
     </article>
   </div>'''
     more=f'<a class="more" href="actions.html">{t["more"]} <span aria-hidden="true">{"←" if rtl else "→"}</span></a>'
-    cards_short=f'''<div class="cards">
+    cards_short=f'''<div class="cards short">
     <article class="card">
       <div class="pic">{mark1}</div>
       <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_s']}</p>{more}</div>
@@ -212,19 +216,8 @@ def page(l, preview=False, pg='home'):
     <h2>{t['mis_h']}</h2>
     <p class="sub">{t['mis_sub']}</p>
   </div>
-  <blockquote>
-    <p>{t['mis_q']}</p>
-    <p class="last">{t['mis_last']}</p>
-  </blockquote>
-</div>
-<div class="in"><div class="join" id="adherer">
-  <div class="join-txt">
-    <h3>{html.escape(JOIN[l]['h'])}</h3>
-    <p>{html.escape(JOIN[l]['p'])}</p>
-    <small>{html.escape(JOIN[l]['n'])}</small>
-  </div>
-  <a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
-</div></div></section>
+  <p class="motto">{t['mis_last']}</p>
+</div></section>
 
 <section id="actions"><div class="in">
   <p class="kicker">{t['act_k']}</p>
@@ -246,21 +239,13 @@ def page(l, preview=False, pg='home'):
 
 {friends_sec}
 
-<section class="band" id="engager"><div class="in grid">
+<section class="band" id="engager"><div class="in grid g4">
+  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a></div>
   <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b1_b']}</a></div>
   <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b2_b']}</a></div>
   <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b3_b']}</a></div>
 </div></section>
 
-<section id="contact"><div class="in">
-  <p class="kicker">{t['ct_k']}</p>
-  <h2>{t['ct_h']}</h2>
-  <dl class="contact" style="margin-top:1.5rem">
-    <div><dt>{t['ct_seat']}</dt><dd dir="ltr" lang="fr">27 rue Saint-Jacques<br>75005 Paris, France</dd></div>
-    <div><dt>{t['ct_mail']}</dt><dd dir="ltr"><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></dd></div>
-    <div><dt>{t['ct_cn']}</dt><dd dir="ltr"><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></dd></div>
-  </dl>
-</div></section>
 ''',
  'actions':f'''<section id="actions"><div class="in">
   <p class="kicker">{t['act_k']}</p>
@@ -277,6 +262,7 @@ def page(l, preview=False, pg='home'):
   <p class="kicker">{t['gov_k']}</p>
   <h1 class="h2">{t['gov_h']}</h1>
   <p class="sub">{t['gov_sub']}</p>
+  <blockquote class="values"><p>{t['mis_q']}</p><p class="last">{t['mis_last']}</p></blockquote>
   <div class="people">
     <div class="person"><h3>{t['p1_n']}</h3><p class="role">{t['p1_r']}</p><p>{t['p1_p']}</p></div>
     <div class="person"><h3>{t['p2_n']}</h3><p class="role">{t['p2_r']}</p><p>{t['p2_p']}</p></div>
@@ -309,13 +295,15 @@ def page(l, preview=False, pg='home'):
   <a class="logo" href="{HOME if pg!='home' else '#top'}" id="top">
     {logo}
   </a>
-  <nav class="menu" aria-label="Menu"><ul>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="{a('m_btn')}"></button>
+  <nav class="menu" aria-label="Menu"><ul id="menu-list">
     <li><a href="{H('association')}">{t['m_assoc']}</a></li>
     <li><a href="actions.html"{cur('actions')}>{t['m_actions']}</a></li>
     <li><a href="gouvernance.html"{cur('gouvernance')}>{t['m_gov']}</a></li>
     <li><a href="{H('actualites')}">{t['m_news']}</a></li>
     <li><a href="{H('partenaires')}">{t['m_part']}</a></li>
     <li><a href="{H('contact')}">{t['m_contact']}</a></li>
+    <li class="m-only"><a href="{H('engager')}">{t['u_support']}</a></li>
   </ul></nav>
 </div></header>
 
@@ -328,13 +316,27 @@ def page(l, preview=False, pg='home'):
     <h4>{fth}</h4>
     <p>{t['ft_p']}</p>
   </div>
+  <div id="contact">
+    <h4>{t['ct_k']}</h4>
+    <p>{t['ct_mail']}{SEP}<bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
+    <p>{t['ct_cn']}{SEP}<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+  </div>
   <div>
     <h4>{t['tr_h']}</h4>
     <p>{t['tr_p']}</p>
     <p>{t['pub']} {legal}</p>
   </div>
-</div></footer>'''
+</div></footer>
+<script>(function(){{var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){{var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)}});m.addEventListener('click',function(e){{if(e.target.closest('a')){{m.classList.remove('open');b.setAttribute('aria-expanded','false')}}}})}})();</script>'''
     attrs=f'lang="{HTML_LANG[l]}"'+(' dir="rtl"' if rtl else '')
+    if zh:
+        import re, urllib.parse
+        parts=re.findall(r'<(h[1-4]|b|blockquote)\b[^>]*>(.*?)</\1>',body,re.S)
+        parts+=re.findall(r'class="(?:seal|mark)[^"]*"[^>]*>([^<]*)<',body)
+        txt=''.join(x[1] if isinstance(x,tuple) else x for x in parts)
+        chars=''.join(sorted({c for c in txt if ord(c)>0x2e7f}))
+        zl=ZH_SERIF+urllib.parse.quote(chars)
+        headx=headx.replace('%%ZHFONT%%',f'\n<link rel="stylesheet" href="{zl}" media="print" onload="this.media=\'all\'">')
     if preview and l=='fr':
         # artifact main page: no document skeleton, it is added at publish time
         return headx+'\n'+f'<div {attrs}>\n'+body+'\n</div>\n'

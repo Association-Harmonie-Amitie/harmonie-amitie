@@ -15,13 +15,13 @@ Site statique en six langues. Par langue : une page d'accueil courte, plus deux 
 - [Mentions légales](https://harmonie-amitie.com/mentions-legales.html)
 
 ## Sections (identical anchors in every language)
-- #association : mission and free membership (#adherer)
+- #association : mission statement and motto
 - #actions : three fields, short teasers linking to actions.html
-- gouvernance.html#gouvernance : honorary presidents and executive president
+- gouvernance.html#gouvernance : statement of values, honorary presidents and executive president
 - #actualites : cooperations in progress, then dated past actions
 - #partenaires : written agreements, documented joint actions, supported charities
-- #engager : support, volunteer, news
-- #contact : ahaparis@outlook.com
+- #engager : free membership (#adherer), support, volunteer, news
+- #contact (in the footer of every page) : ahaparis@outlook.com
 
 ## Data
 - Structured data: JSON-LD (schema.org NGO, Festival, MusicEvent with superEvent) in each page head.

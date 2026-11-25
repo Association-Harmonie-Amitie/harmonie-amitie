@@ -23,8 +23,10 @@
 <script data-goatcounter="https://harmonie-amitie.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@600;700&display=swap&text=%E4%B8%80%E4%B8%89%E4%B8%8D%E4%B8%AA%E4%B9%90%E4%BA%BA%E4%BB%BB%E4%BB%BD%E4%BC%9A%E4%BD%95%E4%BF%A1%E5%85%AC%E5%85%B1%E5%85%BB%E5%87%BA%E5%8D%8F%E5%8D%95%E5%90%8C%E5%92%8C%E5%9F%9F%E5%9F%B9%E5%AD%A4%E5%AD%A6%E5%AE%BD%E5%B9%B4%E5%BC%80%E6%81%AF%E6%8B%93%E6%98%AF%E6%9A%96%E7%9A%84%E7%B3%BB%E8%81%94%E8%A8%80%E8%AE%A9%E8%AF%AD%E8%B0%8A%E8%B7%AF%E9%9D%92%E9%9F%B3%E9%A2%86%EF%BC%8C" media="print" onload="this.media='all'">
+<script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* Layout: institutional, after Ordre de Malte France and Fondation Inalco — utility bar, 6-item menu, photo hero, mission band, key figures, three action cards, honorary presidents, dated news, CTA band, legal footer */
@@ -187,6 +189,37 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 .card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
 .menu a[aria-current=page]{color:var(--red)}
+/* 2026-11-25 first batch from the mobile reading study (A, B, C, G, H, I) */
+.mission .motto{margin:0;align-self:center;font:600 clamp(1.25rem,2.4vw,1.6rem)/1.4 var(--f-head);color:var(--red);border-inline-start:3px solid var(--red);padding-inline-start:1.25rem}
+:lang(zh) .mission .motto{font-family:var(--f-seal)}
+.mission blockquote.values{margin:1.5rem 0 2.25rem;max-width:62ch}
+.band .grid.g4{grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.75rem}
+.band .g4 .btn{min-width:0;width:100%;max-width:16rem}
+.band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
+.cards.short .pic{aspect-ratio:16/7}
+footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
+.util .in>a{display:inline-flex;align-items:center;min-height:24px}
+.menu-btn,.m-only{display:none}
+@media (max-width:1150px){.band .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){footer .in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} footer .in>div:first-child{grid-column:1/-1}}
+@media (max-width:700px){
+  .cards.short .pic{display:none}
+  .util .in>a.btn{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;font:700 .9rem var(--f-body);color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:2px;cursor:pointer}
+  .menu-btn::before{content:"";width:1.1rem;height:.8rem;border-block:2px solid currentColor;background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
+  .js nav.menu{display:none;flex-basis:100%}
+  .js nav.menu.open{display:block}
+  .js nav.menu ul{flex-direction:column;gap:0}
+  .js nav.menu a{display:block;padding-block:.65rem;border-bottom:1px solid var(--line)}
+  .m-only{display:list-item}
+  header.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
+  .logo{flex:1 1 0;min-width:0} .logo b{font-size:1rem} .seal{width:2.6rem;height:2.6rem}
+}
+@media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
+.menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+html:not(.js) .menu-btn{display:none!important}
+:lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
 
 </style>
 </head>
@@ -203,13 +236,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <span class="seal" aria-hidden="true">和谊</span>
     <span><b>和谊协会</b><span><bdi lang="fr">Association Harmonie d'Amitié · A.H.A.</bdi> · 巴黎</span></span>
   </a>
-  <nav class="menu" aria-label="Menu"><ul>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="菜单"></button>
+  <nav class="menu" aria-label="Menu"><ul id="menu-list">
     <li><a href="./#association">关于协会</a></li>
     <li><a href="actions.html" aria-current="page">我们的行动</a></li>
     <li><a href="gouvernance.html">治理</a></li>
     <li><a href="./#actualites">动态</a></li>
     <li><a href="./#partenaires">合作与支持</a></li>
     <li><a href="./#contact">联系</a></li>
+    <li class="m-only"><a href="./#engager">支持我们</a></li>
   </ul></nav>
 </div></header>
 
@@ -245,11 +280,17 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <h4>和谊协会 · <bdi lang="fr">Association Harmonie d'Amitié</bdi></h4>
     <p>依据法国 1901 年社团法登记的非营利组织，已于 2023 年 12 月 12 日向巴黎警察总署备案申报（2023 年 12 月 19 日政府公报公告）。RNA W751272194。会址：巴黎五区圣雅克街 27 号。</p>
   </div>
+  <div id="contact">
+    <h4>联系</h4>
+    <p>电子邮箱：<bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
+    <p>中国联络处（武汉）：<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+  </div>
   <div>
     <h4>信息公开</h4>
     <p>章程与登记回执可按需索取。</p>
     <p>本网站不使用 Cookie。仅通过匿名、无 Cookie 的访问统计（GoatCounter）统计页面浏览量。 <a href="../mentions-legales.html">法律声明</a></p>
   </div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>

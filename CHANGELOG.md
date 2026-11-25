@@ -4,6 +4,15 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Accueil plus court et plus léger (étude lecture mobile, 1re vague)
+- A : mission en une phrase + devise ; texte des valeurs déplacé sur gouvernance.html ; « Adhérer gratuitement » rejoint le bandeau #engager (4 colonnes).
+- B : cartes d'actions de l'accueil sans grande image sur téléphone, image plus basse sur ordinateur.
+- C : section Contact fusionnée dans le pied de page de toutes les pages (ancre #contact conservée).
+- G/H : sur téléphone, bouton « Nous soutenir » retiré de la barre du haut (repris dans le menu) ; menu replié derrière un bouton.
+- I : zones cliquables d'au moins 24 px (WCAG 2.2, 2.5.8).
+- J : police chinoise chargée seulement sur la page chinoise, limitée aux caractères des titres (FR 628 → 271 Ko ; ZH 1 605 → 302 Ko).
+- Hauteur de l'accueil FR : téléphone 6 528 → 4 914 px ; ordinateur 3 517 → 2 985 px. D, E, F en attente des conseillers.
+
 ## 2026-11-25 — Chinois : carte du concert du 25 mai 2025
 - zh uniquement (SK12) : texte de la Présidente pour la carte 25.05.2025 ; patronage = Commission nationale française pour l'UNESCO (festival), A.H.A. finance ce concert seulement, A.I.E.C. exécute (SK9).
 

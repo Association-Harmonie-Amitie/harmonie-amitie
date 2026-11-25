@@ -23,8 +23,9 @@
 <script data-goatcounter="https://harmonie-amitie.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600&display=swap"></noscript>
+<script>document.documentElement.classList.add('js')</script>
 <style>
 *,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}html{scroll-behavior:smooth}@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
 /* Layout: institutional, after Ordre de Malte France and Fondation Inalco — utility bar, 6-item menu, photo hero, mission band, key figures, three action cards, honorary presidents, dated news, CTA band, legal footer */
@@ -187,6 +188,37 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 .card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
 .menu a[aria-current=page]{color:var(--red)}
+/* 2026-11-25 first batch from the mobile reading study (A, B, C, G, H, I) */
+.mission .motto{margin:0;align-self:center;font:600 clamp(1.25rem,2.4vw,1.6rem)/1.4 var(--f-head);color:var(--red);border-inline-start:3px solid var(--red);padding-inline-start:1.25rem}
+:lang(zh) .mission .motto{font-family:var(--f-seal)}
+.mission blockquote.values{margin:1.5rem 0 2.25rem;max-width:62ch}
+.band .grid.g4{grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.75rem}
+.band .g4 .btn{min-width:0;width:100%;max-width:16rem}
+.band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
+.cards.short .pic{aspect-ratio:16/7}
+footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
+.util .in>a{display:inline-flex;align-items:center;min-height:24px}
+.menu-btn,.m-only{display:none}
+@media (max-width:1150px){.band .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){footer .in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} footer .in>div:first-child{grid-column:1/-1}}
+@media (max-width:700px){
+  .cards.short .pic{display:none}
+  .util .in>a.btn{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;font:700 .9rem var(--f-body);color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:2px;cursor:pointer}
+  .menu-btn::before{content:"";width:1.1rem;height:.8rem;border-block:2px solid currentColor;background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
+  .js nav.menu{display:none;flex-basis:100%}
+  .js nav.menu.open{display:block}
+  .js nav.menu ul{flex-direction:column;gap:0}
+  .js nav.menu a{display:block;padding-block:.65rem;border-bottom:1px solid var(--line)}
+  .m-only{display:list-item}
+  header.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
+  .logo{flex:1 1 0;min-width:0} .logo b{font-size:1rem} .seal{width:2.6rem;height:2.6rem}
+}
+@media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
+.menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+html:not(.js) .menu-btn{display:none!important}
+:lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
 
 </style>
 </head>
@@ -204,13 +236,15 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <span class="seal latin" aria-hidden="true">AHA</span>
     <span lang="fr" dir="ltr"><b>Association Harmonie d'Amitié</b><span>A.H.A. · Paris</span></span>
   </a>
-  <nav class="menu" aria-label="Menu"><ul>
+  <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu-list" aria-label="القائمة"></button>
+  <nav class="menu" aria-label="Menu"><ul id="menu-list">
     <li><a href="./#association">الجمعية</a></li>
     <li><a href="actions.html" aria-current="page">أعمالنا</a></li>
     <li><a href="gouvernance.html">الحوكمة</a></li>
     <li><a href="./#actualites">الأخبار</a></li>
     <li><a href="./#partenaires">الشركاء</a></li>
     <li><a href="./#contact">اتصلوا بنا</a></li>
+    <li class="m-only"><a href="./#engager">ادعمونا</a></li>
   </ul></nav>
 </div></header>
 
@@ -246,11 +280,17 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <h4><bdi lang="fr">Association Harmonie d'Amitié (A.H.A.)</bdi></h4>
     <p>جمعية غير ربحية وفق القانون الفرنسي لعام 1901، مُصرَّح بها لدى مديرية شرطة باريس في 12 ديسمبر 2023 (الجريدة الرسمية بتاريخ 19 ديسمبر 2023). RNA W751272194. المقر: 27 rue Saint-Jacques, 75005 Paris.</p>
   </div>
+  <div id="contact">
+    <h4>اتصلوا بنا</h4>
+    <p>البريد الإلكتروني: <bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
+    <p>مكتب الصين (ووهان): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+  </div>
   <div>
     <h4>الشفافية</h4>
     <p>النظام الأساسي وإيصال التصريح متاحان عند الطلب.</p>
     <p>لا يستخدم هذا الموقع ملفات تعريف الارتباط. ويقتصر قياس الجمهور المجهول الهوية ومن دون ملفات تعريف الارتباط (⁦GoatCounter⁩) على عدّ الصفحات المشاهدة. <a href="../mentions-legales.html">إشعار قانوني (بالفرنسية)</a></p>
   </div>
 </div></footer>
+<script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>

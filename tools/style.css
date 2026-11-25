@@ -158,3 +158,34 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 
 .card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
 .menu a[aria-current=page]{color:var(--red)}
+/* 2026-11-25 first batch from the mobile reading study (A, B, C, G, H, I) */
+.mission .motto{margin:0;align-self:center;font:600 clamp(1.25rem,2.4vw,1.6rem)/1.4 var(--f-head);color:var(--red);border-inline-start:3px solid var(--red);padding-inline-start:1.25rem}
+:lang(zh) .mission .motto{font-family:var(--f-seal)}
+.mission blockquote.values{margin:1.5rem 0 2.25rem;max-width:62ch}
+.band .grid.g4{grid-template-columns:repeat(4,minmax(0,1fr));gap:2rem 1.75rem}
+.band .g4 .btn{min-width:0;width:100%;max-width:16rem}
+.band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
+.cards.short .pic{aspect-ratio:16/7}
+footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
+.util .in>a{display:inline-flex;align-items:center;min-height:24px}
+.menu-btn,.m-only{display:none}
+@media (max-width:1150px){.band .grid.g4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:900px){footer .in{grid-template-columns:minmax(0,1fr) minmax(0,1fr)} footer .in>div:first-child{grid-column:1/-1}}
+@media (max-width:700px){
+  .cards.short .pic{display:none}
+  .util .in>a.btn{display:none}
+  .menu-btn{display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;padding:0;font:700 .9rem var(--f-body);color:var(--navy);background:var(--paper);border:1px solid var(--line);border-radius:2px;cursor:pointer}
+  .menu-btn::before{content:"";width:1.1rem;height:.8rem;border-block:2px solid currentColor;background:linear-gradient(currentColor,currentColor) center/100% 2px no-repeat}
+  .js nav.menu{display:none;flex-basis:100%}
+  .js nav.menu.open{display:block}
+  .js nav.menu ul{flex-direction:column;gap:0}
+  .js nav.menu a{display:block;padding-block:.65rem;border-bottom:1px solid var(--line)}
+  .m-only{display:list-item}
+  header.main .in{flex-wrap:wrap;gap:.75rem;padding-block:.75rem}
+  .logo{flex:1 1 0;min-width:0} .logo b{font-size:1rem} .seal{width:2.6rem;height:2.6rem}
+}
+@media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
+.menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+html:not(.js) .menu-btn{display:none!important}
+:lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
