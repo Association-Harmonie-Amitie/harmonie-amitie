@@ -195,7 +195,9 @@ footer h2,footer h4{text-wrap:wrap;margin:0 0 .4rem;font:700 .75rem var(--f-body
 .band .g4 .btn{min-width:0;width:100%;max-width:16rem}
 .band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
 .cards.short .pic{aspect-ratio:16/7}
-footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer .in{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+/* option C (2026-11-25): 4th column titled by the legal-notice link, same look as the other titles but underlined */
+footer h2 a{color:inherit;font:inherit;line-height:inherit;min-height:0}
 footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
 .util .in>a{display:inline-flex;align-items:center;min-height:24px}
 .menu-btn,.m-only{display:none}
@@ -382,7 +384,10 @@ Acepto que la asociación utilice estos datos para gestionar mi adhesión.
   <div>
     <h2>Transparencia</h2>
     <p>Estatutos y resguardo de declaración disponibles a petición.</p>
-    <p>Este sitio no instala cookies. Una medición de audiencia anónima y sin cookies (GoatCounter) solo cuenta las páginas vistas. <a href="../mentions-legales.html">Aviso legal (en francés)</a></p>
+  </div>
+  <div>
+    <h2><a href="../mentions-legales.html">Aviso legal (en francés)</a></h2>
+    <p>Este sitio no instala cookies. Una medición de audiencia anónima y sin cookies (GoatCounter) solo cuenta las páginas vistas.</p>
     <p>Para ampliar el texto, use el zoom de su teléfono o de su navegador.</p>
   </div>
 </div></footer>

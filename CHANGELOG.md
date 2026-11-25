@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Pied de page en quatre colonnes (option C) / 页脚改为四栏（方案 C）
+- Quatre colonnes équilibrées : Association | Contact | Transparence | Mentions légales (titre-lien, avec la phrase sur les cookies et l'aide au zoom). Aucun texte modifié.
+- 四栏平衡：协会登记｜联系｜信息公开｜法律声明（标题即链接，下放 Cookie 说明和放大提示）。文字未改动。
+
 ## 2026-11-25 — Optimisations techniques groupées, sans changement de texte / 技术优化合并发布（未改任何文字）
 - Polices hébergées sur le site (plus d'appel à Google Fonts) : lisibles depuis la Chine (WeChat) et aucune adresse IP de visiteur transmise à un tiers (RGPD). Police chinoise des titres : un sous-ensemble par page, mis à jour automatiquement.
 - 字体改为本站自托管，不再请求 Google 字体：中国大陆微信可正常显示，访客 IP 不外传（GDPR）。中文标题字体每页一个子集，自动更新。

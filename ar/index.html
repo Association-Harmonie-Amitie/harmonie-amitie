@@ -196,7 +196,9 @@ footer h2,footer h4{text-wrap:wrap;margin:0 0 .4rem;font:700 .75rem var(--f-body
 .band .g4 .btn{min-width:0;width:100%;max-width:16rem}
 .band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
 .cards.short .pic{aspect-ratio:16/7}
-footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer .in{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+/* option C (2026-11-25): 4th column titled by the legal-notice link, same look as the other titles but underlined */
+footer h2 a{color:inherit;font:inherit;line-height:inherit;min-height:0}
 footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
 .util .in>a{display:inline-flex;align-items:center;min-height:24px}
 .menu-btn,.m-only{display:none}
@@ -383,7 +385,10 @@ picture{display:contents}
   <div>
     <h2>الشفافية</h2>
     <p>النظام الأساسي وإيصال التصريح متاحان عند الطلب.</p>
-    <p>لا يستخدم هذا الموقع ملفات تعريف الارتباط. ويقتصر قياس الجمهور المجهول الهوية ومن دون ملفات تعريف الارتباط (⁦GoatCounter⁩) على عدّ الصفحات المشاهدة. <a href="../mentions-legales.html">إشعار قانوني (بالفرنسية)</a></p>
+  </div>
+  <div>
+    <h2><a href="../mentions-legales.html">إشعار قانوني (بالفرنسية)</a></h2>
+    <p>لا يستخدم هذا الموقع ملفات تعريف الارتباط. ويقتصر قياس الجمهور المجهول الهوية ومن دون ملفات تعريف الارتباط (⁦GoatCounter⁩) على عدّ الصفحات المشاهدة.</p>
     <p>لتكبير النص، استخدموا خاصية التكبير في الهاتف أو المتصفح.</p>
   </div>
 </div></footer>

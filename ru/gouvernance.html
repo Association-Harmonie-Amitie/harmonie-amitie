@@ -194,7 +194,9 @@ footer h2,footer h4{text-wrap:wrap;margin:0 0 .4rem;font:700 .75rem var(--f-body
 .band .g4 .btn{min-width:0;width:100%;max-width:16rem}
 .band small{display:block;margin-top:.45rem;font-size:.78rem;color:#b9c3d6}
 .cards.short .pic{aspect-ratio:16/7}
-footer .in{grid-template-columns:minmax(0,1.6fr) minmax(0,1fr) minmax(0,1fr)}
+footer .in{grid-template-columns:minmax(0,1.5fr) repeat(3,minmax(0,1fr))}
+/* option C (2026-11-25): 4th column titled by the legal-notice link, same look as the other titles but underlined */
+footer h2 a{color:inherit;font:inherit;line-height:inherit;min-height:0}
 footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:anywhere}
 .util .in>a{display:inline-flex;align-items:center;min-height:24px}
 .menu-btn,.m-only{display:none}
@@ -314,7 +316,10 @@ picture{display:contents}
   <div>
     <h2>Прозрачность</h2>
     <p>Устав и свидетельство о регистрации — по запросу.</p>
-    <p>Этот сайт не использует файлы cookie. Анонимная статистика без cookie (GoatCounter) учитывает только просмотры страниц. <a href="../mentions-legales.html">Правовая информация (на французском)</a></p>
+  </div>
+  <div>
+    <h2><a href="../mentions-legales.html">Правовая информация (на французском)</a></h2>
+    <p>Этот сайт не использует файлы cookie. Анонимная статистика без cookie (GoatCounter) учитывает только просмотры страниц.</p>
     <p>Чтобы увеличить текст, используйте масштабирование на телефоне или в браузере.</p>
   </div>
 </div></footer>

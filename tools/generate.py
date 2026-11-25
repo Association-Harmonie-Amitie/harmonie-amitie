@@ -359,7 +359,10 @@ def page(l, preview=False, pg='home'):
   <div>
     <h2>{t['tr_h']}</h2>
     <p>{t['tr_p']}</p>
-    <p>{t['pub']} {legal}</p>
+  </div>
+  <div>
+    <h2>{legal}</h2>
+    <p>{t['pub']}</p>
     <p>{html.escape(ZOOM[l])}</p>
   </div>
 </div></footer>
