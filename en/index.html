@@ -44,7 +44,7 @@
 body{background:var(--paper);color:var(--ink);font:400 1.02rem/1.65 var(--f-body)}
 .in{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:var(--navy)} a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
+h2,h1.h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
 .kicker{font:700 .74rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 .4rem}
 section{padding-block:3.5rem}
 .sub{color:var(--muted);max-width:60ch;margin:0 0 2rem}
@@ -108,7 +108,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .card p{margin:0;color:var(--muted)}
 
 /* presidents */
-.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .person{border-top:3px solid var(--navy);padding-top:1rem}
 .person h3{font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
 .person .role{font-weight:600;color:var(--red);margin:0 0 .5rem}
@@ -185,6 +185,9 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 @media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
 .mission .grid{align-items:center}
 
+.card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
+.menu a[aria-current=page]{color:var(--red)}
+
 </style>
 </head>
 <body>
@@ -203,8 +206,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">About</a></li>
-    <li><a href="#actions">Our work</a></li>
-    <li><a href="#gouvernance">Governance</a></li>
+    <li><a href="actions.html">Our work</a></li>
+    <li><a href="gouvernance.html">Governance</a></li>
     <li><a href="#actualites">News</a></li>
     <li><a href="#partenaires">Partners</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -218,7 +221,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <h1>Building connection and trust across generations</h1>
     <p>Supporting young people, caring for our elders and bringing together the energy of solidarity, so that everyone can move at their own pace towards a more harmonious life.</p>
     <div class="ctas">
-      <a class="btn btn-red" href="#actions">Discover our work</a>
+      <a class="btn btn-red" href="actions.html">Discover our work</a>
       <a class="btn btn-line" href="#association">Our mission</a>
     </div>
   </div>
@@ -245,39 +248,22 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Free%20membership&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20join%20the%20Association%20Harmonie%20d%27Amiti%C3%A9%20%28free%20membership%29.%0A%0AFull%20name%3A%0ACountry%20/%20city%3A%0APhone%20%28optional%29%3A%0AInterests%20%28youth%20and%20education%20/%20culture%20and%20music%20/%20solidarity%29%3A%0AVolunteering%20%28yes%20/%20no%29%3A%0A%0AI%20agree%20that%20the%20association%20may%20use%20this%20data%20to%20manage%20my%20membership.%0A">Sign up</a>
 </div></div></section>
 
-<section aria-labelledby="h-figs"><div class="in">
-  <p class="kicker" id="h-figs">Key figures</p>
-  <div class="figs"><div class="fig"><b>2023</b><span>Founded in Paris, thanks to the friendship and support of our two Honorary Presidents</span></div><div class="fig"><b>2</b><span>concerts supported at the Festival of Cultural Diversity (2024, 2025)</span></div><div class="fig"><b>40</b><span>winter coats donated to people in need (Nov. 2024)</span></div><div class="fig"><b>2</b><span>first learners supported in France (2024–2025)</span></div><div class="fig"><b>6</b><span>partners and supported charities</span></div></div>
-  <p class="asof">Figures as of 25 November 2026.</p>
-</div></section>
-
-<section id="actions" style="padding-top:0"><div class="in">
+<section id="actions"><div class="in">
   <p class="kicker">Our work</p>
   <h2>Three fields, one commitment to trust</h2>
-  <p class="sub">As a public-interest bridge, A.H.A. connects people and institutions as an independent third party and does not handle funds. Its projects are carried out with its long-term strategic partner A.I.E.C., a place for hands-on projects by young people.</p>
   <div class="cards">
     <article class="card">
       <div class="pic"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></div>
-      <div class="body"><span class="tag">Youth · Education</span><h3>Training and opening pathways</h3><p>French-Chinese vocational training with IFAC du Pays de Montbéliard (mandate 2026–2028); further studies and reciprocal student exchanges under discussion with higher-education institutions.</p></div>
+      <div class="body"><span class="tag">Youth · Education</span><h3>Training and opening pathways</h3><p>French–Chinese vocational training with IFAC du Pays de Montbéliard (2026–2028).</p><a class="more" href="actions.html">Learn more <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="The audience at a concert in the church of Saint-Louis-en-l&#x27;Île, Paris" loading="lazy"></div>
-      <div class="body"><span class="tag">Harmony · Culture</span><h3>Music, a shared language</h3><p>The Festival of Cultural Diversity is organised by the Comité d'animation culturelle Paris 1, under the patronage of the French National Commission for UNESCO. As part of this festival, two concerts took place at the church of Saint-Louis-en-l'Île, on 24 May 2024 and, at the Comité's invitation, on 25 May 2025: they were organised by A.I.E.C., with support from A.H.A.</p></div>
+      <div class="body"><span class="tag">Harmony · Culture</span><h3>Music, a shared language</h3><p>Two concerts at the church of Saint-Louis-en-l'Île, as part of the Festival of Cultural Diversity (2024, 2025).</p><a class="more" href="actions.html">Learn more <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic red"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></div>
-      <div class="body"><span class="tag">Elders · Solidarity</span><h3>Leaving no one alone</h3><p>Alongside two charities dear to our Honorary Presidents: the Association Internationale La Voix de la Compassion, which initiated winter donations to a Paris parish, and the Ordre de Malte France, for homeless people. We also support collections for care homes and parishes.</p></div>
+      <div class="body"><span class="tag">Elders · Solidarity</span><h3>Leaving no one alone</h3><p>Winter donations alongside charities dear to our Honorary Presidents.</p><a class="more" href="actions.html">Learn more <span aria-hidden="true">→</span></a></div>
     </article>
-  </div>
-</div></section>
-
-<section class="mission" id="gouvernance"><div class="in">
-  <p class="kicker">Governance</p>
-  <h2>Honorary Presidents</h2>
-  <p class="sub">Founded in late 2023 thanks to the friendship and caring support of its two Honorary Presidents, A.H.A. carries forward the commitment of the Association Internationale La Voix de la Compassion, of which its President is a member, and continues to support it. Every project is submitted to the two Honorary Presidents for their opinion before it begins.</p>
-  <div class="people">
-    <div class="person"><h3>Mr Charles-Henri d'ARAGON</h3><p class="role">Honorary Minister Plenipotentiary</p><p>Former Ambassador of France to Kuwait, Syria, Saudi Arabia and Luxembourg, then Ambassador of the Sovereign Order of Malta to Lebanon. Officer of the Legion of Honour.</p></div>
-    <div class="person"><h3>Ms CHOW Ching Ling</h3><p class="role">Pianist, UNESCO Mozart Medal (2007)</p><p>Former professor at the Central Conservatory of Music in Beijing, Officer of Arts and Letters, founder of the Association Internationale La Voix de la Compassion.</p></div>
   </div>
 </div></section>
 
@@ -308,6 +294,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <div><dt>Office in China (Wuhan)</dt><dd dir="ltr"><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></dd></div>
   </dl>
 </div></section>
+
 </main>
 
 <footer><div class="in">

@@ -60,5 +60,125 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/"/>
   </url>
+  <url>
+    <loc>https://harmonie-amitie.com/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/zh/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/en/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/es/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/ru/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/ar/actions.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/actions.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/actions.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/zh/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/en/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/es/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/ru/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
+  <url>
+    <loc>https://harmonie-amitie.com/ar/gouvernance.html</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://harmonie-amitie.com/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://harmonie-amitie.com/zh/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://harmonie-amitie.com/en/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://harmonie-amitie.com/es/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://harmonie-amitie.com/ru/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://harmonie-amitie.com/ar/gouvernance.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://harmonie-amitie.com/gouvernance.html"/>
+  </url>
   <url><loc>https://harmonie-amitie.com/mentions-legales.html</loc></url>
 </urlset>

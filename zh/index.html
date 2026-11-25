@@ -44,7 +44,7 @@
 body{background:var(--paper);color:var(--ink);font:400 1.02rem/1.65 var(--f-body)}
 .in{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:var(--navy)} a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
+h2,h1.h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
 .kicker{font:700 .74rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 .4rem}
 section{padding-block:3.5rem}
 .sub{color:var(--muted);max-width:60ch;margin:0 0 2rem}
@@ -108,7 +108,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .card p{margin:0;color:var(--muted)}
 
 /* presidents */
-.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .person{border-top:3px solid var(--navy);padding-top:1rem}
 .person h3{font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
 .person .role{font-weight:600;color:var(--red);margin:0 0 .5rem}
@@ -185,6 +185,9 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 @media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
 .mission .grid{align-items:center}
 
+.card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
+.menu a[aria-current=page]{color:var(--red)}
+
 </style>
 </head>
 <body>
@@ -202,8 +205,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">关于协会</a></li>
-    <li><a href="#actions">我们的行动</a></li>
-    <li><a href="#gouvernance">治理</a></li>
+    <li><a href="actions.html">我们的行动</a></li>
+    <li><a href="gouvernance.html">治理</a></li>
     <li><a href="#actualites">动态</a></li>
     <li><a href="#partenaires">合作与支持</a></li>
     <li><a href="#contact">联系</a></li>
@@ -217,7 +220,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <h1>跨越代际，创造链接与信任</h1>
     <p>助力青年，关爱长者，凝聚公益之力，让每个人都能以自己的节奏，走向和谐美好。</p>
     <div class="ctas">
-      <a class="btn btn-red" href="#actions">了解我们的行动</a>
+      <a class="btn btn-red" href="actions.html">了解我们的行动</a>
       <a class="btn btn-line" href="#association">协会宗旨</a>
     </div>
   </div>
@@ -244,39 +247,22 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%E5%85%8D%E8%B4%B9%E5%85%A5%E4%BC%9A%E7%94%B3%E8%AF%B7&amp;body=%E6%82%A8%E5%A5%BD%EF%BC%9A%0A%0A%E6%88%91%E5%B8%8C%E6%9C%9B%E5%85%8D%E8%B4%B9%E5%8A%A0%E5%85%A5%E5%92%8C%E8%B0%8A%E5%8D%8F%E4%BC%9A%E3%80%82%0A%0A%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E5%9B%BD%E5%AE%B6%20/%20%E5%9F%8E%E5%B8%82%EF%BC%9A%0A%E7%94%B5%E8%AF%9D%EF%BC%88%E9%80%89%E5%A1%AB%EF%BC%89%EF%BC%9A%0A%E5%85%B3%E6%B3%A8%E9%A2%86%E5%9F%9F%EF%BC%88%E9%9D%92%E5%B9%B4%E4%B8%8E%E6%95%99%E8%82%B2%20/%20%E6%96%87%E5%8C%96%E4%B8%8E%E9%9F%B3%E4%B9%90%20/%20%E5%85%AC%E7%9B%8A%EF%BC%89%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E6%84%BF%E6%84%8F%E5%81%9A%E5%BF%97%E6%84%BF%E8%80%85%EF%BC%88%E6%98%AF%20/%20%E5%90%A6%EF%BC%89%EF%BC%9A%0A%0A%E6%88%91%E5%90%8C%E6%84%8F%E5%8D%8F%E4%BC%9A%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8A%E4%BF%A1%E6%81%AF%E5%8A%9E%E7%90%86%E4%BC%9A%E5%91%98%E4%BA%8B%E5%8A%A1%E3%80%82%0A">立即登记</a>
 </div></div></section>
 
-<section aria-labelledby="h-figs"><div class="in">
-  <p class="kicker" id="h-figs">数字</p>
-  <div class="figs"><div class="fig"><b>2023</b><span>在两位荣誉主席的友谊与师长般的支持下，于巴黎成立</span></div><div class="fig"><b>2</b><span>场在多元文化节框架内支持的音乐会（2024、2025）</span></div><div class="fig"><b>40</b><span>件冬衣捐给困难人群（2024 年 11 月）</span></div><div class="fig"><b>2</b><span>名首批学员在法国接受培训（2024–2025）</span></div><div class="fig"><b>6</b><span>家合作伙伴与支持的公益机构</span></div></div>
-  <p class="asof">数据截至 2026 年 11 月 25 日。</p>
-</div></section>
-
-<section id="actions" style="padding-top:0"><div class="in">
+<section id="actions"><div class="in">
   <p class="kicker">我们的行动</p>
   <h2>三个领域，同一份信任</h2>
-  <p class="sub">和谊协会是公益桥梁，以独立第三方身份连接个人与机构，不经手财务。项目由长期战略合作伙伴 A.I.E.C. 执行，A.I.E.C. 是年轻人的实践平台。</p>
   <div class="cards">
     <article class="card">
       <div class="pic"><span class="mark" aria-hidden="true">学</span></div>
-      <div class="body"><span class="tag">助力青年 · 教育</span><h3>培养青年，打开道路</h3><p>与蒙贝利亚尔 IFAC 培训学院（2026–2028 年委托）开展中法职业教育合作；正与高等院校商谈学生升学与双向交流。</p></div>
+      <div class="body"><span class="tag">助力青年 · 教育</span><h3>培养青年，打开道路</h3><p>与蒙贝利亚尔地区 IFAC 合作开展中法职业培训（2026–2028）。</p><a class="more" href="actions.html">了解更多 <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="巴黎圣路易岛教堂音乐会现场的观众" loading="lazy"></div>
-      <div class="body"><span class="tag">和谐 · 文化</span><h3>音乐是共同的语言</h3><p>多元文化节由巴黎一区文化活动委员会主办，由法国联合国教科文组织全国委员会赞助。在文化节框架内，2024 年 5 月 24 日以及应委员会邀请于 2025 年 5 月 25 日，在圣路易岛教堂举办了两场音乐会，均由 A.I.E.C. 执行，和谊协会支持。</p></div>
+      <div class="body"><span class="tag">和谐 · 文化</span><h3>音乐是共同的语言</h3><p>在多元文化节框架内，于圣路易岛教堂举办两场音乐会（2024、2025）。</p><a class="more" href="actions.html">了解更多 <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic red"><span class="mark" aria-hidden="true">暖</span></div>
-      <div class="body"><span class="tag">关爱长者 · 公益</span><h3>不让任何人孤单</h3><p>与两位荣誉主席所关心的两家公益机构同行：法国国际妙音同善会发起冬衣捐赠，送往巴黎的一座教堂；马耳他骑士团法国分会关怀无家可归者。我们也支持为养老院和教堂开展的募集活动。</p></div>
+      <div class="body"><span class="tag">关爱长者 · 公益</span><h3>不让任何人孤单</h3><p>与荣誉主席所关心的公益机构一起开展冬季捐赠。</p><a class="more" href="actions.html">了解更多 <span aria-hidden="true">→</span></a></div>
     </article>
-  </div>
-</div></section>
-
-<section class="mission" id="gouvernance"><div class="in">
-  <p class="kicker">治理</p>
-  <h2>荣誉主席</h2>
-  <p class="sub">在两位荣誉主席的友谊与师长般的支持下，和谊协会于 2023 年底成立，延续法国国际妙音同善会的公益事业；协会主席是该会会员，和谊协会也持续支持该会。协会的每个项目在实施前都先征询两位荣誉主席的意见。</p>
-  <div class="people">
-    <div class="person"><h3>Charles-Henri d'ARAGON 先生</h3><p class="role">荣誉全权公使</p><p>曾任法国驻科威特、叙利亚、沙特阿拉伯和卢森堡大使，后任马耳他骑士团驻黎巴嫩大使。法国荣誉军团军官勋章获得者。</p></div>
-    <div class="person"><h3>周勤龄先生</h3><p class="role">钢琴家，2007 年联合国教科文组织莫扎特勋章</p><p>曾任北京中央音乐学院教授，法国艺术与文学军官勋章获得者，法国国际妙音同善会创办人。</p></div>
   </div>
 </div></section>
 
@@ -307,6 +293,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <div><dt>中国联络处（武汉）</dt><dd dir="ltr"><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></dd></div>
   </dl>
 </div></section>
+
 </main>
 
 <footer><div class="in">

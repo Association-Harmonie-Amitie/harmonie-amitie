@@ -64,6 +64,8 @@ JOIN={
 from urllib.parse import quote
 def join_href(l):
     j=JOIN[l]; return 'mailto:%s?subject=%s&body=%s'%(JOIN_TO,quote(j['subj']),quote(j['body']))
+# friends and partner companies: (name, {lang: line}); shown only with written consent
+FRIENDS=[]
 HEART='<svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>'
 
 CSS=open(os.path.join(HERE,'style.css'),encoding='utf-8').read()
@@ -71,15 +73,18 @@ FONTS=('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700'
        '&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Noto+Serif+SC:wght@600;700')
 FONTS_AR='&family=Noto+Naskh+Arabic:wght@500;600&family=Noto+Sans+Arabic:wght@400;600'
 
-def url(l): return BASE if l=='fr' else BASE+l+'/'
+PAGES=['home','actions','gouvernance']
+def fname(pg): return '' if pg=='home' else pg+'.html'
+def url(l,pg='home'): return (BASE if l=='fr' else BASE+l+'/')+fname(pg)
 CLEAN=True  # site: clean folder URLs (/, /zh/); preview: explicit index.html
-def rel(frm,to):
-    """relative link from page of lang frm to page of lang to"""
+def rel(frm,to,pg='home'):
+    """relative link from page pg of lang frm to the same page pg of lang to"""
     up='' if frm=='fr' else '../'
-    if CLEAN: return (up or './') if to=='fr' else up+to+'/'
-    return up+('index.html' if to=='fr' else to+'/index.html')
+    f=fname(pg) or ('' if CLEAN else 'index.html')
+    if to=='fr': return up+f if (up+f) else './'
+    return up+to+'/'+f
 
-def page(l, preview=False):
+def page(l, preview=False, pg='home'):
     t={k:html.escape(v,quote=False) for k,v in T[l].items()}
     if l!='zh': t['title']=html.escape("Association Harmonie d'Amitié (A.H.A.)",quote=False)
     a=lambda k: html.escape(t[k] if k=='title' else T[l][k],quote=True)
@@ -101,8 +106,10 @@ def page(l, preview=False):
     rtl=(l=='ar')
     fonts=FONTS+(FONTS_AR if rtl else '')+'&display=swap'
     ltr=lambda s:'<bdi class="ltr">%s</bdi>'%s if rtl else s
-    alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x)) for x in LANGS)
-    alts+='<link rel="alternate" hreflang="x-default" href="%s">\n'%BASE
+    alts=''.join('<link rel="alternate" hreflang="%s" href="%s">\n'%(HTML_LANG[x] if x!='zh' else 'zh-Hans',url(x,pg)) for x in LANGS)
+    alts+='<link rel="alternate" hreflang="x-default" href="%s">\n'%url('fr',pg)
+    HOME='./' if CLEAN else 'index.html'
+    H=lambda a: '#'+a if pg=='home' else HOME+'#'+a
     # structured data for search engines and AI agents (SK0): association, strategic partner, concerts
     AHA_ID=BASE+'#aha'; AIEC_ID=BASE+'#aiec'; FEST_ID=BASE+'#festival-diversite'
     venue={"@type":"Place","name":"Église Saint-Louis-en-l'Île","address":{"@type":"PostalAddress","streetAddress":"19 rue Saint-Louis-en-l'Île","postalCode":"75004","addressLocality":"Paris","addressCountry":"FR"}}
@@ -124,18 +131,20 @@ def page(l, preview=False):
         {"@type":"Festival","@id":FEST_ID,"name":"Festival de la diversité culturelle","startDate":"2025-05-17","endDate":"2025-05-27","description":"15e édition (2025)",
          "organizer":{"@type":"Organization","name":"Comité d'animation culturelle Paris 1","url":"https://www.animationculturelle-paris1.com/"},
          "sponsor":{"@type":"Organization","name":"Commission nationale française pour l'UNESCO"}}]}
+    if pg!='home':
+        t['title']=html.escape({'actions':T[l]['m_actions'],'gouvernance':T[l]['m_gov']}[pg],quote=False)+' · '+t['title']
+    ldtag=f'<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>\n' if pg=='home' else ''
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
 <meta property="og:type" content="website">
 <meta property="og:title" content="{a('title')}">
 <meta property="og:description" content="{a('desc')}">
 <meta property="og:image" content="{BASE}img/concert-2025.jpg">
-<meta property="og:url" content="{url(l)}">
+<meta property="og:url" content="{url(l,pg)}">
 <meta property="og:locale" content="{ {'fr':'fr_FR','zh':'zh_CN','en':'en_GB','es':'es_ES','ru':'ru_RU','ar':'ar_AR'}[l] }">
-<link rel="canonical" href="{url(l)}">
+<link rel="canonical" href="{url(l,pg)}">
 {alts}<link rel="icon" href="{up}favicon.svg" type="image/svg+xml">
-<script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+{ldtag}<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="{fonts}" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="{fonts}"></noscript>
@@ -144,50 +153,50 @@ def page(l, preview=False):
 {CSS}
 </style>'''
     sw=''.join('<a href="%s" hreflang="%s" lang="%s" title="%s"%s>%s</a>'%(
-        rel(l,x),HTML_LANG[x],HTML_LANG[x],html.escape(NAMES[x]),' aria-current="page"' if x==l else '',SHORT[x]) for x in LANGS)
-    mt=f'<div class="mtnote" role="note"><div class="in">{t["mtnote"]} <a href="{rel(l,"fr")}" hreflang="fr" lang="fr">Version française</a></div></div>\n' if l in MACHINE and t['mtnote'] else ''
+        rel(l,x,pg),HTML_LANG[x],HTML_LANG[x],html.escape(NAMES[x]),' aria-current="page"' if x==l else '',SHORT[x]) for x in LANGS)
+    mt=f'<div class="mtnote" role="note"><div class="in">{t["mtnote"]} <a href="{rel(l,"fr",pg)}" hreflang="fr" lang="fr">Version française</a></div></div>\n' if l in MACHINE and t['mtnote'] else ''
     figs=''.join(f'<div class="fig"><b>{FIGS[i]}</b><span>{t["f%d"%(i+1)]}</span></div>' for i in range(5))
     news=''.join(f'<article class="item ongoing"><span class="status">{html.escape(st)}</span><p>{html.escape(tx)}</p></article>' for st,tx in ONGOING[l])
     news+=''.join(f'<article class="item"><time datetime="{d}">{ltr(s)}</time><p>{t[k]}</p></article>' for d,s,k in NEWS)
     t['d6']=html.escape(D6[l],quote=False)
     parts=''.join(f'<li><bdi lang="fr">{html.escape(PARTNERS[i])}</bdi><small>{t["d%d"%(i+1)]}</small></li>' for i in range(6))
     legal=f'<a href="{up}mentions-legales.html">{t["legal"]}</a>'
-    body=f'''{mt}<div class="util"><div class="in">
-  <a href="#contact">{t['u_news']}</a>
-  <a href="#adherer">{t['u_join']}</a>
-  <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
-  <a class="btn btn-red" href="#engager">{t['u_support']}</a>
-</div></div>
-
-<header class="main"><div class="in">
-  <a class="logo" href="#top" id="top">
-    {logo}
-  </a>
-  <nav class="menu" aria-label="Menu"><ul>
-    <li><a href="#association">{t['m_assoc']}</a></li>
-    <li><a href="#actions">{t['m_actions']}</a></li>
-    <li><a href="#gouvernance">{t['m_gov']}</a></li>
-    <li><a href="#actualites">{t['m_news']}</a></li>
-    <li><a href="#partenaires">{t['m_part']}</a></li>
-    <li><a href="#contact">{t['m_contact']}</a></li>
-  </ul></nav>
-</div></header>
-
-<main>
-<div class="hero">
-  <img src="{up}img/concert-2025.jpg" alt="{a('hero_alt')}">
-  <div class="in">
-    <h1>{t['h1']}</h1>
-    <p>{t['hero_p']}</p>
-    <div class="ctas">
-      <a class="btn btn-red" href="#actions">{t['cta1']}</a>
-      <a class="btn btn-line" href="#association">{t['cta2']}</a>
-    </div>
-  </div>
-  <span class="credit">{t['credit']}</span>
-</div>
-
-<section class="mission" id="association"><div class="in grid">
+    cur=lambda x: ' aria-current="page"' if pg==x else ''
+    cards_full=f'''<div class="cards">
+    <article class="card">
+      <div class="pic">{mark1}</div>
+      <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_p']}</p></div>
+    </article>
+    <article class="card">
+      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
+      <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_p']}</p></div>
+    </article>
+    <article class="card">
+      <div class="pic red">{mark3}</div>
+      <div class="body"><span class="tag">{t['c3_tag']}</span><h3>{t['c3_h']}</h3><p>{t['c3_p']}</p></div>
+    </article>
+  </div>'''
+    more=f'<a class="more" href="actions.html">{t["more"]} <span aria-hidden="true">{"←" if rtl else "→"}</span></a>'
+    cards_short=f'''<div class="cards">
+    <article class="card">
+      <div class="pic">{mark1}</div>
+      <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_s']}</p>{more}</div>
+    </article>
+    <article class="card">
+      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
+      <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_s']}</p>{more}</div>
+    </article>
+    <article class="card">
+      <div class="pic red">{mark3}</div>
+      <div class="body"><span class="tag">{t['c3_tag']}</span><h3>{t['c3_h']}</h3><p>{t['c3_s']}</p>{more}</div>
+    </article>
+  </div>'''
+    friends=''.join(f'<li><bdi lang="fr">{html.escape(n)}</bdi><small>{html.escape(d.get(l,d["fr"]))}</small></li>' for n,d in FRIENDS)
+    friends_sec=(f'''<section id="amis"><div class="in">
+  <h2>{t['fr_h']}</h2>
+  <ul class="partners" style="margin-top:1.5rem">{friends}</ul>
+</div></section>''' if FRIENDS else '')
+    MAINS={'home':f'''<section class="mission" id="association"><div class="in grid">
   <div>
     <p class="kicker">{t['mis_k']}</p>
     <h2>{t['mis_h']}</h2>
@@ -207,40 +216,10 @@ def page(l, preview=False):
   <a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
 </div></div></section>
 
-<section aria-labelledby="h-figs"><div class="in">
-  <p class="kicker" id="h-figs">{t['fig_k']}</p>
-  <div class="figs">{figs}</div>
-  <p class="asof">{t['asof']}</p>
-</div></section>
-
-<section id="actions" style="padding-top:0"><div class="in">
+<section id="actions"><div class="in">
   <p class="kicker">{t['act_k']}</p>
   <h2>{t['act_h']}</h2>
-  <p class="sub">{t['act_sub']}</p>
-  <div class="cards">
-    <article class="card">
-      <div class="pic">{mark1}</div>
-      <div class="body"><span class="tag">{t['c1_tag']}</span><h3>{t['c1_h']}</h3><p>{t['c1_p']}</p></div>
-    </article>
-    <article class="card">
-      <div class="pic"><img src="{up}img/concert-saint-louis.jpg" alt="{html.escape(C2_ALT[l],quote=True)}" loading="lazy"></div>
-      <div class="body"><span class="tag">{t['c2_tag']}</span><h3>{t['c2_h']}</h3><p>{t['c2_p']}</p></div>
-    </article>
-    <article class="card">
-      <div class="pic red">{mark3}</div>
-      <div class="body"><span class="tag">{t['c3_tag']}</span><h3>{t['c3_h']}</h3><p>{t['c3_p']}</p></div>
-    </article>
-  </div>
-</div></section>
-
-<section class="mission" id="gouvernance"><div class="in">
-  <p class="kicker">{t['gov_k']}</p>
-  <h2>{t['gov_h']}</h2>
-  <p class="sub">{t['gov_sub']}</p>
-  <div class="people">
-    <div class="person"><h3>{t['p1_n']}</h3><p class="role">{t['p1_r']}</p><p>{t['p1_p']}</p></div>
-    <div class="person"><h3>{t['p2_n']}</h3><p class="role">{t['p2_r']}</p><p>{t['p2_p']}</p></div>
-  </div>
+  {cards_short}
 </div></section>
 
 <section id="actualites"><div class="in">
@@ -256,9 +235,9 @@ def page(l, preview=False):
 </div></section>
 
 <section class="band" id="engager"><div class="in grid">
-  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="#contact">{t['b1_b']}</a></div>
-  <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="#contact">{t['b2_b']}</a></div>
-  <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="#contact">{t['b3_b']}</a></div>
+  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b1_b']}</a></div>
+  <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b2_b']}</a></div>
+  <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b3_b']}</a></div>
 </div></section>
 
 <section id="contact"><div class="in">
@@ -270,6 +249,67 @@ def page(l, preview=False):
     <div><dt>{t['ct_cn']}</dt><dd dir="ltr"><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></dd></div>
   </dl>
 </div></section>
+''',
+ 'actions':f'''<section id="actions"><div class="in">
+  <p class="kicker">{t['act_k']}</p>
+  <h1 class="h2">{t['act_h']}</h1>
+  <p class="sub">{t['act_sub']}</p>
+  {cards_full}
+</div></section>
+<section aria-labelledby="h-figs"><div class="in">
+  <p class="kicker" id="h-figs">{t['fig_k']}</p>
+  <div class="figs">{figs}</div>
+  <p class="asof">{t['asof']}</p>
+</div></section>''',
+ 'gouvernance':f'''<section class="mission" id="gouvernance"><div class="in">
+  <p class="kicker">{t['gov_k']}</p>
+  <h1 class="h2">{t['gov_h']}</h1>
+  <p class="sub">{t['gov_sub']}</p>
+  <div class="people">
+    <div class="person"><h3>{t['p1_n']}</h3><p class="role">{t['p1_r']}</p><p>{t['p1_p']}</p></div>
+    <div class="person"><h3>{t['p2_n']}</h3><p class="role">{t['p2_r']}</p><p>{t['p2_p']}</p></div>
+    <div class="person"><h3>{t['p3_n']}</h3><p class="role">{t['p3_r']}</p><p>{t['p3_p']}</p></div>
+  </div>
+</div></section>
+{friends_sec}''' }
+    MAIN=MAINS[pg]
+    HERO=f'''<div class="hero">
+  <img src="{up}img/concert-2025.jpg" alt="{a('hero_alt')}">
+  <div class="in">
+    <h1>{t['h1']}</h1>
+    <p>{t['hero_p']}</p>
+    <div class="ctas">
+      <a class="btn btn-red" href="actions.html">{t['cta1']}</a>
+      <a class="btn btn-line" href="#association">{t['cta2']}</a>
+    </div>
+  </div>
+  <span class="credit">{t['credit']}</span>
+</div>
+
+''' if pg=='home' else ''
+    body=f'''{mt}<div class="util"><div class="in">
+  <a href="{H('contact')}">{t['u_news']}</a>
+  <a href="{H('adherer')}">{t['u_join']}</a>
+  <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
+  <a class="btn btn-red" href="{H('engager')}">{t['u_support']}</a>
+</div></div>
+
+<header class="main"><div class="in">
+  <a class="logo" href="{HOME if pg!='home' else '#top'}" id="top">
+    {logo}
+  </a>
+  <nav class="menu" aria-label="Menu"><ul>
+    <li><a href="{H('association')}">{t['m_assoc']}</a></li>
+    <li><a href="actions.html"{cur('actions')}>{t['m_actions']}</a></li>
+    <li><a href="gouvernance.html"{cur('gouvernance')}>{t['m_gov']}</a></li>
+    <li><a href="{H('actualites')}">{t['m_news']}</a></li>
+    <li><a href="{H('partenaires')}">{t['m_part']}</a></li>
+    <li><a href="{H('contact')}">{t['m_contact']}</a></li>
+  </ul></nav>
+</div></header>
+
+<main>
+{HERO}{MAIN}
 </main>
 
 <footer><div class="in">
@@ -297,14 +337,17 @@ def main():
     if not os.path.exists(os.path.join(ROOT,'CNAME')): ROOT=os.path.join(ROOT,'site')
     out=preview or ROOT
     for l in LANGS:
-        p=os.path.join(out,'index.html') if l=='fr' else os.path.join(out,l,'index.html')
+      for pg in PAGES:
+        f=fname(pg) or 'index.html'
+        p=os.path.join(out,f) if l=='fr' else os.path.join(out,l,f)
         os.makedirs(os.path.dirname(p),exist_ok=True)
-        open(p,'w',encoding='utf-8').write(page(l,preview=bool(preview)))
+        open(p,'w',encoding='utf-8').write(page(l,preview=bool(preview) and pg=='home',pg=pg))
         print('wrote',p)
     if not preview:
         sm='<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'
-        alts=''.join(f'    <xhtml:link rel="alternate" hreflang="{HTML_LANG[x]}" href="{url(x)}"/>\n' for x in LANGS)+f'    <xhtml:link rel="alternate" hreflang="x-default" href="{BASE}"/>\n'
-        for l in LANGS: sm+=f'  <url>\n    <loc>{url(l)}</loc>\n{alts}  </url>\n'
+        for pg in PAGES:
+          alts=''.join(f'    <xhtml:link rel="alternate" hreflang="{HTML_LANG[x]}" href="{url(x,pg)}"/>\n' for x in LANGS)+f'    <xhtml:link rel="alternate" hreflang="x-default" href="{url("fr",pg)}"/>\n'
+          for l in LANGS: sm+=f'  <url>\n    <loc>{url(l,pg)}</loc>\n{alts}  </url>\n'
         sm+=f'  <url><loc>{BASE}mentions-legales.html</loc></url>\n</urlset>\n'
         open(os.path.join(out,'sitemap.xml'),'w',encoding='utf-8').write(sm); print('wrote sitemap')
 

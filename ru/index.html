@@ -44,7 +44,7 @@
 body{background:var(--paper);color:var(--ink);font:400 1.02rem/1.65 var(--f-body)}
 .in{max-width:72rem;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 a{color:var(--navy)} a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
-h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
+h2,h1.h2{font:600 clamp(1.5rem,3vw,2rem)/1.2 var(--f-head);color:var(--navy);margin:0 0 .4rem;text-wrap:balance}
 .kicker{font:700 .74rem var(--f-body);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin:0 0 .4rem}
 section{padding-block:3.5rem}
 .sub{color:var(--muted);max-width:60ch;margin:0 0 2rem}
@@ -108,7 +108,7 @@ nav.menu a:hover{border-bottom-color:var(--red)}
 .card p{margin:0;color:var(--muted)}
 
 /* presidents */
-.people{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.5rem}
+.people{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.5rem}
 .person{border-top:3px solid var(--navy);padding-top:1rem}
 .person h3{font:600 1.25rem/1.3 var(--f-head);margin:0 0 .2rem}
 .person .role{font-weight:600;color:var(--red);margin:0 0 .5rem}
@@ -185,6 +185,9 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
 @media (max-width:700px){.join{flex-direction:column;align-items:flex-start}.join .btn{align-self:stretch}}
 .mission .grid{align-items:center}
 
+.card .body p{flex:1}.card .more{margin-top:.5rem;font-weight:600;color:var(--navy);text-decoration:none;border-bottom:1px solid var(--red);align-self:flex-start}.card .more:hover{color:var(--red)}
+.menu a[aria-current=page]{color:var(--red)}
+
 </style>
 </head>
 <body>
@@ -203,8 +206,8 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   </a>
   <nav class="menu" aria-label="Menu"><ul>
     <li><a href="#association">Об ассоциации</a></li>
-    <li><a href="#actions">Наша работа</a></li>
-    <li><a href="#gouvernance">Руководство</a></li>
+    <li><a href="actions.html">Наша работа</a></li>
+    <li><a href="gouvernance.html">Руководство</a></li>
     <li><a href="#actualites">Новости</a></li>
     <li><a href="#partenaires">Партнёры</a></li>
     <li><a href="#contact">Контакты</a></li>
@@ -218,7 +221,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <h1>Создавать связи и доверие между поколениями</h1>
     <p>Поддерживать молодёжь, заботиться о старшем поколении и объединять силы солидарности, чтобы каждый мог в своём ритме двигаться к более гармоничной жизни.</p>
     <div class="ctas">
-      <a class="btn btn-red" href="#actions">Наша работа</a>
+      <a class="btn btn-red" href="actions.html">Наша работа</a>
       <a class="btn btn-line" href="#association">Наша миссия</a>
     </div>
   </div>
@@ -245,39 +248,22 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
   <a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%D0%91%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%D0%B5%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%BE&amp;body=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5%21%0A%0A%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B1%D0%B5%D1%81%D0%BF%D0%BB%D0%B0%D1%82%D0%BD%D0%BE%20%D0%B2%D1%81%D1%82%D1%83%D0%BF%D0%B8%D1%82%D1%8C%20%D0%B2%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0A%D0%98%D0%BC%D1%8F%20%D0%B8%20%D1%84%D0%B0%D0%BC%D0%B8%D0%BB%D0%B8%D1%8F%3A%0A%D0%A1%D1%82%D1%80%D0%B0%D0%BD%D0%B0%20/%20%D0%B3%D0%BE%D1%80%D0%BE%D0%B4%3A%0A%D0%A2%D0%B5%D0%BB%D0%B5%D1%84%D0%BE%D0%BD%20%28%D0%BF%D0%BE%20%D0%B6%D0%B5%D0%BB%D0%B0%D0%BD%D0%B8%D1%8E%29%3A%0A%D0%98%D0%BD%D1%82%D0%B5%D1%80%D0%B5%D1%81%D1%8B%20%28%D0%BC%D0%BE%D0%BB%D0%BE%D0%B4%D1%91%D0%B6%D1%8C%20%D0%B8%20%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5%20/%20%D0%BA%D1%83%D0%BB%D1%8C%D1%82%D1%83%D1%80%D0%B0%20%D0%B8%20%D0%BC%D1%83%D0%B7%D1%8B%D0%BA%D0%B0%20/%20%D1%81%D0%BE%D0%BB%D0%B8%D0%B4%D0%B0%D1%80%D0%BD%D0%BE%D1%81%D1%82%D1%8C%29%3A%0A%D0%92%D0%BE%D0%BB%D0%BE%D0%BD%D1%82%D1%91%D1%80%D1%81%D1%82%D0%B2%D0%BE%20%28%D0%B4%D0%B0%20/%20%D0%BD%D0%B5%D1%82%29%3A%0A%0A%D0%AF%20%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B5%D0%BD%28%D0%BD%D0%B0%29%2C%20%D1%87%D1%82%D0%BE%D0%B1%D1%8B%20%D0%B0%D1%81%D1%81%D0%BE%D1%86%D0%B8%D0%B0%D1%86%D0%B8%D1%8F%20%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BB%D0%B0%20%D1%8D%D1%82%D0%B8%20%D0%B4%D0%B0%D0%BD%D0%BD%D1%8B%D0%B5%20%D0%B4%D0%BB%D1%8F%20%D1%83%D1%87%D1%91%D1%82%D0%B0%20%D0%BC%D0%BE%D0%B5%D0%B3%D0%BE%20%D1%87%D0%BB%D0%B5%D0%BD%D1%81%D1%82%D0%B2%D0%B0.%0A">Записаться</a>
 </div></div></section>
 
-<section aria-labelledby="h-figs"><div class="in">
-  <p class="kicker" id="h-figs">Цифры</p>
-  <div class="figs"><div class="fig"><b>2023</b><span>Основана в Париже благодаря дружбе и наставнической поддержке двух почётных президентов</span></div><div class="fig"><b>2</b><span>концерта, поддержанных в рамках Фестиваля культурного разнообразия (2024, 2025)</span></div><div class="fig"><b>40</b><span>зимних пальто передано нуждающимся (ноябрь 2024)</span></div><div class="fig"><b>2</b><span>первых учащихся получили сопровождение во Франции (2024–2025)</span></div><div class="fig"><b>6</b><span>партнёров и поддерживаемых благотворительных организаций</span></div></div>
-  <p class="asof">Данные на 25 ноября 2026 года.</p>
-</div></section>
-
-<section id="actions" style="padding-top:0"><div class="in">
+<section id="actions"><div class="in">
   <p class="kicker">Наша работа</p>
   <h2>Три направления, одно требование — доверие</h2>
-  <p class="sub">Как общественно полезный мост, A.H.A. связывает людей и организации в качестве независимой стороны и не распоряжается денежными средствами. Её проекты реализуются вместе с долгосрочным стратегическим партнёром A.I.E.C. — площадкой практических проектов для молодёжи.</p>
   <div class="cards">
     <article class="card">
       <div class="pic"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"><path d="M12 6.5C10 5 7 4.5 3.5 5v13c3.5-.5 6.5 0 8.5 1.5 2-1.5 5-2 8.5-1.5V5C17 4.5 14 5 12 6.5z"/><path d="M12 6.5v13"/></svg></div>
-      <div class="body"><span class="tag">Молодёжь · Образование</span><h3>Обучать и открывать пути</h3><p>Франко-китайское профессиональное обучение с IFAC du Pays de Montbéliard (мандат на 2026–2028 годы); продолжение учёбы и взаимные студенческие обмены обсуждаются с высшими учебными заведениями.</p></div>
+      <div class="body"><span class="tag">Молодёжь · Образование</span><h3>Обучать и открывать пути</h3><p>Франко-китайское профессиональное обучение с IFAC du Pays de Montbéliard (2026–2028).</p><a class="more" href="actions.html">Подробнее <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="Зрители концерта в церкви Сен-Луи-ан-л&#x27;Иль в Париже" loading="lazy"></div>
-      <div class="body"><span class="tag">Гармония · Культура</span><h3>Музыка — общий язык</h3><p>Фестиваль культурного разнообразия организует Comité d'animation culturelle Paris 1 под патронажем Национальной комиссии Франции по делам ЮНЕСКО. В рамках фестиваля в церкви Сен-Луи-ан-л'Иль прошли два концерта — 24 мая 2024 года и, по приглашению Comité, 25 мая 2025 года; их организовала A.I.E.C. при поддержке A.H.A.</p></div>
+      <div class="body"><span class="tag">Гармония · Культура</span><h3>Музыка — общий язык</h3><p>Два концерта в церкви Сен-Луи-ан-л'Иль в рамках Фестиваля культурного разнообразия (2024, 2025).</p><a class="more" href="actions.html">Подробнее <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic red"><svg class="ico" viewBox="0 0 24 24" width="64" height="64" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg></div>
-      <div class="body"><span class="tag">Старшее поколение · Солидарность</span><h3>Чтобы никто не остался один</h3><p>Вместе с двумя организациями, близкими нашим почётным президентам: Association Internationale La Voix de la Compassion, по инициативе которой зимние вещи были переданы парижскому приходу, и Мальтийским орденом Франции — для бездомных. Мы также поддерживаем сборы для домов престарелых и приходов.</p></div>
+      <div class="body"><span class="tag">Старшее поколение · Солидарность</span><h3>Чтобы никто не остался один</h3><p>Зимние пожертвования вместе с организациями, близкими нашим почётным президентам.</p><a class="more" href="actions.html">Подробнее <span aria-hidden="true">→</span></a></div>
     </article>
-  </div>
-</div></section>
-
-<section class="mission" id="gouvernance"><div class="in">
-  <p class="kicker">Руководство</p>
-  <h2>Почётные президенты</h2>
-  <p class="sub">Созданная в конце 2023 года благодаря дружбе и наставнической поддержке двух почётных президентов, A.H.A. продолжает дело Association Internationale La Voix de la Compassion, членом которой является её президент, и продолжает её поддерживать. Каждый проект до начала работы представляется на рассмотрение двум почётным президентам.</p>
-  <div class="people">
-    <div class="person"><h3>Г-н Charles-Henri d'ARAGON</h3><p class="role">Почётный полномочный министр</p><p>Бывший посол Франции в Кувейте, Сирии, Саудовской Аравии и Люксембурге, затем посол Суверенного Мальтийского ордена в Ливане. Офицер ордена Почётного легиона.</p></div>
-    <div class="person"><h3>Г-жа CHOW Ching Ling</h3><p class="role">Пианистка, медаль Моцарта ЮНЕСКО (2007)</p><p>Бывший профессор Центральной консерватории Пекина, офицер ордена Искусств и литературы, основательница Association Internationale La Voix de la Compassion.</p></div>
   </div>
 </div></section>
 
@@ -308,6 +294,7 @@ footer h4{margin:0 0 .4rem;font:700 .75rem var(--f-body);letter-spacing:.12em;te
     <div><dt>Представительство в Китае (Ухань)</dt><dd dir="ltr"><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></dd></div>
   </dl>
 </div></section>
+
 </main>
 
 <footer><div class="in">

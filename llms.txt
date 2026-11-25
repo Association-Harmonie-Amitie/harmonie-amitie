@@ -2,7 +2,7 @@
 
 > Association loi 1901 à but non lucratif, créée à Paris en 2023 (RNA W751272194). Éducation, culture et solidarité. Passerelle d'intérêt général : l'A.H.A. ne gère pas de flux financiers ; la mise en œuvre des projets est confiée à son partenaire stratégique, l'A.I.E.C.
 
-Site statique en six langues, une page par langue, mêmes sections et mêmes ancres partout.
+Site statique en six langues. Par langue : une page d'accueil courte, plus deux sous-pages identiques dans chaque langue : actions.html (détail des actions et chiffres) et gouvernance.html (présidence d'honneur et exécutive).
 
 ## Pages
 - [Français (version de référence)](https://harmonie-amitie.com/)
@@ -11,12 +11,13 @@ Site statique en six langues, une page par langue, mêmes sections et mêmes anc
 - [Español (traducción asistida por IA, en revisión)](https://harmonie-amitie.com/es/)
 - [Русский (перевод с помощью ИИ, на проверке)](https://harmonie-amitie.com/ru/)
 - [العربية (ترجمة بمساعدة الذكاء الاصطناعي، قيد المراجعة)](https://harmonie-amitie.com/ar/)
+- Sous-pages FR : [Nos actions](https://harmonie-amitie.com/actions.html) · [Gouvernance](https://harmonie-amitie.com/gouvernance.html) (même nom de fichier dans /zh/, /en/, /es/, /ru/, /ar/)
 - [Mentions légales](https://harmonie-amitie.com/mentions-legales.html)
 
 ## Sections (identical anchors in every language)
 - #association : mission and free membership (#adherer)
-- #actions : three fields (youth and education, culture, solidarity)
-- #gouvernance : honorary presidents
+- #actions : three fields, short teasers linking to actions.html
+- gouvernance.html#gouvernance : honorary presidents and executive president
 - #actualites : cooperations in progress, then dated past actions
 - #partenaires : written agreements, documented joint actions, supported charities
 - #engager : support, volunteer, news
