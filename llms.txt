@@ -20,7 +20,7 @@ Site statique en six langues. Par langue : une page d'accueil courte, plus deux 
 - gouvernance.html#gouvernance : statement of values, honorary presidents and executive president
 - #actualites : cooperations in progress, then dated past actions
 - #partenaires : written agreements, documented joint actions, supported charities
-- #engager : free membership (#adherer: write to ahaparis@outlook.com; a copyable application template is on the page), support, volunteer, news
+- #engager : free membership, support, volunteer, news: each button opens the page-language "Membership and contact" Microsoft Form (fr https://forms.cloud.microsoft/r/qjyDrVn1sA, zh/en https://forms.cloud.microsoft/r/ZvukM4AueZ, es https://forms.cloud.microsoft/r/NvSwQPzXvB, ru https://forms.cloud.microsoft/r/KjnPvXzNPx, ar https://forms.cloud.microsoft/r/F3Bv8YsMaA); e-mail ahaparis@outlook.com and a copyable template remain as fallback
 - #contact (in the footer of every page) : ahaparis@outlook.com
 
 ## Data

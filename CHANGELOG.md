@@ -4,6 +4,11 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Adhésion et contact : formulaire en ligne / 入会与联系：在线登记表
+- Les boutons Adhérer, Nous écrire, Devenir bénévole, Recevoir nos nouvelles et « Lettre d'information » ouvrent le formulaire « Adhésion et contact » de la langue de la page (langue + anglais ; zh et en partagent le formulaire chinois-anglais). Validé par la Présidente.
+- 入会、联系我们、成为志愿者、订阅动态和"订阅通讯"按钮改为打开本页语言的"入会与联系登记"表单（中文页与英文页共用中英表单）。经会长批准。
+- L'adresse e-mail et le modèle copiable restent en secours. 邮箱和可复制模板保留作备用。
+
 ## 2026-11-25 — Adhésion : entrée qui fonctionne dans WeChat
 - Le bouton d'adhésion ouvre seulement l'adresse (le sujet/corps codé s'affichait en clair dans le navigateur WeChat).
 - Ajout : adresse visible + bouton « copier », modèle de demande dépliable + bouton « copier le modèle » (libellés validés par la Présidente, six langues). Étape suivante : formulaire Microsoft Forms du compte de l'association.

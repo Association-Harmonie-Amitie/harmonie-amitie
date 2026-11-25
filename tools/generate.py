@@ -67,9 +67,13 @@ JOIN={
       subj="طلب عضوية مجانية",body="مرحبًا،\n\nأرغب في الانضمام مجانًا إلى Association Harmonie d'Amitié.\n\nالاسم الكامل:\nالبلد / المدينة:\nالهاتف (اختياري):\nالاهتمامات (الشباب والتعليم / الثقافة والموسيقى / التضامن):\nالتطوع (نعم / لا):\n\nأوافق على أن تستخدم الجمعية هذه البيانات لإدارة عضويتي.\n"),
 }
 from urllib.parse import quote
+# Microsoft Forms "membership and contact" forms (page language + English), approved by the Présidente 2026-11-25
+FORM={'zh':'https://forms.cloud.microsoft/r/ZvukM4AueZ','en':'https://forms.cloud.microsoft/r/ZvukM4AueZ',
+ 'fr':'https://forms.cloud.microsoft/r/qjyDrVn1sA','es':'https://forms.cloud.microsoft/r/NvSwQPzXvB',
+ 'ru':'https://forms.cloud.microsoft/r/KjnPvXzNPx','ar':'https://forms.cloud.microsoft/r/F3Bv8YsMaA'}
+FT=' target="_blank" rel="noopener"'
 def join_href(l):
-    # plain address only: in-app browsers (WeChat) show encoded subject/body as raw text
-    return 'mailto:%s'%JOIN_TO
+    return FORM[l]
 # labels for the copy fallback (wording confirmed by the Présidente, 2026-11-25)
 JCOPY={'zh':('或发邮件至','复制邮箱','已复制','查看申请模板','复制模板'),
  'fr':('Ou écrivez-nous à',"Copier l'adresse",'Copié','Voir le modèle de demande','Copier le modèle'),
@@ -253,12 +257,12 @@ def page(l, preview=False, pg='home'):
 {friends_sec}
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
+  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}"{FT}>{html.escape(JOIN[l]['b'])}</a>
     <p class="jalt">{JCOPY[l][0]} <bdi class="jmail">{JOIN_TO}</bdi> <button type="button" class="copy" data-copy="{JOIN_TO}" data-done="{JCOPY[l][2]}">{JCOPY[l][1]}</button></p>
     <details class="jtpl"><summary>{JCOPY[l][3]}</summary><pre id="jtpl-{l}">{html.escape(JOIN[l]['body'])}</pre><button type="button" class="copy" data-copy-from="jtpl-{l}" data-done="{JCOPY[l][2]}">{JCOPY[l][4]}</button></details></div>
-  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b1_b']}</a></div>
-  <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b2_b']}</a></div>
-  <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b3_b']}</a></div>
+  <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b1_b']}</a></div>
+  <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b2_b']}</a></div>
+  <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{FORM[l]}"{FT}>{t['b3_b']}</a></div>
 </div></section>
 
 ''',
@@ -300,7 +304,7 @@ def page(l, preview=False, pg='home'):
 
 ''' if pg=='home' else ''
     body=f'''{mt}<div class="util"><div class="in">
-  <a href="{H('contact')}">{t['u_news']}</a>
+  <a href="{FORM[l]}"{FT}>{t['u_news']}</a>
   <a href="{H('adherer')}">{t['u_join']}</a>
   <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
   <a class="btn btn-red" href="{H('engager')}">{t['u_support']}</a>
