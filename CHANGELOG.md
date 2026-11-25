@@ -4,6 +4,9 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Chinois : carte du concert du 25 mai 2025
+- zh uniquement (SK12) : texte de la Présidente pour la carte 25.05.2025 ; patronage = Commission nationale française pour l'UNESCO (festival), A.H.A. finance ce concert seulement, A.I.E.C. exécute (SK9).
+
 ## 2026-11-25 (SK8, vérification des sources)
 - Humain : demande de vérifier les informations publiques de chaque partenaire avant toute formulation.
 - IA : vérifié le site du Comité d'animation culturelle Paris 1 (programme 2024), les statuts de l'Ordre de Malte France (RUP, décret du 19 août 1928) et les pages publiques du Fleuron Saint-Jean (péniche d'accueil). Carte « Musique » : faits 2024 seulement là où ils sont attestés (14e édition, 24 mai 2024, patronage CNFU) ; retrait de « porté par le Comité » et de « 15e » pour 2025, en attente de confirmation. Collecte d'hiver : Fleuron Saint-Jean, 500 paires de chaussettes, 24 plaids-capes, acheminement organisé par l'A.H.A.
