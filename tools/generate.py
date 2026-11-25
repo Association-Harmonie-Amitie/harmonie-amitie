@@ -119,7 +119,7 @@ def page(l, preview=False):
         {"@type":"MusicEvent","name":"Concert de l'Orchestre à cordes de Paris (Festival de la diversité culturelle 2025)","startDate":"2025-05-25T19:30","location":venue,
          "performer":{"@type":"MusicGroup","name":"Orchestre à cordes de Paris"},
          "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID},"superEvent":{"@id":FEST_ID}},
-        {"@type":"Festival","@id":FEST_ID,"name":"Festival de la diversité culturelle",
+        {"@type":"Festival","@id":FEST_ID,"name":"Festival de la diversité culturelle","startDate":"2025-05-17","endDate":"2025-05-27","description":"15e édition (2025)",
          "organizer":{"@type":"Organization","name":"Comité d'animation culturelle Paris 1","url":"https://www.animationculturelle-paris1.com/"},
          "sponsor":{"@type":"Organization","name":"Commission nationale française pour l'UNESCO"}}]}
     headx=f'''<title>{t['title']}</title>
