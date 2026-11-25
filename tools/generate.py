@@ -20,7 +20,12 @@ D6={'fr':"A.I.E.C. · partenaire stratégique · organisation des concerts 2024 
     'ru':"A.I.E.C. · стратегический партнёр · организация концертов 2024 и 2025 годов",
     'ar':"\u2066A.I.E.C.\u2069 · شريك استراتيجي · تنظيم حفلَي 2024 و2025"}
 # past news: (datetime, label, content key)
-NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
+NEWS=[('2025-05-25',{'zh':'2025 年 5 月 25 日','fr':'25 mai 2025','en':'25 May 2025','es':'25 de mayo de 2025','ru':'25 мая 2025 г.','ar':'25 مايو 2025'},'n3'),
+      ('2024-11-25',{'zh':'2024 年 11 月 25 日','fr':'25 novembre 2024','en':'25 November 2024','es':'25 de noviembre de 2024','ru':'25 ноября 2024 г.','ar':'25 نوفمبر 2024'},'n4')]
+# footer hint for readers who need larger text (wording confirmed by the Présidente, 2026-11-25)
+ZOOM={'zh':'如需放大文字，请使用手机或浏览器的缩放功能。','fr':'Pour agrandir le texte, utilisez le zoom de votre téléphone ou de votre navigateur.',
+      'en':"To enlarge the text, use your phone's or browser's zoom.",'es':'Para ampliar el texto, use el zoom de su teléfono o de su navegador.',
+      'ru':'Чтобы увеличить текст, используйте масштабирование на телефоне или в браузере.','ar':'لتكبير النص، استخدموا خاصية التكبير في الهاتف أو المتصفح.'}
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
 ONGOING={
  'fr':[("En préparation","Collecte d'hiver 2026 : des donateurs en Chine offrent 500 paires de chaussettes et 24 plaids-capes au Fleuron Saint-Jean, péniche d'accueil de l'Ordre de Malte France pour les personnes sans abri, à Paris. L'A.H.A. organise l'acheminement.")],
@@ -166,7 +171,7 @@ def page(l, preview=False, pg='home'):
     mt=f'<div class="mtnote" role="note"><div class="in">{t["mtnote"]} <a href="{rel(l,"fr",pg)}" hreflang="fr" lang="fr">Version française</a></div></div>\n' if l in MACHINE and t['mtnote'] else ''
     figs=''.join(f'<div class="fig"><b>{FIGS[i]}</b><span>{t["f%d"%(i+1)]}</span></div>' for i in range(5))
     news=''.join(f'<article class="item ongoing"><span class="status">{html.escape(st)}</span><p>{html.escape(tx)}</p></article>' for st,tx in ONGOING[l])
-    news+=''.join(f'<article class="item"><time datetime="{d}">{ltr(s)}</time><p>{t[k]}</p></article>' for d,s,k in NEWS)
+    news+=''.join(f'<article class="item"><time datetime="{d}">{s[l]}</time><p>{t[k]}</p></article>' for d,s,k in NEWS)
     t['d6']=html.escape(D6[l],quote=False)
     parts=''.join(f'<li><bdi lang="fr">{html.escape(PARTNERS[i])}</bdi><small>{t["d%d"%(i+1)]}</small></li>' for i in range(6))
     legal=f'<a href="{up}mentions-legales.html">{t["legal"]}</a>'
@@ -325,6 +330,7 @@ def page(l, preview=False, pg='home'):
     <h4>{t['tr_h']}</h4>
     <p>{t['tr_p']}</p>
     <p>{t['pub']} {legal}</p>
+    <p>{html.escape(ZOOM[l])}</p>
   </div>
 </div></footer>
 <script>(function(){{var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){{var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)}});m.addEventListener('click',function(e){{if(e.target.closest('a')){{m.classList.remove('open');b.setAttribute('aria-expanded','false')}}}})}})();</script>'''
