@@ -4,6 +4,9 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Dates et étiquettes plus lisibles (option 2 validée, partie visuelle)
+- Dates des actualités 12,8 → 16 px gras ; en mode sombre rouge plus clair (contraste 5,3 → 8,0 : 1). Étiquettes 11,5 → 13,6 px. Format des dates et phrase de pied de page : en attente de confirmation (SK13).
+
 ## 2026-11-25 — Chinois : « 执行 » → « 承办 » pour l'A.I.E.C.
 - zh uniquement (SK12), mot confirmé par la Présidente : 4 occurrences (actions, cartes musique, actualité 25.05.2025, ligne partenaire). « 执行主席 » (titre) inchangé.
 

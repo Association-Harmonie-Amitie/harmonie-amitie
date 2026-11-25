@@ -220,6 +220,12 @@ footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:any
 .menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 html:not(.js) .menu-btn{display:none!important}
 :lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
+/* 2026-11-25 option 2 (approved): readable dates and labels for older readers */
+:root{--date:var(--red)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--date:#f29097}}
+:root[data-theme="dark"]{--date:#f29097}
+.item time{font-size:1rem;font-weight:700;color:var(--date)}
+.kicker,.card .tag,.item .status{font-size:.85rem}
 
 </style>
 </head>
