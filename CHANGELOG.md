@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Police chinoise de la devise / 中文红字引语字体统一
+- La devise « 阴阳相济，冲气为和。 » s'affiche entièrement dans la même police (certains caractères manquaient au sous-ensemble de police et s'affichaient dans une autre).
+- 红字引语"阴阳相济，冲气为和。"现在整句使用同一字体（之前部分字未包含在网页字体子集里，显示成了另一种字体）。
+
 ## 2026-11-25 — Abonnement : petite fenêtre sur la page / 订阅：本页小框
 - « Lettre d'information » (haut de page) ouvre une petite fenêtre : écrire à ahaparis@outlook.com avec l'objet « Abonnement », bouton de copie de l'adresse, lien vers le formulaire. Sans quitter le site ni dépendre de Microsoft. Choix de la Présidente (option B), textes zh/fr validés.
 - 顶栏"订阅通讯"在本页弹出小框：发邮件至 ahaparis@outlook.com，标题写"订阅"；可复制邮箱，并附登记表链接。不跳转、不依赖微软。会长选定方案 B，中法文字已确认。

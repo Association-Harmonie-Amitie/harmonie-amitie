@@ -379,6 +379,8 @@ document.querySelectorAll('button.copy').forEach(function(b){{b.addEventListener
         body=re.sub(r'(<(h[1-3])\b[^>]*>)([^<]*)(</\2>)',_ph,body)
         parts=re.findall(r'<(h[1-4]|b|blockquote)\b[^>]*>(.*?)</\1>',body,re.S)
         parts+=re.findall(r'class="(?:seal|mark)[^"]*"[^>]*>([^<]*)<',body)
+        # every element drawn in the heading serif must be in the subset, or missing glyphs fall back to another font
+        parts+=re.findall(r'class="motto"[^>]*>(.*?)</',body,re.S)
         txt=''.join(x[1] if isinstance(x,tuple) else x for x in parts)
         chars=''.join(sorted({c for c in txt if ord(c)>0x2e7f}))
         zl=ZH_SERIF+urllib.parse.quote(chars)
