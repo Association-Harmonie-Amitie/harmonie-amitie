@@ -5,6 +5,7 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
 ## 2026-11-25
+- Principe de discrétion : actualités et cartes rédigées en donnant le premier rôle aux partenaires (Comité d'animation culturelle Paris 1, Ordre de Malte France, donateurs en Chine, A.I.E.C.) ; personnes désignées par leur titre ; patronage de la CNFU mentionné pour la seule édition 2024 (vérifiée).
 - Mission recentrée sur les valeurs communes (paix, amitié, amour) sur conseil des conseillers ; l'IA n'apparaît plus que comme un projet de pratique de l'A.I.E.C. ; titre d'accueil « au fil des générations ».
 - Relecture selon les règles SK0–SK6 : données structurées (association, partenaire, concerts), fichier llms.txt pour les agents, ce journal.
 - Formulations : plus d'annonce de dons en ligne ni de lettre trimestrielle ni de rapport 2026 non encore disponibles ; « منظمة مالطا » au lieu de « فرسان مالطا » en arabe.

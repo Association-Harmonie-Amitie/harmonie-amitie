@@ -23,12 +23,12 @@ D6={'fr':"A.I.E.C. · partenaire stratégique · organisation des concerts 2024 
 NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
 ONGOING={
- 'fr':[("En préparation","Collecte d'hiver 2026 : des dons en nature proposés par des donateurs en Chine (chaussettes, plaids), acceptés par l'Ordre de Malte France pour ses maraudes.")],
- 'zh':[("筹备中","2026 年冬季募集：中国捐赠者拟捐赠袜子和毛毯，马耳他骑士团法国分会已同意接收，用于冬季街头探访救助。")],
- 'en':[("In preparation","Winter collection 2026: donations in kind offered by donors in China (socks, blankets), accepted by the Ordre de Malte France for its street outreach.")],
- 'es':[("En preparación","Colecta de invierno 2026: donaciones en especie ofrecidas por donantes en China (calcetines, mantas), aceptadas por la Orden de Malta Francia para sus rondas solidarias.")],
- 'ru':[("В подготовке","Зимний сбор 2026 года: вещи от дарителей из Китая (носки, пледы) приняты Мальтийским орденом Франции для помощи людям на улице.")],
- 'ar':[("قيد التحضير","حملة الشتاء 2026: تبرعات عينية يقدّمها متبرعون في الصين (جوارب وأغطية)، قبلتها منظمة مالطا في فرنسا لجولاتها الميدانية.")],
+ 'fr':[("En préparation","Collecte d'hiver 2026 : des donateurs en Chine offrent chaussettes et plaids aux équipes de maraude de l'Ordre de Malte France, auprès des personnes à la rue. L'A.H.A. assure le lien.")],
+ 'zh':[("筹备中","2026 年冬季募集：中国爱心人士捐赠袜子和毛毯，送交马耳他骑士团法国分会的街头探访团队，关怀露宿街头的人们。和谊协会负责牵线联络。")],
+ 'en':[("In preparation","Winter collection 2026: donors in China are offering socks and blankets to the street-outreach teams of the Ordre de Malte France, for people living on the streets. A.H.A. acts as the link.")],
+ 'es':[("En preparación","Colecta de invierno 2026: donantes en China ofrecen calcetines y mantas a los equipos de calle de la Orden de Malta Francia, para las personas que viven en la calle. La A.H.A. hace de enlace.")],
+ 'ru':[("В подготовке","Зимний сбор 2026 года: дарители из Китая передают носки и пледы уличным бригадам Мальтийского ордена Франции для людей, оказавшихся на улице. A.H.A. выступает связующим звеном.")],
+ 'ar':[("قيد التحضير","حملة الشتاء 2026: متبرعون في الصين يقدّمون جوارب وأغطية لفرق العمل الميداني في منظمة مالطا في فرنسا، دعمًا للأشخاص الذين يعيشون في الشارع. وتتولى الجمعية التنسيق بين الطرفين.")],
 }
 FIGS=['2023','2','40','2','6']
 # alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
