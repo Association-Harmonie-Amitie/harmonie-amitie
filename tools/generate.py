@@ -23,12 +23,12 @@ D6={'fr':"A.I.E.C. · partenaire stratégique · organisation des concerts 2024 
 NEWS=[('2025-05-25','25.05.2025','n3'),('2024-11-25','25.11.2024','n4')]
 # cooperations under discussion (no names of individuals, no third-party logos; modest wording)
 ONGOING={
- 'fr':[("En préparation","Collecte d'hiver 2026 : des donateurs en Chine offrent chaussettes et plaids aux équipes de maraude de l'Ordre de Malte France, auprès des personnes à la rue. L'A.H.A. assure le lien.")],
- 'zh':[("筹备中","2026 年冬季募集：中国爱心人士捐赠袜子和毛毯，送交马耳他骑士团法国分会的街头探访团队，关怀露宿街头的人们。和谊协会负责牵线联络。")],
- 'en':[("In preparation","Winter collection 2026: donors in China are offering socks and blankets to the street-outreach teams of the Ordre de Malte France, for people living on the streets. A.H.A. acts as the link.")],
- 'es':[("En preparación","Colecta de invierno 2026: donantes en China ofrecen calcetines y mantas a los equipos de calle de la Orden de Malta Francia, para las personas que viven en la calle. La A.H.A. hace de enlace.")],
- 'ru':[("В подготовке","Зимний сбор 2026 года: дарители из Китая передают носки и пледы уличным бригадам Мальтийского ордена Франции для людей, оказавшихся на улице. A.H.A. выступает связующим звеном.")],
- 'ar':[("قيد التحضير","حملة الشتاء 2026: متبرعون في الصين يقدّمون جوارب وأغطية لفرق العمل الميداني في منظمة مالطا في فرنسا، دعمًا للأشخاص الذين يعيشون في الشارع. وتتولى الجمعية التنسيق بين الطرفين.")],
+ 'fr':[("En préparation","Collecte d'hiver 2026 : des donateurs en Chine offrent 500 paires de chaussettes et 24 plaids-capes au Fleuron Saint-Jean, péniche d'accueil de l'Ordre de Malte France pour les personnes sans abri, à Paris. L'A.H.A. organise l'acheminement.")],
+ 'zh':[("筹备中","2026 年冬季募集：中国爱心人士捐赠 500 双袜子和 24 件披肩毯，送往马耳他骑士团法国分会在巴黎的 Fleuron Saint-Jean 收容船，帮助无家可归的人。和谊协会负责组织运送。")],
+ 'en':[("In preparation","Winter collection 2026: donors in China are offering 500 pairs of socks and 24 blanket-capes to the Fleuron Saint-Jean, the Ordre de Malte France's shelter barge for homeless people in Paris. A.H.A. is arranging the shipment.")],
+ 'es':[("En preparación","Colecta de invierno 2026: donantes en China ofrecen 500 pares de calcetines y 24 mantas-capa al Fleuron Saint-Jean, la barcaza de acogida de la Orden de Malta Francia para personas sin hogar en París. La A.H.A. organiza el envío.")],
+ 'ru':[("В подготовке","Зимний сбор 2026 года: дарители из Китая передают 500 пар носков и 24 пледа-накидки на Fleuron Saint-Jean — баржу-приют Мальтийского ордена Франции для бездомных в Париже. A.H.A. организует доставку.")],
+ 'ar':[("قيد التحضير","حملة الشتاء 2026: متبرعون في الصين يقدّمون 500 زوج من الجوارب و24 غطاءً على شكل عباءة إلى ⁦Fleuron Saint-Jean⁩، مركب الإيواء التابع لمنظمة مالطا في فرنسا للأشخاص بلا مأوى في باريس. وتتولى الجمعية تنظيم الشحن.")],
 }
 FIGS=['2023','2','40','2','6']
 # alt text for the Saint-Louis-en-l'Ile concert photo (card "music")
@@ -116,7 +116,7 @@ def page(l, preview=False):
          "description":"Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."},
         {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 14e édition","startDate":"2024-05-24T20:00","location":venue,
          "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}},
-        {"@type":"MusicEvent","name":"Festival de la diversité culturelle, 15e édition","startDate":"2025-05-25","location":venue,
+        {"@type":"MusicEvent","name":"Concert, Festival de la diversité culturelle 2025","startDate":"2025-05-25","location":venue,
          "organizer":{"@id":AIEC_ID},"funder":{"@id":AHA_ID}}]}
     headx=f'''<title>{t['title']}</title>
 <meta name="description" content="{a('desc')}">
