@@ -112,6 +112,8 @@ def page(l, preview=False):
          "description":"Association loi 1901 à but non lucratif : éducation, culture, solidarité. Passerelle d'intérêt général ; ne gère pas de flux financiers.",
          "knowsLanguage":["fr","zh","en","es","ru","ar"],
          "address":{"@type":"PostalAddress","streetAddress":"27 rue Saint-Jacques","postalCode":"75005","addressLocality":"Paris","addressCountry":"FR"}},
+        {"@type":"NGO","name":"Association Internationale La Voix de la Compassion","alternateName":"法国国际妙音同善会",
+         "description":"Association fondée par la Présidente d'honneur de l'A.H.A. ; initiatrice des dons d'hiver 2024, avec l'aide de l'A.H.A."},
         {"@type":"NGO","@id":AIEC_ID,"name":"Association internationale d'échanges culturels","alternateName":"A.I.E.C.",
          "description":"Partenaire stratégique de long terme de l'A.H.A. ; met en œuvre les projets."},
         {"@type":"MusicEvent","name":"Concert à l'église Saint-Louis-en-l'Île (Festival de la diversité culturelle 2024)","startDate":"2024-05-24T20:00","location":venue,
