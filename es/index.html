@@ -259,6 +259,8 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
 /* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
 picture{display:contents}
+/* footer: China office label and e-mail on one line on wide screens (Présidente, 2026-11-25) */
+@media (min-width:1000px){footer .cn{white-space:nowrap}footer .in{grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr) minmax(0,1fr)}}
 
 </style>
 </head>
@@ -379,16 +381,16 @@ Acepto que la asociación utilice estos datos para gestionar mi adhesión.
   <div id="contact">
     <h2>Contacto</h2>
     <p>Correo electrónico: <bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
-    <p>Oficina en China (Wuhan): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+    <p class="cn">Oficina en China (Wuhan): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
     <h2>Transparencia</h2>
     <p>Estatutos y resguardo de declaración disponibles a petición.</p>
+    <p>Para ampliar el texto, use el zoom de su teléfono o de su navegador.</p>
   </div>
   <div>
     <h2><a href="../mentions-legales.html">Aviso legal (en francés)</a></h2>
     <p>Este sitio no instala cookies. Una medición de audiencia anónima y sin cookies (GoatCounter) solo cuenta las páginas vistas.</p>
-    <p>Para ampliar el texto, use el zoom de su teléfono o de su navegador.</p>
   </div>
 </div></footer>
 <div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="Boletín"><div class="subin">

@@ -354,16 +354,16 @@ def page(l, preview=False, pg='home'):
   <div id="contact">
     <h2>{t['ct_k']}</h2>
     <p>{t['ct_mail']}{SEP}<bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
-    <p>{t['ct_cn']}{SEP}<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+    <p class="cn">{t['ct_cn']}{SEP}<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
     <h2>{t['tr_h']}</h2>
     <p>{t['tr_p']}</p>
+    <p>{html.escape(ZOOM[l])}</p>
   </div>
   <div>
     <h2>{legal}</h2>
     <p>{t['pub']}</p>
-    <p>{html.escape(ZOOM[l])}</p>
   </div>
 </div></footer>
 <div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="{t['u_news']}"><div class="subin">

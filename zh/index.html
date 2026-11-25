@@ -260,6 +260,8 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
 /* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
 picture{display:contents}
+/* footer: China office label and e-mail on one line on wide screens (Présidente, 2026-11-25) */
+@media (min-width:1000px){footer .cn{white-space:nowrap}footer .in{grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr) minmax(0,1fr)}}
 
 </style>
 </head>
@@ -379,16 +381,16 @@ picture{display:contents}
   <div id="contact">
     <h2>联系</h2>
     <p>电子邮箱：<bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
-    <p>中国联络处（武汉）：<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+    <p class="cn">中国联络处（武汉）：<bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
     <h2>信息公开</h2>
     <p>章程与登记回执可按需索取。</p>
+    <p>如需放大文字，请使用手机或浏览器的缩放功能。</p>
   </div>
   <div>
     <h2><a href="../mentions-legales.html">法律声明</a></h2>
     <p>本网站不使用 Cookie。仅通过匿名、无 Cookie 的访问统计（GoatCounter）统计页面浏览量。</p>
-    <p>如需放大文字，请使用手机或浏览器的缩放功能。</p>
   </div>
 </div></footer>
 <div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="订阅通讯"><div class="subin">

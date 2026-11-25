@@ -258,6 +258,8 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
 /* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
 picture{display:contents}
+/* footer: China office label and e-mail on one line on wide screens (Présidente, 2026-11-25) */
+@media (min-width:1000px){footer .cn{white-space:nowrap}footer .in{grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr) minmax(0,1fr)}}
 
 </style>
 </head>
@@ -311,16 +313,16 @@ picture{display:contents}
   <div id="contact">
     <h2>Contact</h2>
     <p>E-mail: <bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
-    <p>Office in China (Wuhan): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+    <p class="cn">Office in China (Wuhan): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
     <h2>Transparency</h2>
     <p>Statutes and declaration receipt available on request.</p>
+    <p>To enlarge the text, use your phone&#x27;s or browser&#x27;s zoom.</p>
   </div>
   <div>
     <h2><a href="../mentions-legales.html">Legal notice (French)</a></h2>
     <p>This site sets no cookies. Anonymous, cookie-free audience measurement (GoatCounter) only counts page views.</p>
-    <p>To enlarge the text, use your phone&#x27;s or browser&#x27;s zoom.</p>
   </div>
 </div></footer>
 <div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="Newsletter"><div class="subin">

@@ -230,3 +230,5 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
 /* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
 picture{display:contents}
+/* footer: China office label and e-mail on one line on wide screens (Présidente, 2026-11-25) */
+@media (min-width:1000px){footer .cn{white-space:nowrap}footer .in{grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr) minmax(0,1fr)}}

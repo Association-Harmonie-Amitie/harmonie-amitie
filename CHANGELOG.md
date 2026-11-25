@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Pied de page : ajustements / 页脚微调
+- Bureau en Chine (Wuhan) et son e-mail sur une seule ligne (écrans larges) ; l'aide au zoom passe dans « Transparence », après les statuts. Aucun texte modifié.
+- 中国联络处（武汉）与邮箱同一行（宽屏）；放大提示移到“信息公开”栏，章程一句之后。文字未改动。
+
 ## 2026-11-25 — Pied de page en quatre colonnes (option C) / 页脚改为四栏（方案 C）
 - Quatre colonnes équilibrées : Association | Contact | Transparence | Mentions légales (titre-lien, avec la phrase sur les cookies et l'aide au zoom). Aucun texte modifié.
 - 四栏平衡：协会登记｜联系｜信息公开｜法律声明（标题即链接，下放 Cookie 说明和放大提示）。文字未改动。

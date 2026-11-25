@@ -258,6 +258,8 @@ h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
 .sub-x{position:absolute;top:.3rem;inset-inline-end:.5rem;display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;font-size:1.6rem;text-decoration:none;color:#fff}
 /* webp images: <picture> must not add a box, so the img keeps filling .pic / .hero */
 picture{display:contents}
+/* footer: China office label and e-mail on one line on wide screens (Présidente, 2026-11-25) */
+@media (min-width:1000px){footer .cn{white-space:nowrap}footer .in{grid-template-columns:minmax(0,1.3fr) auto minmax(0,1fr) minmax(0,1fr)}}
 
 </style>
 </head>
@@ -311,16 +313,16 @@ picture{display:contents}
   <div id="contact">
     <h2>Контакты</h2>
     <p>Электронная почта: <bdi><a href="mailto:ahaparis@outlook.com">ahaparis@outlook.com</a></bdi></p>
-    <p>Представительство в Китае (Ухань): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
+    <p class="cn">Представительство в Китае (Ухань): <bdi><a href="mailto:aha.chine@qq.com">aha.chine@qq.com</a></bdi></p>
   </div>
   <div>
     <h2>Прозрачность</h2>
     <p>Устав и свидетельство о регистрации — по запросу.</p>
+    <p>Чтобы увеличить текст, используйте масштабирование на телефоне или в браузере.</p>
   </div>
   <div>
     <h2><a href="../mentions-legales.html">Правовая информация (на французском)</a></h2>
     <p>Этот сайт не использует файлы cookie. Анонимная статистика без cookie (GoatCounter) учитывает только просмотры страниц.</p>
-    <p>Чтобы увеличить текст, используйте масштабирование на телефоне или в браузере.</p>
   </div>
 </div></footer>
 <div id="sub" class="subbox" role="dialog" aria-modal="true" aria-label="Рассылка"><div class="subin">
