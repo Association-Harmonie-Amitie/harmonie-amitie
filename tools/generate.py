@@ -68,7 +68,15 @@ JOIN={
 }
 from urllib.parse import quote
 def join_href(l):
-    j=JOIN[l]; return 'mailto:%s?subject=%s&body=%s'%(JOIN_TO,quote(j['subj']),quote(j['body']))
+    # plain address only: in-app browsers (WeChat) show encoded subject/body as raw text
+    return 'mailto:%s'%JOIN_TO
+# labels for the copy fallback (wording confirmed by the Présidente, 2026-11-25)
+JCOPY={'zh':('或发邮件至','复制邮箱','已复制','查看申请模板','复制模板'),
+ 'fr':('Ou écrivez-nous à',"Copier l'adresse",'Copié','Voir le modèle de demande','Copier le modèle'),
+ 'en':('Or write to us at','Copy address','Copied','See the application template','Copy template'),
+ 'es':('O escríbanos a','Copiar la dirección','Copiado','Ver el modelo de solicitud','Copiar el modelo'),
+ 'ru':('Или напишите нам по адресу','Скопировать адрес','Скопировано','Показать образец заявки','Скопировать образец'),
+ 'ar':('أو راسلونا على','نسخ العنوان','تم النسخ','عرض نموذج الطلب','نسخ النموذج')}
 # Jardin de l'amitié / 友谊花园: friends and partner companies, ONLY with signed consent form on file.
 # entry: dict(name='...', line={'fr':'...','zh':'...'}, url='https://...' or None)  (≤40 words, no personal contact data)
 FRIENDS=[]
@@ -245,7 +253,9 @@ def page(l, preview=False, pg='home'):
 {friends_sec}
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a></div>
+  <div id="adherer"><h3>{html.escape(JOIN[l]['h'])}</h3><p>{html.escape(JOIN[l]['p'])} <small>{html.escape(JOIN[l]['n'])}</small></p><a class="btn btn-red" href="{html.escape(join_href(l),quote=True)}">{html.escape(JOIN[l]['b'])}</a>
+    <p class="jalt">{JCOPY[l][0]} <bdi class="jmail">{JOIN_TO}</bdi> <button type="button" class="copy" data-copy="{JOIN_TO}" data-done="{JCOPY[l][2]}">{JCOPY[l][1]}</button></p>
+    <details class="jtpl"><summary>{JCOPY[l][3]}</summary><pre id="jtpl-{l}">{html.escape(JOIN[l]['body'])}</pre><button type="button" class="copy" data-copy-from="jtpl-{l}" data-done="{JCOPY[l][2]}">{JCOPY[l][4]}</button></details></div>
   <div><h3>{t['b1_h']}</h3><p>{t['b1_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b1_b']}</a></div>
   <div><h3>{t['b2_h']}</h3><p>{t['b2_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b2_b']}</a></div>
   <div><h3>{t['b3_h']}</h3><p>{t['b3_p']}</p><a class="btn btn-line" href="{H('contact')}">{t['b3_b']}</a></div>
@@ -333,6 +343,8 @@ def page(l, preview=False, pg='home'):
     <p>{html.escape(ZOOM[l])}</p>
   </div>
 </div></footer>
+<script>(function(){{function cp(t){{if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){{return fb(t)}});return Promise.resolve(fb(t))}}function fb(t){{var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{{document.execCommand('copy')}}catch(e){{}}document.body.removeChild(a)}}
+document.querySelectorAll('button.copy').forEach(function(b){{b.addEventListener('click',function(){{var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){{b.textContent=b.dataset.done;setTimeout(function(){{b.textContent=o}},2000)}})}})}})}})();</script>
 <script>(function(){{var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){{var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)}});m.addEventListener('click',function(e){{if(e.target.closest('a')){{m.classList.remove('open');b.setAttribute('aria-expanded','false')}}}})}})();</script>'''
     attrs=f'lang="{HTML_LANG[l]}"'+(' dir="rtl"' if rtl else '')
     if zh:

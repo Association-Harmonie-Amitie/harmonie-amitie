@@ -226,6 +226,14 @@ html:not(.js) .menu-btn{display:none!important}
 :root[data-theme="dark"]{--date:#f29097}
 .item time{font-size:1rem;font-weight:700;color:var(--date)}
 .kicker,.card .tag,.item .status{font-size:.85rem}
+/* join fallback: address + copy buttons (works in WeChat in-app browser) */
+.band .jalt{flex:none;margin:.8rem 0 0;font-size:.9rem;color:#d7deea}
+.band .jmail{color:#fff;font-weight:600;overflow-wrap:anywhere;user-select:all}
+.band .copy{min-height:32px;margin-inline-start:.35rem;padding:.2rem .7rem;font:600 .82rem var(--f-body);color:#fff;background:transparent;border:1px solid #fff;border-radius:2px;cursor:pointer}
+.band .copy:hover{background:#fff;color:var(--navy)}
+.band .jtpl{margin-top:.6rem;font-size:.88rem;color:#d7deea;width:100%}
+.band .jtpl summary{cursor:pointer;min-height:24px;text-decoration:underline}
+.band .jtpl pre{white-space:pre-wrap;font:inherit;background:rgba(255,255,255,.08);padding:.6rem .7rem;margin:.5rem 0;color:#fff}
 
 </style>
 </head>
@@ -312,7 +320,20 @@ html:not(.js) .menu-btn{display:none!important}
 
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>انضموا مجانًا</h3><p>العضوية في الجمعية مجانية. انضموا إلينا لمتابعة أنشطتنا والمشاركة فيها بالإيقاع الذي يناسبكم. <small>تُستخدم بياناتكم لإدارة العضوية فقط ولا تُشارك مع أي جهة.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%D8%B7%D9%84%D8%A8%20%D8%B9%D8%B6%D9%88%D9%8A%D8%A9%20%D9%85%D8%AC%D8%A7%D9%86%D9%8A%D8%A9&amp;body=%D9%85%D8%B1%D8%AD%D8%A8%D9%8B%D8%A7%D8%8C%0A%0A%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%A7%D9%86%D8%B6%D9%85%D8%A7%D9%85%20%D9%85%D8%AC%D8%A7%D9%86%D9%8B%D8%A7%20%D8%A5%D9%84%D9%89%20Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0A%D8%A7%D9%84%D8%A7%D8%B3%D9%85%20%D8%A7%D9%84%D9%83%D8%A7%D9%85%D9%84%3A%0A%D8%A7%D9%84%D8%A8%D9%84%D8%AF%20/%20%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%3A%0A%D8%A7%D9%84%D9%87%D8%A7%D8%AA%D9%81%20%28%D8%A7%D8%AE%D8%AA%D9%8A%D8%A7%D8%B1%D9%8A%29%3A%0A%D8%A7%D9%84%D8%A7%D9%87%D8%AA%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%28%D8%A7%D9%84%D8%B4%D8%A8%D8%A7%D8%A8%20%D9%88%D8%A7%D9%84%D8%AA%D8%B9%D9%84%D9%8A%D9%85%20/%20%D8%A7%D9%84%D8%AB%D9%82%D8%A7%D9%81%D8%A9%20%D9%88%D8%A7%D9%84%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%89%20/%20%D8%A7%D9%84%D8%AA%D8%B6%D8%A7%D9%85%D9%86%29%3A%0A%D8%A7%D9%84%D8%AA%D8%B7%D9%88%D8%B9%20%28%D9%86%D8%B9%D9%85%20/%20%D9%84%D8%A7%29%3A%0A%0A%D8%A3%D9%88%D8%A7%D9%81%D9%82%20%D8%B9%D9%84%D9%89%20%D8%A3%D9%86%20%D8%AA%D8%B3%D8%AA%D8%AE%D8%AF%D9%85%20%D8%A7%D9%84%D8%AC%D9%85%D8%B9%D9%8A%D8%A9%20%D9%87%D8%B0%D9%87%20%D8%A7%D9%84%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA%20%D9%84%D8%A5%D8%AF%D8%A7%D8%B1%D8%A9%20%D8%B9%D8%B6%D9%88%D9%8A%D8%AA%D9%8A.%0A">سجّلوا الآن</a></div>
+  <div id="adherer"><h3>انضموا مجانًا</h3><p>العضوية في الجمعية مجانية. انضموا إلينا لمتابعة أنشطتنا والمشاركة فيها بالإيقاع الذي يناسبكم. <small>تُستخدم بياناتكم لإدارة العضوية فقط ولا تُشارك مع أي جهة.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com">سجّلوا الآن</a>
+    <p class="jalt">أو راسلونا على <bdi class="jmail">ahaparis@outlook.com</bdi> <button type="button" class="copy" data-copy="ahaparis@outlook.com" data-done="تم النسخ">نسخ العنوان</button></p>
+    <details class="jtpl"><summary>عرض نموذج الطلب</summary><pre id="jtpl-ar">مرحبًا،
+
+أرغب في الانضمام مجانًا إلى Association Harmonie d&#x27;Amitié.
+
+الاسم الكامل:
+البلد / المدينة:
+الهاتف (اختياري):
+الاهتمامات (الشباب والتعليم / الثقافة والموسيقى / التضامن):
+التطوع (نعم / لا):
+
+أوافق على أن تستخدم الجمعية هذه البيانات لإدارة عضويتي.
+</pre><button type="button" class="copy" data-copy-from="jtpl-ar" data-done="تم النسخ">نسخ النموذج</button></details></div>
   <div><h3>أدعم</h3><p>لدعم أحد أعمالنا أو مشاريعنا، راسلونا ويسعدنا الرد عليكم.</p><a class="btn btn-line" href="#contact">راسلونا</a></div>
   <div><h3>أشارك</h3><p>متطوعون وموسيقيون ومعلمون: شاركوا في الحفلات والحملات الشتوية التي ننظمها مع شركائنا.</p><a class="btn btn-line" href="#contact">كن متطوعًا</a></div>
   <div><h3>أتابع</h3><p>تلقّوا أخبارنا عبر البريد الإلكتروني.</p><a class="btn btn-line" href="#contact">تلقّي الأخبار</a></div>
@@ -338,6 +359,8 @@ html:not(.js) .menu-btn{display:none!important}
     <p>لتكبير النص، استخدموا خاصية التكبير في الهاتف أو المتصفح.</p>
   </div>
 </div></footer>
+<script>(function(){function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return fb(t)});return Promise.resolve(fb(t))}function fb(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},2000)})})})})();</script>
 <script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>

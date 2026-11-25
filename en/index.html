@@ -226,6 +226,14 @@ html:not(.js) .menu-btn{display:none!important}
 :root[data-theme="dark"]{--date:#f29097}
 .item time{font-size:1rem;font-weight:700;color:var(--date)}
 .kicker,.card .tag,.item .status{font-size:.85rem}
+/* join fallback: address + copy buttons (works in WeChat in-app browser) */
+.band .jalt{flex:none;margin:.8rem 0 0;font-size:.9rem;color:#d7deea}
+.band .jmail{color:#fff;font-weight:600;overflow-wrap:anywhere;user-select:all}
+.band .copy{min-height:32px;margin-inline-start:.35rem;padding:.2rem .7rem;font:600 .82rem var(--f-body);color:#fff;background:transparent;border:1px solid #fff;border-radius:2px;cursor:pointer}
+.band .copy:hover{background:#fff;color:var(--navy)}
+.band .jtpl{margin-top:.6rem;font-size:.88rem;color:#d7deea;width:100%}
+.band .jtpl summary{cursor:pointer;min-height:24px;text-decoration:underline}
+.band .jtpl pre{white-space:pre-wrap;font:inherit;background:rgba(255,255,255,.08);padding:.6rem .7rem;margin:.5rem 0;color:#fff}
 
 </style>
 </head>
@@ -312,7 +320,20 @@ html:not(.js) .menu-btn{display:none!important}
 
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>Join for free</h3><p>Membership of the association is free. Join us to follow and take part in our activities at your own pace. <small>Your data is used only to manage memberships and is never shared.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Free%20membership&amp;body=Hello%2C%0A%0AI%20would%20like%20to%20join%20the%20Association%20Harmonie%20d%27Amiti%C3%A9%20%28free%20membership%29.%0A%0AFull%20name%3A%0ACountry%20/%20city%3A%0APhone%20%28optional%29%3A%0AInterests%20%28youth%20and%20education%20/%20culture%20and%20music%20/%20solidarity%29%3A%0AVolunteering%20%28yes%20/%20no%29%3A%0A%0AI%20agree%20that%20the%20association%20may%20use%20this%20data%20to%20manage%20my%20membership.%0A">Sign up</a></div>
+  <div id="adherer"><h3>Join for free</h3><p>Membership of the association is free. Join us to follow and take part in our activities at your own pace. <small>Your data is used only to manage memberships and is never shared.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com">Sign up</a>
+    <p class="jalt">Or write to us at <bdi class="jmail">ahaparis@outlook.com</bdi> <button type="button" class="copy" data-copy="ahaparis@outlook.com" data-done="Copied">Copy address</button></p>
+    <details class="jtpl"><summary>See the application template</summary><pre id="jtpl-en">Hello,
+
+I would like to join the Association Harmonie d&#x27;Amitié (free membership).
+
+Full name:
+Country / city:
+Phone (optional):
+Interests (youth and education / culture and music / solidarity):
+Volunteering (yes / no):
+
+I agree that the association may use this data to manage my membership.
+</pre><button type="button" class="copy" data-copy-from="jtpl-en" data-done="Copied">Copy template</button></details></div>
   <div><h3>I give</h3><p>To support an action or a project, write to us; we will be glad to reply.</p><a class="btn btn-line" href="#contact">Write to us</a></div>
   <div><h3>I take part</h3><p>Volunteers, musicians, teachers: take part in the concerts and winter collections we run with our partners.</p><a class="btn btn-line" href="#contact">Volunteer</a></div>
   <div><h3>I stay informed</h3><p>Receive our news by email.</p><a class="btn btn-line" href="#contact">Get our news</a></div>
@@ -338,6 +359,8 @@ html:not(.js) .menu-btn{display:none!important}
     <p>To enlarge the text, use your phone&#x27;s or browser&#x27;s zoom.</p>
   </div>
 </div></footer>
+<script>(function(){function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return fb(t)});return Promise.resolve(fb(t))}function fb(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},2000)})})})})();</script>
 <script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>

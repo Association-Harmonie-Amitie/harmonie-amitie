@@ -226,6 +226,14 @@ html:not(.js) .menu-btn{display:none!important}
 :root[data-theme="dark"]{--date:#f29097}
 .item time{font-size:1rem;font-weight:700;color:var(--date)}
 .kicker,.card .tag,.item .status{font-size:.85rem}
+/* join fallback: address + copy buttons (works in WeChat in-app browser) */
+.band .jalt{flex:none;margin:.8rem 0 0;font-size:.9rem;color:#d7deea}
+.band .jmail{color:#fff;font-weight:600;overflow-wrap:anywhere;user-select:all}
+.band .copy{min-height:32px;margin-inline-start:.35rem;padding:.2rem .7rem;font:600 .82rem var(--f-body);color:#fff;background:transparent;border:1px solid #fff;border-radius:2px;cursor:pointer}
+.band .copy:hover{background:#fff;color:var(--navy)}
+.band .jtpl{margin-top:.6rem;font-size:.88rem;color:#d7deea;width:100%}
+.band .jtpl summary{cursor:pointer;min-height:24px;text-decoration:underline}
+.band .jtpl pre{white-space:pre-wrap;font:inherit;background:rgba(255,255,255,.08);padding:.6rem .7rem;margin:.5rem 0;color:#fff}
 
 </style>
 </head>
@@ -311,7 +319,20 @@ html:not(.js) .menu-btn{display:none!important}
 
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>Adhérer gratuitement</h3><p>L&#x27;adhésion à l&#x27;association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme. <small>Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=Adh%C3%A9sion%20gratuite&amp;body=Bonjour%2C%0A%0AJe%20souhaite%20adh%C3%A9rer%20gratuitement%20%C3%A0%20l%27Association%20Harmonie%20d%27Amiti%C3%A9.%0A%0ANom%20et%20pr%C3%A9nom%20%3A%0APays%20/%20ville%20%3A%0AT%C3%A9l%C3%A9phone%20%28facultatif%29%20%3A%0ACentres%20d%27int%C3%A9r%C3%AAt%20%28jeunesse%20et%20%C3%A9ducation%20/%20culture%20et%20musique%20/%20solidarit%C3%A9%29%20%3A%0AB%C3%A9n%C3%A9volat%20%28oui%20/%20non%29%20%3A%0A%0AJ%27accepte%20que%20ces%20donn%C3%A9es%20soient%20utilis%C3%A9es%20par%20l%27association%20pour%20g%C3%A9rer%20mon%20adh%C3%A9sion.%0A">Je m&#x27;inscris</a></div>
+  <div id="adherer"><h3>Adhérer gratuitement</h3><p>L&#x27;adhésion à l&#x27;association est gratuite. Rejoignez-nous pour suivre nos actions et y participer à votre rythme. <small>Vos données servent uniquement à la gestion des adhésions et ne sont jamais cédées.</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com">Je m&#x27;inscris</a>
+    <p class="jalt">Ou écrivez-nous à <bdi class="jmail">ahaparis@outlook.com</bdi> <button type="button" class="copy" data-copy="ahaparis@outlook.com" data-done="Copié">Copier l'adresse</button></p>
+    <details class="jtpl"><summary>Voir le modèle de demande</summary><pre id="jtpl-fr">Bonjour,
+
+Je souhaite adhérer gratuitement à l&#x27;Association Harmonie d&#x27;Amitié.
+
+Nom et prénom :
+Pays / ville :
+Téléphone (facultatif) :
+Centres d&#x27;intérêt (jeunesse et éducation / culture et musique / solidarité) :
+Bénévolat (oui / non) :
+
+J&#x27;accepte que ces données soient utilisées par l&#x27;association pour gérer mon adhésion.
+</pre><button type="button" class="copy" data-copy-from="jtpl-fr" data-done="Copié">Copier le modèle</button></details></div>
   <div><h3>Je soutiens</h3><p>Pour soutenir une action ou un projet, écrivez-nous : nous vous répondrons avec plaisir.</p><a class="btn btn-line" href="#contact">Nous écrire</a></div>
   <div><h3>Je m'engage</h3><p>Bénévoles, musiciens, enseignants : participez aux concerts et aux collectes d'hiver menés avec nos partenaires.</p><a class="btn btn-line" href="#contact">Devenir bénévole</a></div>
   <div><h3>Je m'informe</h3><p>Recevez nos nouvelles par e-mail.</p><a class="btn btn-line" href="#contact">Recevoir nos nouvelles</a></div>
@@ -337,6 +358,8 @@ html:not(.js) .menu-btn{display:none!important}
     <p>Pour agrandir le texte, utilisez le zoom de votre téléphone ou de votre navigateur.</p>
   </div>
 </div></footer>
+<script>(function(){function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return fb(t)});return Promise.resolve(fb(t))}function fb(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},2000)})})})})();</script>
 <script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>

@@ -4,6 +4,10 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Adhésion : entrée qui fonctionne dans WeChat
+- Le bouton d'adhésion ouvre seulement l'adresse (le sujet/corps codé s'affichait en clair dans le navigateur WeChat).
+- Ajout : adresse visible + bouton « copier », modèle de demande dépliable + bouton « copier le modèle » (libellés validés par la Présidente, six langues). Étape suivante : formulaire Microsoft Forms du compte de l'association.
+
 ## 2026-11-25 — Dates en toutes lettres et aide pour agrandir le texte (validé par la Présidente)
 - Dates des actualités écrites selon l'usage de chaque langue (2025 年 5 月 25 日 ; 25 mai 2025 ; 25 May 2025 ; 25 de mayo de 2025 ; 25 мая 2025 г. ; 25 مايو 2025).
 - Pied de page : phrase indiquant comment agrandir le texte avec le zoom du téléphone ou du navigateur, six langues.

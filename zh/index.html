@@ -227,6 +227,14 @@ html:not(.js) .menu-btn{display:none!important}
 :root[data-theme="dark"]{--date:#f29097}
 .item time{font-size:1rem;font-weight:700;color:var(--date)}
 .kicker,.card .tag,.item .status{font-size:.85rem}
+/* join fallback: address + copy buttons (works in WeChat in-app browser) */
+.band .jalt{flex:none;margin:.8rem 0 0;font-size:.9rem;color:#d7deea}
+.band .jmail{color:#fff;font-weight:600;overflow-wrap:anywhere;user-select:all}
+.band .copy{min-height:32px;margin-inline-start:.35rem;padding:.2rem .7rem;font:600 .82rem var(--f-body);color:#fff;background:transparent;border:1px solid #fff;border-radius:2px;cursor:pointer}
+.band .copy:hover{background:#fff;color:var(--navy)}
+.band .jtpl{margin-top:.6rem;font-size:.88rem;color:#d7deea;width:100%}
+.band .jtpl summary{cursor:pointer;min-height:24px;text-decoration:underline}
+.band .jtpl pre{white-space:pre-wrap;font:inherit;background:rgba(255,255,255,.08);padding:.6rem .7rem;margin:.5rem 0;color:#fff}
 
 </style>
 </head>
@@ -312,7 +320,20 @@ html:not(.js) .menu-btn{display:none!important}
 
 
 <section class="band" id="engager"><div class="in grid g4">
-  <div id="adherer"><h3>免费入会</h3><p>入会完全免费。欢迎随时关注并参与我们的行动，一切随心、量力而行。 <small>您的信息仅用于会员管理，绝不对外披露。</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com?subject=%E5%85%8D%E8%B4%B9%E5%85%A5%E4%BC%9A%E7%94%B3%E8%AF%B7&amp;body=%E6%82%A8%E5%A5%BD%EF%BC%9A%0A%0A%E6%88%91%E5%B8%8C%E6%9C%9B%E5%85%8D%E8%B4%B9%E5%8A%A0%E5%85%A5%E5%92%8C%E8%B0%8A%E5%8D%8F%E4%BC%9A%E3%80%82%0A%0A%E5%A7%93%E5%90%8D%EF%BC%9A%0A%E5%9B%BD%E5%AE%B6%20/%20%E5%9F%8E%E5%B8%82%EF%BC%9A%0A%E7%94%B5%E8%AF%9D%EF%BC%88%E9%80%89%E5%A1%AB%EF%BC%89%EF%BC%9A%0A%E5%85%B3%E6%B3%A8%E9%A2%86%E5%9F%9F%EF%BC%88%E9%9D%92%E5%B9%B4%E4%B8%8E%E6%95%99%E8%82%B2%20/%20%E6%96%87%E5%8C%96%E4%B8%8E%E9%9F%B3%E4%B9%90%20/%20%E5%85%AC%E7%9B%8A%EF%BC%89%EF%BC%9A%0A%E6%98%AF%E5%90%A6%E6%84%BF%E6%84%8F%E5%81%9A%E5%BF%97%E6%84%BF%E8%80%85%EF%BC%88%E6%98%AF%20/%20%E5%90%A6%EF%BC%89%EF%BC%9A%0A%0A%E6%88%91%E5%90%8C%E6%84%8F%E5%8D%8F%E4%BC%9A%E4%BD%BF%E7%94%A8%E4%BB%A5%E4%B8%8A%E4%BF%A1%E6%81%AF%E5%8A%9E%E7%90%86%E4%BC%9A%E5%91%98%E4%BA%8B%E5%8A%A1%E3%80%82%0A">立即登记</a></div>
+  <div id="adherer"><h3>免费入会</h3><p>入会完全免费。欢迎随时关注并参与我们的行动，一切随心、量力而行。 <small>您的信息仅用于会员管理，绝不对外披露。</small></p><a class="btn btn-red" href="mailto:ahaparis@outlook.com">立即登记</a>
+    <p class="jalt">或发邮件至 <bdi class="jmail">ahaparis@outlook.com</bdi> <button type="button" class="copy" data-copy="ahaparis@outlook.com" data-done="已复制">复制邮箱</button></p>
+    <details class="jtpl"><summary>查看申请模板</summary><pre id="jtpl-zh">您好：
+
+我希望免费加入和谊协会。
+
+姓名：
+国家 / 城市：
+电话（选填）：
+关注领域（青年与教育 / 文化与音乐 / 公益）：
+是否愿意做志愿者（是 / 否）：
+
+我同意协会使用以上信息办理会员事务。
+</pre><button type="button" class="copy" data-copy-from="jtpl-zh" data-done="已复制">复制模板</button></details></div>
   <div><h3>我要支持</h3><p>如您希望支持某项行动或项目，欢迎来信，我们定当诚挚回复。</p><a class="btn btn-line" href="#contact">联系我们</a></div>
   <div><h3>我要参与</h3><p>志愿者、音乐家、教师：欢迎参与我们与合作伙伴一起开展的音乐会和冬季公益行动。</p><a class="btn btn-line" href="#contact">成为志愿者</a></div>
   <div><h3>我要关注</h3><p>通过电子邮件接收我们的动态。</p><a class="btn btn-line" href="#contact">订阅动态</a></div>
@@ -338,6 +359,8 @@ html:not(.js) .menu-btn{display:none!important}
     <p>如需放大文字，请使用手机或浏览器的缩放功能。</p>
   </div>
 </div></footer>
+<script>(function(){function cp(t){if(navigator.clipboard&&window.isSecureContext)return navigator.clipboard.writeText(t).catch(function(){return fb(t)});return Promise.resolve(fb(t))}function fb(t){var a=document.createElement('textarea');a.value=t;a.setAttribute('readonly','');a.style.position='fixed';a.style.opacity='0';document.body.appendChild(a);a.select();a.setSelectionRange(0,t.length);try{document.execCommand('copy')}catch(e){}document.body.removeChild(a)}
+document.querySelectorAll('button.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.dataset.copy||document.getElementById(b.dataset.copyFrom).textContent,o=b.textContent;cp(t).then(function(){b.textContent=b.dataset.done;setTimeout(function(){b.textContent=o},2000)})})})})();</script>
 <script>(function(){var b=document.querySelector('.menu-btn'),m=document.querySelector('nav.menu');if(!b||!m)return;b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});m.addEventListener('click',function(e){if(e.target.closest('a')){m.classList.remove('open');b.setAttribute('aria-expanded','false')}})})();</script>
 </body>
 </html>
