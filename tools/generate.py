@@ -307,7 +307,7 @@ def page(l, preview=False, pg='home'):
   <a href="{FORM[l]}"{FT}>{t['u_news']}</a>
   <a href="{H('adherer')}">{t['u_join']}</a>
   <nav class="langs" aria-label="{a('langs_label')}">{sw}</nav>
-  <a class="btn btn-red" href="{H('engager')}">{t['u_support']}</a>
+  <a class="btn btn-red" href="{FORM[l]}"{FT}>{t['u_support']}</a>
 </div></div>
 
 <header class="main"><div class="in">
@@ -322,7 +322,7 @@ def page(l, preview=False, pg='home'):
     <li><a href="{H('actualites')}">{t['m_news']}</a></li>
     <li><a href="{H('partenaires')}">{t['m_part']}</a></li>
     <li><a href="{H('contact')}">{t['m_contact']}</a></li>
-    <li class="m-only"><a href="{H('engager')}">{t['u_support']}</a></li>
+    <li class="m-only"><a href="{FORM[l]}"{FT}>{t['u_support']}</a></li>
   </ul></nav>
 </div></header>
 
@@ -353,6 +353,14 @@ document.querySelectorAll('button.copy').forEach(function(b){{b.addEventListener
     attrs=f'lang="{HTML_LANG[l]}"'+(' dir="rtl"' if rtl else '')
     if zh:
         import re, urllib.parse
+        # break Chinese headings only between phrases (after ，、·：；), never inside a word like 热爱
+        def _ph(m):
+            inner=m.group(3)
+            if '<' in inner or len(inner)<6: return m.group(0)
+            segs=[x for x in re.split(r'(?<=[，、·：；])\s*',inner) if x]
+            if len(segs)<2: return m.group(0)
+            return m.group(1)+''.join('<span class="ph">%s</span>'%x for x in segs)+m.group(4)
+        body=re.sub(r'(<(h[1-3])\b[^>]*>)([^<]*)(</\2>)',_ph,body)
         parts=re.findall(r'<(h[1-4]|b|blockquote)\b[^>]*>(.*?)</\1>',body,re.S)
         parts+=re.findall(r'class="(?:seal|mark)[^"]*"[^>]*>([^<]*)<',body)
         txt=''.join(x[1] if isinstance(x,tuple) else x for x in parts)

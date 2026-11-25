@@ -220,7 +220,12 @@ footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:any
 @media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
 .menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 html:not(.js) .menu-btn{display:none!important}
-:lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
+:lang(zh) .logo{word-break:keep-all}
+/* no horizontal scroll, even with large text in WeChat / phone settings */
+html,body{overflow-x:clip;max-width:100%}
+h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
+.ph{display:inline-block;max-width:100%}
+.figs>*,.grid>*,.cards>*{min-width:0}
 /* 2026-11-25 option 2 (approved): readable dates and labels for older readers */
 :root{--date:var(--red)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--date:#f29097}}
@@ -243,7 +248,7 @@ html:not(.js) .menu-btn{display:none!important}
   <a href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">订阅通讯</a>
   <a href="#adherer">加入我们</a>
   <nav class="langs" aria-label="语言"><a href="../" hreflang="fr" lang="fr" title="Français">FR</a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" title="中文" aria-current="page">中文</a><a href="../en/" hreflang="en" lang="en" title="English">EN</a><a href="../es/" hreflang="es" lang="es" title="Español">ES</a><a href="../ru/" hreflang="ru" lang="ru" title="Русский">RU</a><a href="../ar/" hreflang="ar" lang="ar" title="العربية">عربي</a></nav>
-  <a class="btn btn-red" href="#engager">支持我们</a>
+  <a class="btn btn-red" href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">支持我们</a>
 </div></div>
 
 <header class="main"><div class="in">
@@ -259,7 +264,7 @@ html:not(.js) .menu-btn{display:none!important}
     <li><a href="#actualites">动态</a></li>
     <li><a href="#partenaires">合作与支持</a></li>
     <li><a href="#contact">联系</a></li>
-    <li class="m-only"><a href="#engager">支持我们</a></li>
+    <li class="m-only"><a href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">支持我们</a></li>
   </ul></nav>
 </div></header>
 
@@ -267,7 +272,7 @@ html:not(.js) .menu-btn{display:none!important}
 <div class="hero">
   <img src="../img/concert-2025.jpg" alt="巴黎弦乐团在 2025 年多元文化节音乐会上演出">
   <div class="in">
-    <h1>跨越代际，建立联结与信任</h1>
+    <h1><span class="ph">跨越代际，</span><span class="ph">建立联结与信任</span></h1>
     <p>助力青年，关爱长者，凝聚公益之力，让每个人都能按自己的步调，走向和谐美好。</p>
     <div class="ctas">
       <a class="btn btn-red" href="actions.html">了解我们的行动</a>
@@ -280,7 +285,7 @@ html:not(.js) .menu-btn{display:none!important}
 <section class="mission" id="association"><div class="in grid">
   <div>
     <p class="kicker">协会宗旨</p>
-    <h2>和平 · 友谊 · 热爱，和合共生</h2>
+    <h2><span class="ph">和平 ·</span><span class="ph">友谊 ·</span><span class="ph">热爱，</span><span class="ph">和合共生</span></h2>
     <p class="sub">和谊协会于 2023 年在巴黎依法注册成立，是一家非营利社团，深耕教育、文化、公益三大领域。</p>
   </div>
   <p class="motto">阴阳相济，冲气为和。</p>
@@ -288,11 +293,11 @@ html:not(.js) .menu-btn{display:none!important}
 
 <section id="actions"><div class="in">
   <p class="kicker">我们的行动</p>
-  <h2>三个领域，同一份信任</h2>
+  <h2><span class="ph">三个领域，</span><span class="ph">同一份信任</span></h2>
   <div class="cards short">
     <article class="card">
       <div class="pic"><span class="mark" aria-hidden="true">学</span></div>
-      <div class="body"><span class="tag">助力青年 · 教育</span><h3>培养青年，拓宽出路</h3><p>根据与蒙贝利亚尔 IFAC 培训学院的委托协议，开展中法职业培训合作（2026–2028）。</p><a class="more" href="actions.html">了解更多 <span aria-hidden="true">→</span></a></div>
+      <div class="body"><span class="tag">助力青年 · 教育</span><h3><span class="ph">培养青年，</span><span class="ph">拓宽出路</span></h3><p>根据与蒙贝利亚尔 IFAC 培训学院的委托协议，开展中法职业培训合作（2026–2028）。</p><a class="more" href="actions.html">了解更多 <span aria-hidden="true">→</span></a></div>
     </article>
     <article class="card">
       <div class="pic"><img src="../img/concert-saint-louis.jpg" alt="巴黎圣路易岛教堂音乐会现场的观众" loading="lazy"></div>

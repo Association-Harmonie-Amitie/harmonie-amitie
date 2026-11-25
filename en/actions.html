@@ -218,7 +218,12 @@ footer a{display:inline-block;min-height:24px;line-height:24px;overflow-wrap:any
 @media (max-width:600px){.band .grid.g4{grid-template-columns:1fr}footer .in{grid-template-columns:1fr}}
 .menu-btn:focus-visible{outline:2px solid var(--red);outline-offset:2px}
 html:not(.js) .menu-btn{display:none!important}
-:lang(zh) .hero h1,:lang(zh) .logo{word-break:keep-all}
+:lang(zh) .logo{word-break:keep-all}
+/* no horizontal scroll, even with large text in WeChat / phone settings */
+html,body{overflow-x:clip;max-width:100%}
+h1,h2,h3,h4,p,li,dd,b,a{overflow-wrap:break-word}
+.ph{display:inline-block;max-width:100%}
+.figs>*,.grid>*,.cards>*{min-width:0}
 /* 2026-11-25 option 2 (approved): readable dates and labels for older readers */
 :root{--date:var(--red)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--date:#f29097}}
@@ -242,7 +247,7 @@ html:not(.js) .menu-btn{display:none!important}
   <a href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">Newsletter</a>
   <a href="./#adherer">Join us</a>
   <nav class="langs" aria-label="Language"><a href="../actions.html" hreflang="fr" lang="fr" title="Français">FR</a><a href="../zh/actions.html" hreflang="zh-Hans" lang="zh-Hans" title="中文">中文</a><a href="../en/actions.html" hreflang="en" lang="en" title="English" aria-current="page">EN</a><a href="../es/actions.html" hreflang="es" lang="es" title="Español">ES</a><a href="../ru/actions.html" hreflang="ru" lang="ru" title="Русский">RU</a><a href="../ar/actions.html" hreflang="ar" lang="ar" title="العربية">عربي</a></nav>
-  <a class="btn btn-red" href="./#engager">Support us</a>
+  <a class="btn btn-red" href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">Support us</a>
 </div></div>
 
 <header class="main"><div class="in">
@@ -258,7 +263,7 @@ html:not(.js) .menu-btn{display:none!important}
     <li><a href="./#actualites">News</a></li>
     <li><a href="./#partenaires">Partners</a></li>
     <li><a href="./#contact">Contact</a></li>
-    <li class="m-only"><a href="./#engager">Support us</a></li>
+    <li class="m-only"><a href="https://forms.cloud.microsoft/r/ZvukM4AueZ" target="_blank" rel="noopener">Support us</a></li>
   </ul></nav>
 </div></header>
 

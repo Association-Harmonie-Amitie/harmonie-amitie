@@ -4,6 +4,11 @@ Qui fait quoi / 人机分工 : les contenus, les choix et les validations vienne
 
 Le détail de chaque version est dans l'historique Git (un commit par modification). 每次修改的细节见 Git 提交记录。
 
+## 2026-11-25 — Mobile : plus de débordement horizontal ; bouton « Nous soutenir » / 手机不再左右溢出；"支持我们"按钮
+- Avec un grand texte (réglage WeChat ou téléphone), la page ne déborde plus à droite ; les titres chinois ne se coupent qu'entre les expressions (plus de coupure dans « 热爱 »).
+- 字体放大时页面不再左右溢出；中文标题只在词组之间换行（不再把"热爱"拆开）。
+- Le bouton rouge « Nous soutenir » en haut de page (et dans le menu mobile) ouvre le formulaire de la langue, comme l'adhésion. 顶栏红色"支持我们"按钮（含手机菜单）改为直接打开本语言表单。
+
 ## 2026-11-25 — Adhésion et contact : formulaire en ligne / 入会与联系：在线登记表
 - Les boutons Adhérer, Nous écrire, Devenir bénévole, Recevoir nos nouvelles et « Lettre d'information » ouvrent le formulaire « Adhésion et contact » de la langue de la page (langue + anglais ; zh et en partagent le formulaire chinois-anglais). Validé par la Présidente.
 - 入会、联系我们、成为志愿者、订阅动态和"订阅通讯"按钮改为打开本页语言的"入会与联系登记"表单（中文页与英文页共用中英表单）。经会长批准。
